@@ -10,4 +10,3 @@ Development
    testing
    ci_pipeline
    contributing
-   

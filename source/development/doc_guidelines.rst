@@ -3,6 +3,8 @@ Documentation Guidelines
 
 TBD...
 
+.. _headings:
+
 Headings
 --------
 
@@ -29,6 +31,8 @@ Headings
    Section 3 heading
    -----------------
 
+.. _text_formatting:
+
 Text Formatting
 ---------------
 reST uses some few special characters to format text. The following table resumes the inline markup samples used throughout our documentation.
@@ -48,6 +52,8 @@ reST uses some few special characters to format text. The following table resume
 +-------------+------------------------+----------------------+
 
 The use of backslash (``\``) is a work around to eliminate inline markup delimiters. Use before the character. 
+
+.. _tables:
 
 Tables 
 ------
@@ -149,7 +155,7 @@ The reST format uses the ``code-block`` directive to create a highlight block to
 
     .. code-block:: shell
 
-        uname -a
+        cd ~
 
 Rendered, the code blocks look like this:
 
@@ -162,7 +168,7 @@ Rendered, the code blocks look like this:
 
 .. code-block:: shell
 
-        uname -a
+        cd ~
 
 Moreover, you can also create a highlight a text segment with a code block. To achieve this, you just need to selected ``none`` as the "programming language".
 
@@ -178,15 +184,101 @@ Rendered, the code block looks like this:
 
     Takeaway 1: This is a highlighted text with a code block background and box.
 
-Cross-Reference Hyperlinks
---------------------------
+Referencing Links
+-----------------
+To create a implicit link to a title, you should know that all headings are considered as Hyperlinks. This is the syntax
+
+.. code-block:: rest
+
+    this is a link to `headings`_ from this page
+
+Rendered, the implicit link looks like this:
+
+    this is a link to `headings`_ from this page
+
+To create a explicit link within the reST files, you need first to create a target location by following this syntax:
+
+.. code-block:: rest
+
+    .. _label_name:
+
+To reference a target location, you should use this notation:
+
+.. code-block:: rest
+
+    :ref:`label_name`
+
+If we reference a target located on the first three headings of this document, you should be able to navigate to all three spots:
+
+- :ref:`headings`
+
+- :ref:`text_formatting`
+
+- :ref:`tables`
 
 Images
 ------
+To include images in the reST files, the following directive must be use:
+
+.. code-block:: rest
+
+    .. figure:: ../images/bao-logo.png
+        :width: 200px
+        :align: center
+        :name: bao-logo-fig
+
+        Caption for the Bao logo picture.
+
+Rendered, the image should look like this:
+
+.. figure:: ../images/bao-logo.png
+    :width: 200px
+    :align: center
+    :name: bao-logo-fig
+
+    Caption for the Bao logo picture.
+
+You can after reference the image :numref:`bao-logo-fig` by using the notation ``:numref:`bao-logo-fig```, specifying the image name field. 
 
 Tabbed Content
 --------------
+For certain situations, instead of creating multipled documents describing similiar content, you can use the ``tabs`` feature to merge all information in one document in an organized fashion. 
 
-Instruction Steps
+.. code-block:: rest
+
+    .. tabs::
+
+    .. tab:: Platform-A
+
+        Platform A instructions.
+
+    .. tab:: Platform-B
+
+        Platform B instructions.
+
+    .. tab:: Platform-C
+
+        Platform C instructions.
+
+Rendered, the tabbed content looks like this:
+
+
+Boxes
 -----------------
+To highlight within a colored box, you can use three different directives depending on your goal.
 
+.. code-block:: rest
+    
+    .. seealso:: This is a **seealso** box.
+
+    .. note:: This is a **note** box.
+
+    .. warning:: This is a **warning** box.
+
+Rendered, the different boxes look like this:
+
+.. seealso:: This is a **seealso** box.
+
+.. note:: This is a **note** box.
+
+.. warning:: This is a **warning** box.

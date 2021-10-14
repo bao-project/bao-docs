@@ -261,7 +261,20 @@ For certain situations, instead of creating multipled documents describing simil
         Platform C instructions.
 
 Rendered, the tabbed content looks like this:
+    
+.. tabs::
 
+    .. tab:: Platform-A
+
+        Platform A instructions.
+
+    .. tab:: Platform-B
+
+        Platform B instructions.
+
+    .. tab:: Platform-C
+
+        Platform C instructions.
 
 Boxes
 -----------------

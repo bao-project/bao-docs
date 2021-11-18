@@ -1,24 +1,24 @@
 .. _platform:
 
-Bao Platform Definition
+Bao Platform Isolation Profiles
 #######################
-
-The platform specification defines (tbd) ... hardware primitives available for isolation ... 
 
 
 Platforms Overview
 ***************************************
 
-The platform specification currently defines two platforms:
+The platform specification currently identifies three main vectors aiming at 
+guaranteeing strong temporal and spatial isolation among the existing system
+components:
 
-#. A platform: This specifies a platform capable of running rich OS such as Linux, powered by an application processor.
+#. Platform Hardware Isolation Primitives: TBD
 
-#. M platform: This specifies a platform capable of running RTOS and baremetal Apps, powered by a microcontroller.
+#. Platform (uArch) Shared Resources: TBD
 
-#. R platform: This specifies a platform capable of running RTOS and baremetal Apps, powered by a real-time processor.
+#. Platform Interrupt Facilities: TBD
 
 
-A Platform
+Platform Hardware Isolation Primitives
 ***************************************
 
 #. MMU
@@ -32,9 +32,6 @@ A Platform
 #. Platform Peripheral Controller (TZPC, XPPU)
 
 #. IOMMU (sMMUv1, sMMUv2, sMMUv3)
-
-#. Interrupt controller ...
-
 
 
 A-00000[0-F]
@@ -74,8 +71,21 @@ A-00000[0-F]
      - sMMUv2
 
 
-Platform Definition Examples
-====================
+Platform (uArch) Shared Resources
+***************************************
 
-#. Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit
+#. TBD
+
+
+Platform Interrupt Facilities
+***************************************
+
+#. TBD
+
+
+Platform Examples
+***************************************
+
+Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit
+====================
 

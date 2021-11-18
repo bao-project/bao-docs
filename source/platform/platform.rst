@@ -21,33 +21,45 @@ components:
 Platform Hardware Isolation Primitives
 ***************************************
 
-#. MMU
+To provide spatial isolation (memory) among the ... Bao can leverage multiple
 
-#. Virtualization extensions (Arm-VE, RISC-V H-ext)
+#. **Virtualization extensions**. Hardware virtualization support. At the CPU 
+level, includes an additional privilege mode and set of registers. For example, 
+Arm virtualization extensions (VE) for the Armv7-A and the RISC-V Hypervisor
+extension.
 
-#. Security state (TrustZone)
+#. **Security state**: (TrustZone)
 
-#. Platform Memory Controller (PMP, TZASC, RDC, xRDC, XMPU)
+#. **MMU**: 
 
-#. Platform Peripheral Controller (TZPC, XPPU)
+#. **MPU**: 
 
-#. IOMMU (sMMUv1, sMMUv2, sMMUv3)
+#. **IOMMU**: (sMMUv1, sMMUv2, sMMUv3)
+
+#. **IOMPU**: 
+
+#. **Platform Memory Controller**: (PMP, TZASC, RDC, xRDC, XMPU)
+
+#. **Platform Peripheral Controller**: (TZPC, XPPU)
+
+The hardware isolation primitives (HIP) can be identified by a code ...
+
+HIP-00000[0-Z]
 
 
-A-00000[0-F]
-
-
-.. list-table:: A Platform - hardware isolation primitives definition
+.. list-table:: Platform hardware isolation primitives definition
    :widths: 25 25 25 25 25 25 25
    :header-rows: 1
 
    * - 
-     - MMU
      - Virtualization
      - Security state
+     - MMU
+     - MPU
+     - IOMMU
+     - IOMPU
      - PMC
      - PPC
-     - IOMMU
    * - 0
      - none
      - none
@@ -56,19 +68,18 @@ A-00000[0-F]
      - none
      - none
    * - 1
-     - standard
-     - Arm-VE
-     - TrustZone
-     - TZASC
-     - TZPC
-     - sMMUv1
-   * - 2
-     - 
-     - RISC-V H-ext
+     - Armv7-A VE
      - none
-     - RDC
-     - XPPU
-     - sMMUv2
+     - none
+     - none
+     - none
+   * - 2
+     - none
+     - none
+     - none
+     - none
+     - none
+     - none
 
 
 Platform (uArch) Shared Resources

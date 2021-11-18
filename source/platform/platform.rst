@@ -33,7 +33,9 @@ A Platform
 
 #. IOMMU (sMMUv1, sMMUv2, sMMUv3)
 
-#. ...
+#. Interrupt controller ...
+
+
 
 A-00000[0-F]
 

@@ -346,7 +346,7 @@ Rendered, the tabbed content looks like this:
     - Tabs **should** be used to organize similiar information that differ in a "configuration option" (e.g., build instructions across different platforms).
 
 Boxes
------------------
+-----
 To highlight within a colored box, you can use three different directives depending on your goal.
 
 .. code-block:: rest
@@ -369,3 +369,19 @@ Rendered, the different boxes look like this:
     - See also boxes **should** be used to highlight (beginning with a preliminary description) additional text information referenced externally. 
     - Note boxes **should** be used for information that you want the user to pay particular attention to.
     - Warning boxes **should** be used for information the user must understand to avoid negative consequences.
+
+TODO and FIXME Tags 
+-------------------
+While writing Bao documentation, the TODO and FIXME tags can be used as typical inline comments (``.. This is a comment.``) to tag content that is missing, needs refactoring or optimization, or is broken (in the sense that the output is not what is expected). See below the meaning of each tag and use it accordingly.  
+
+**TODO** tags can be used to mark documentation content that (i) is missing or should be added in the future or (ii) needs any refactoring or optimization. 
+
+.. code-block:: rest
+    
+    .. TODO: This is a TODO tag.
+
+**FIXME** tags can be used to mark documentation content that is broken, in the sense that the output after building is not showing what is expected. Identified misuse of the markdown syntax can be marked with this tag. 
+
+.. code-block:: rest
+    
+    .. FIXME: This is a FIXME tag.

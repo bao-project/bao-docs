@@ -11,20 +11,20 @@ The platform specification currently identifies three main vectors aiming at
 guaranteeing strong temporal and spatial isolation among the existing system
 components:
 
-#. Platform Hardware Isolation Primitives: Hardware building blocks available 
-   on the CPU and on the overall platform that can be leveraged to guarantee 
-   isolation of memory accesses (spatial isolation) of diferent software 
-   components. For example, Memory Managment Unit (MMU), Memory Protection Unit 
-   (MPU), security-oriented technhologies (e.g., TrustZone) and hardware 
-   controllers.
+#. **Platform Hardware Isolation Primitives**: Hardware building blocks 
+   available on the CPU and on the overall platform that can be leveraged to 
+   guarantee isolation of memory accesses (spatial isolation) of diferent 
+   software components. For example, Memory Managment Unit (MMU), Memory 
+   Protection Unit (MPU), security-oriented technhologies (e.g., TrustZone) and 
+   hardware controllers.
 
-#. Platform Quality of Service (QoS) Resources: Platform-wide resources that 
+#. **Platform Quality of Service (QoS) Resources**: Platform-wide resources that 
    can be (intentionally or unintentionally) shared by multiple partitions (and 
    virtual machines). These resources can mainly impact the temporal isolation 
    guarantees.
 
-#. Platform Interrupt Facilities: Platform-wide interrupt facilities that need
-   to be shared by multiple partitions. The interrupt controller is a key 
+#. **Platform Interrupt Facilities**: Platform-wide interrupt facilities that 
+   need to be shared by multiple partitions. The interrupt controller is a key 
    component that can impact both temporal and spatial isolation. 
 
 

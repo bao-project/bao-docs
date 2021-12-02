@@ -1,9 +1,9 @@
-About 
+Platforms 
 =====
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
    :caption: Contents:
 
    platform

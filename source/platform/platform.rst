@@ -1,6 +1,6 @@
 .. _platform:
 
-Bao Platform Isolation Profiles
+Platform Isolation Profiles
 ################################
 
 
@@ -43,15 +43,28 @@ tipically includes an additional orthogonal execution state which replicates
 all privilege modes. For example, Arm TrustZone for the Armv7-A/Armv8-A and 
 TrustZone-M for the Armv8-M.
 
-#. **MMU**: 
+#. **MMU**: Memory managment unit. At the CPU level, provides translation of
+virtual memory addresses to physical addresses while enforcing access 
+permissions. MMU can have stage 1 translation and stage 2 translation (when
+hardware virtualization extensions are implemented). For example, the Arm 
+MMU-500 provides stage 1 and stage 2 support. 
 
-#. **MPU**: 
+#. **MPU**: Memory protection unit. At the CPU level, provides memory protection
+by enforcing access permissions on the physical memory space. MPU can have a 
+Level 1 and Level 2 access control (when hardware virtualization extensions are 
+implemented). For example, the Arm MPU for Armv7-M/Armv8-M and the RISC-V PMP
+provides Level 1 access control, while the Arm MPU for the Armv8-R provides both
+Level 1 and Level 2 access control. 
 
-#. **IOMMU**: (sMMUv1, sMMUv2, sMMUv3)
+
+#. **IOMMU**: Input-Output memory managment unit. At the platform level, is an 
+MMU that connects a DMA-capable I/O bus to the main memory. Similar to a 
+CPU MMU, the IOMMU maps device-visible virtual addresses to physical addresses.
+For example, Arm sMMUv1, sMMUv2, and sMMUv3. 
 
 #. **IOMPU**: 
 
-#. **Platform Memory Controller**: (PMP, TZASC, RDC, xRDC, XMPU)
+#. **Platform Memory Controller**: (TZASC, RDC, xRDC, XMPU)
 
 #. **Platform Peripheral Controller**: (TZPC, XPPU)
 
@@ -128,4 +141,7 @@ Platform Examples
 
 Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit
 =============================================
+
+ZCU104 Hardware Isolation Primitives
+***************************************
 

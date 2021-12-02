@@ -1,11 +1,11 @@
 .. _platform:
 
 Platform Isolation Profiles
-################################
+===========================
 
 
 Platforms Overview
-***************************************
+------------------
 
 The platform specification currently identifies three main vectors aiming at 
 guaranteeing strong temporal and spatial isolation among the existing system
@@ -28,39 +28,39 @@ component that can impact both temporal and spatial isolation.
 
 
 Platform Hardware Isolation Primitives
-***************************************
+--------------------------------------
 
 To provide spatial isolation (memory) among the diferent software components, 
-Bao partitioner and VMMs can leverage multiple
+Bao partitioner and VMMs can leverage multiple ...
 
 #. **Virtualization extensions**. Hardware virtualization support. At the CPU 
-level, includes an additional privilege mode and set of registers. For example, 
-Arm virtualization extensions (VE) for the Armv7-A/Armv8-A and the RISC-V 
-Hypervisor extension.
+   level, includes an additional privilege mode and set of registers. For 
+   example, Arm virtualization extensions (VE) for the Armv7-A/Armv8-A and the 
+   RISC-V Hypervisor extension.
 
 #. **Security state**: Security-oriented technologies. At the CPU level, 
-tipically includes an additional orthogonal execution state which replicates
-all privilege modes. For example, Arm TrustZone for the Armv7-A/Armv8-A and 
-TrustZone-M for the Armv8-M.
+   tipically includes an additional orthogonal execution state which replicates
+   all privilege modes. For example, Arm TrustZone for the Armv7-A/Armv8-A and 
+   TrustZone-M for the Armv8-M.
 
 #. **MMU**: Memory managment unit. At the CPU level, provides translation of
-virtual memory addresses to physical addresses while enforcing access 
-permissions. MMU can have stage 1 translation and stage 2 translation (when
-hardware virtualization extensions are implemented). For example, the Arm 
-MMU-500 provides stage 1 and stage 2 support. 
+   virtual memory addresses to physical addresses while enforcing access 
+   permissions. MMU can have stage 1 translation and stage 2 translation (when
+   hardware virtualization extensions are implemented). For example, the Arm 
+   MMU-500 provides stage 1 and stage 2 support. 
 
 #. **MPU**: Memory protection unit. At the CPU level, provides memory protection
-by enforcing access permissions on the physical memory space. MPU can have a 
-Level 1 and Level 2 access control (when hardware virtualization extensions are 
-implemented). For example, the Arm MPU for Armv7-M/Armv8-M and the RISC-V PMP
-provides Level 1 access control, while the Arm MPU for the Armv8-R provides both
-Level 1 and Level 2 access control. 
+   by enforcing access permissions on the physical memory space. MPU can have a 
+   Level 1 and Level 2 access control (when hardware virtualization extensions 
+   are implemented). For example, the Arm MPU for Armv7-M/Armv8-M and the RISC-V 
+   PMP provides Level 1 access control, while the Arm MPU for the Armv8-R 
+   provides both Level 1 and Level 2 access control. 
 
 
 #. **IOMMU**: Input-Output memory managment unit. At the platform level, is an 
-MMU that connects a DMA-capable I/O bus to the main memory. Similar to a 
-CPU MMU, the IOMMU maps device-visible virtual addresses to physical addresses.
-For example, Arm sMMUv1, sMMUv2, and sMMUv3. 
+   MMU that connects a DMA-capable I/O bus to the main memory. Similar to a 
+   CPU MMU, the IOMMU maps device-visible virtual addresses to physical 
+   addresses. For example, Arm sMMUv1, sMMUv2, and sMMUv3. 
 
 #. **IOMPU**: 
 
@@ -116,7 +116,7 @@ HIP-00000[0-Z]
 
 
 Platform (uArch) Shared Resources
-***************************************
+---------------------------------
 
 #. **L1-Cache**: (D, I, D+I, unified)
 
@@ -128,7 +128,7 @@ Platform (uArch) Shared Resources
 
 
 Platform Interrupt Facilities
-***************************************
+-----------------------------
 
 #. **Interrupt Controller**:
 
@@ -137,11 +137,11 @@ Platform Interrupt Facilities
 
 
 Platform Examples
-***************************************
+-----------------
 
 Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit
-=============================================
+********************************************
 
 ZCU104 Hardware Isolation Primitives
-***************************************
+####################################
 

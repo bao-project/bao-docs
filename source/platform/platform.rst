@@ -1,7 +1,7 @@
 .. _platform:
 
 Bao Platform Isolation Profiles
-#######################
+################################
 
 
 Platforms Overview
@@ -35,10 +35,13 @@ Bao partitioner and VMMs can leverage multiple
 
 #. **Virtualization extensions**. Hardware virtualization support. At the CPU 
 level, includes an additional privilege mode and set of registers. For example, 
-Arm virtualization extensions (VE) for the Armv7-A and the RISC-V Hypervisor
-extension.
+Arm virtualization extensions (VE) for the Armv7-A/Armv8-A and the RISC-V 
+Hypervisor extension.
 
-#. **Security state**: (TrustZone-A, TrustZone-M)
+#. **Security state**: Security-oriented technologies. At the CPU level, 
+tipically includes an additional orthogonal execution state which replicates
+all privilege modes. For example, Arm TrustZone for the Armv7-A/Armv8-A and 
+TrustZone-M for the Armv8-M.
 
 #. **MMU**: 
 
@@ -58,7 +61,7 @@ HIP-00000[0-Z]
 
 
 .. list-table:: Platform hardware isolation primitives definition
-   :widths: 25 25 25 25 25 25 25
+   :widths: 25 25 25 25 25 25 25 25 25
    :header-rows: 1
 
    * - 
@@ -77,17 +80,24 @@ HIP-00000[0-Z]
      - none
      - none
      - none
+     - none
+     - none
    * - 1
-     - Armv7-A VE
-     - none
-     - none
+     - standard
+     - Arm-VE
+     - TrustZone
+     - TZASC
+     - TZPC
+     - sMMUv1
      - none
      - none
    * - 2
+     - 
+     - RISC-V H-ext
      - none
-     - none
-     - none
-     - none
+     - RDC
+     - XPPU
+     - sMMUv2
      - none
      - none
 
@@ -117,5 +127,5 @@ Platform Examples
 ***************************************
 
 Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit
-====================
+=============================================
 

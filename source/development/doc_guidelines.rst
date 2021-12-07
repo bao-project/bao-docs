@@ -109,6 +109,7 @@ Rendered, the table looks like this:
 
 Lists
 -----
+There are three types of possible lists: bullet lists, numbered lists, and definition lists. Bullet and numbered lists should be indented at the same level as the preceding paragraph (and not indented itself). Aditional lines are indented to the first character of the text of the bullet list.
 
 **Bullet List**
 
@@ -118,13 +119,21 @@ For bullet lists you can use the asterisk ``*`` or hyphen ``-`` characters at th
 
     * This is a bulleted list.
     * This is a big item break between two or more lines. 
-      This is a big item break between two or more lines. This is a big item break between two or more lines. This is a big item break between two or more lines.
+      This is a big item break between two or more lines. This is a big item 
+      break between two or more lines. This is a big item break between two or more lines.
+        * Second-level bulleted list. This is a big item break between two or 
+          more lines. 
+
 
 Rendered, the bullet list looks like this:
 
 * This is a bulleted list.
 * This is a big item break between two or more lines. 
-  This is a big item break between two or more lines. This is a big item break between two or more lines. This is a big item break between two or more lines.
+  This is a big item break between two or more lines. This is a big item 
+  break between two or more lines. This is a big item break between two or more lines.
+
+    * Second-level bulleted list. This is a big item break between two or 
+      more lines. 
 
 **Numbered List**
 

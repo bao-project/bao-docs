@@ -81,7 +81,7 @@ the following table:
 
 
 .. list-table:: Platform hardware isolation primitives definition
-   :widths: 25 25 25 25 25 25 25 25 25
+   :widths: 25 25 25 25 25 25 25 25
    :header-rows: 1
 
    * - 

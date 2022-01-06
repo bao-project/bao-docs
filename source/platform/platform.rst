@@ -32,7 +32,7 @@ Platform Hardware Isolation Primitives
 --------------------------------------
 
 To provide spatial isolation (memory) among the diferent software components, 
-Bao partitioner and VMMs can leverage multiple ...
+Bao partitioner and VMMs can leverage multiple hardware primitives.
 
 #. **Virtualization extensions**. Hardware virtualization support. At the CPU 
    level, includes an additional privilege mode and set of registers. For 
@@ -57,21 +57,27 @@ Bao partitioner and VMMs can leverage multiple ...
    PMP provides Level 1 access control, while the Arm MPU for the Armv8-R 
    provides both Level 1 and Level 2 access control. 
 
-
 #. **IOMMU**: Input-Output memory managment unit. At the platform level, is an 
    MMU that connects a DMA-capable I/O bus to the main memory. Similar to a 
    CPU MMU, the IOMMU maps device-visible virtual addresses to physical 
    addresses. For example, Arm sMMUv1, sMMUv2, and sMMUv3. 
 
-#. **IOMPU**: 
+#. **IOMPU**: Input-Output memory protection unit. At the platform level, is an 
+   MPU that connects a bus master to the main memory. Similar to a 
+   CPU MPU, the IOMPU enforces access permissions to bus masters while accessing 
+   physical addresses. For example, RISC-V IOPMP. 
 
-#. **Platform Memory Controller**: (TZASC, RDC, xRDC, XMPU)
+#. **System Protection Units**: At the platform level, is a hardware unit / 
+   controller that verifies if a specific system bus master is explicitly 
+   allowed to access an address by assigning specific addresses ranges (memories
+   and peripherals). For example, Arm TZASC and TZPC, NXP (x)RDC, and Xilinx 
+   XMPU and XPPU.
 
-#. **Platform Peripheral Controller**: (TZPC, XPPU)
+The hardware isolation primitives (HIP) can be identified by a unique code, 
+i.e., HIP-00000[0-Z], where each alphanumeric symbol (0-Z) identifies the 
+availability of a specific hardware primitive in a given platform, according to 
+the following table:
 
-The hardware isolation primitives (HIP) can be identified by a code ...
-
-HIP-00000[0-Z]
 
 
 .. list-table:: Platform hardware isolation primitives definition
@@ -85,10 +91,8 @@ HIP-00000[0-Z]
      - MPU
      - IOMMU
      - IOMPU
-     - PMC
-     - PPC
+     - SPU
    * - 0
-     - none
      - none
      - none
      - none
@@ -104,7 +108,6 @@ HIP-00000[0-Z]
      - TZPC
      - sMMUv1
      - none
-     - none
    * - 2
      - 
      - RISC-V H-ext
@@ -113,11 +116,10 @@ HIP-00000[0-Z]
      - XPPU
      - sMMUv2
      - none
-     - none
 
 
-Platform (uArch) Shared Resources
----------------------------------
+Platform Quality of Service (QoS) Resources
+-------------------------------------------
 
 #. **L1-Cache**: (D, I, D+I, unified)
 

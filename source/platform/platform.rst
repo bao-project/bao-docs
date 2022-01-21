@@ -105,8 +105,8 @@ the following table:
      - Arm MMU-400
      - 1-Level
      - *reserved*
-     - none
-     - none
+     - *reserved*
+     - *reserved*
    * - 2
      - Armv8-A VE
      - Armv8-A TZ
@@ -121,8 +121,8 @@ the following table:
      - Arm MMU-500
      - *reserved*
      - sMMUv2
-     - none
-     - none
+     - *reserved*
+     - *reserved*
    * - 4
      - RISC-V Hypervisor
      - *reserved*

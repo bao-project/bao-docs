@@ -102,7 +102,7 @@ the following table:
      - none
    * - 1
      - Armv7-A VE
-     - TrustZone
+     - Armv7-A TZ
      - TZASC
      - TZPC
      - sMMUv1
@@ -110,7 +110,7 @@ the following table:
      - none
    * - 2
      - Armv8-A VE
-     - RISC-V H-ext
+     - Armv8-A TZ
      - none
      - RDC
      - XPPU
@@ -118,7 +118,7 @@ the following table:
      - none
    * - 3
      - Armv8-R VE
-     - none
+     - Armv8-M TZ
      - none
      - none
      - none
@@ -126,7 +126,7 @@ the following table:
      - none
    * - 4
      - RISC-V Hypervisor
-     - none
+     - --
      - none
      - none
      - none

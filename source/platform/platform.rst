@@ -126,12 +126,12 @@ the following table:
      - none
    * - 4
      - RISC-V Hypervisor
-     - --
-     - none
-     - none
-     - none
-     - none
-     - none
+     - *reserved*
+     - *reserved*
+     - *reserved*
+     - *reserved*
+     - *reserved*
+     - *reserved*
 
 
 Platform Quality of Service (QoS) Resources
@@ -163,4 +163,25 @@ Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit
 
 ZCU104 Hardware Isolation Primitives
 ####################################
+
+.. list-table:: ZCU104 hardware isolation primitives mapping
+   :widths: 25 25 25 25 25 25 25 25
+   :header-rows: 1
+
+   * - 
+     - Virtualization
+     - Security state
+     - MMU
+     - MPU
+     - IOMMU
+     - IOMPU
+     - SPU
+   * - 0
+     - none
+     - none
+     - none
+     - none
+     - none
+     - none
+     - none
 

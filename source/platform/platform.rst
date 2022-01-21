@@ -112,15 +112,15 @@ the following table:
      - Armv8-A TZ
      - Arm MMU-401
      - 2-Level
+     - sMMUv1
      - *reserved*
-     - sMMUv2
-     - none
+     - *reserved*
    * - 3
      - Armv8-R VE
      - Armv8-M TZ
      - Arm MMU-500
      - *reserved*
-     - *reserved*
+     - sMMUv2
      - none
      - none
    * - 4
@@ -128,7 +128,7 @@ the following table:
      - *reserved*
      - Arm MMU-600
      - *reserved*
-     - *reserved*
+     - sMMUv3.1
      - *reserved*
      - *reserved*
    * - 5
@@ -144,7 +144,7 @@ the following table:
      - *reserved*
      - Arm MMU-700
      - *reserved*
-     - *reserved*
+     - sMMUv3.2
      - *reserved*
      - *reserved*
    * - 7

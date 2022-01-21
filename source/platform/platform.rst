@@ -47,8 +47,7 @@ Bao partitioner and VMMs can leverage multiple hardware primitives.
 #. **MMU**: Memory managment unit. At the CPU level, provides translation of
    virtual memory addresses to physical addresses while enforcing access 
    permissions. MMU can have stage 1 translation and stage 2 translation (when
-   hardware virtualization extensions are implemented). For example, the Arm 
-   MMU-500 provides stage 1 and stage 2 support. 
+   hardware virtualization extensions are implemented). 
 
 #. **MPU**: Memory protection unit. At the CPU level, provides memory protection
    by enforcing access permissions on the physical memory space. MPU can have a 

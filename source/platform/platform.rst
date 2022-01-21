@@ -74,7 +74,7 @@ Bao partitioner and VMMs can leverage multiple hardware primitives.
    XMPU and XPPU.
 
 The hardware isolation primitives (HIP) can be identified by a unique code, 
-i.e., HIP-00000[0-Z], where each alphanumeric symbol (0-Z) identifies the 
+i.e., HIP-0000000[0-Z], where each alphanumeric symbol (0-Z) identifies the 
 availability of a specific hardware primitive in a given platform, according to 
 the following table:
 
@@ -101,20 +101,36 @@ the following table:
      - none
      - none
    * - 1
-     - standard
-     - Arm-VE
+     - Armv7-A VE
      - TrustZone
      - TZASC
      - TZPC
      - sMMUv1
      - none
+     - none
    * - 2
-     - 
+     - Armv8-A VE
      - RISC-V H-ext
      - none
      - RDC
      - XPPU
      - sMMUv2
+     - none
+   * - 3
+     - Armv8-R VE
+     - none
+     - none
+     - none
+     - none
+     - none
+     - none
+   * - 4
+     - RISC-V Hypervisor
+     - none
+     - none
+     - none
+     - none
+     - none
      - none
 
 

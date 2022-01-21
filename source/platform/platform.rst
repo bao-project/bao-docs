@@ -102,7 +102,7 @@ the following table:
    * - 1
      - Armv7-A VE
      - Armv7-A TZ
-     - TZASC
+     - 1-Level
      - TZPC
      - sMMUv1
      - none
@@ -110,7 +110,7 @@ the following table:
    * - 2
      - Armv8-A VE
      - Armv8-A TZ
-     - none
+     - 2-Level
      - RDC
      - XPPU
      - sMMUv2
@@ -118,7 +118,7 @@ the following table:
    * - 3
      - Armv8-R VE
      - Armv8-M TZ
-     - none
+     - *reserved*
      - none
      - none
      - none

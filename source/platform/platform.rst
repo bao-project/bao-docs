@@ -196,23 +196,21 @@ ZCU104 Hardware Isolation Primitives
 ####################################
 
 .. list-table:: ZCU104 hardware isolation primitives mapping
-   :widths: 25 25 25 25 25 25 25 25
+   :widths: 25 25 25 25 25 25 25
    :header-rows: 1
 
-   * - 
-     - Virtualization
+   * - Virtualization
      - Security state
      - MMU
      - MPU
      - IOMMU
      - IOMPU
      - SPU
-   * - 0
-     - none
-     - none
-     - none
-     - none
-     - none
-     - none
-     - none
+   * - [2] Armv8-A VE
+     - [2] Armv8-A TZ
+     - [3] Arm MMU-500
+     - [0] none
+     - [3] sMMUv2
+     - [0] none 
+     - [] tbd
 

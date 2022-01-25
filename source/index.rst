@@ -14,6 +14,7 @@ Bao Documentation
    user_manual/index
    development/index
    internals/index
+   requirements/index
    glossary
 
 

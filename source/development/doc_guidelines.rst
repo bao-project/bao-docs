@@ -1,10 +1,19 @@
 Documentation Guidelines
 ========================
 
-The Bao hypervisor and tool documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`_ markup language and enhanced with `Sphinx <https://www.sphinx-doc.org/en/master/>`_ extensions. This documentation can be built into HTML content by using the Makefile command ``make html``. In the generated build folder, developers can drag and drop the ``index.html`` file to a web browser tab and navigate in a structured manner throughout the documentation. 
+The Bao hypervisor and tool documentation is written in
+`reStructuredText <https://docutils.sourceforge.io/rst.html>`_ markup language
+and enhanced with `Sphinx <https://www.sphinx-doc.org/en/master/>`_ extensions.
+This documentation can be built into HTML content by using the Makefile command
+``make html``. In the generated build folder, developers can drag and drop the
+``index.html`` file to a web browser tab and navigate in a structured manner
+throughout the documentation.
 
-.. note:: 
-    In order to maintain the consistency throughout Bao's documentation, for each reST syntax element, we have defined a set of guidelines specifying when each element should be applied. The guidelines are highlighted in a **Note** box like this one.
+.. note::
+    In order to maintain the consistency throughout Bao's documentation, for
+    each reST syntax element, we have defined a set of guidelines specifying
+    when each element should be applied. The guidelines are highlighted in a
+    **Note** box like this one.
 
 .. _headings:
 
@@ -12,7 +21,7 @@ Headings
 --------
 
 .. code-block:: rest
-   
+
    Document Title heading
    ======================
 
@@ -47,7 +56,8 @@ Headings
 
 Text Formatting
 ---------------
-reST uses some few special characters to format text. The following table resumes the inline markup samples used throughout our documentation.
+reST uses some few special characters to format text. The following table
+resumes the inline markup samples used throughout our documentation.
 
 +-------------+------------------------+----------------------+
 |    format   |         syntax         | rendering            |
@@ -63,24 +73,28 @@ reST uses some few special characters to format text. The following table resume
 |             | project.org/>`_``      | project.org/>`_      |
 +-------------+------------------------+----------------------+
 
-The use of backslash (``\``) is a work around to eliminate inline markup delimiters. Use before the character. 
+The use of backslash (``\``) is a work around to eliminate inline markup
+delimiters. Use before the character.
 
 .. note::
     - Bold format **should** be used to strongly emphasize information.
     - Italic format **should** be used to lightly emphasize information.
-    - Inline code format **must** be used when small code samples are used in the text.
-    - Link format **must** be used when referencing any external link. 
+    - Inline code format **must** be used when small code samples are used in
+      the text.
+    - Link format **must** be used when referencing any external link.
 
 .. _tables:
 
-Tables 
+Tables
 ------
-Throughout our documentation there are a few tables to systematically present relevant information. We use `Grid tables
-<http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables>`_ to create tables, which have the most flexibility to merge rows and columns. There are plenty of tools online that help to generate compatible grid tables, such as `TablesGenerator
-<https://www.tablesgenerator.com/>`_. 
+Throughout our documentation there are a few tables to systematically present
+relevant information. We use `Grid tables <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables>`_
+to create tables, which have the most flexibility to merge rows and columns.
+There are plenty of tools online that help to generate compatible grid tables,
+such as `TablesGenerator <https://www.tablesgenerator.com/>`_.
 
 .. code-block:: rest
-   
+
    +------------+---------------------------+-----------+-----------+
    |  header-c1 |         mheader-c2        | header-c3 | header-c4 |
    +============+=============+=============+===========+===========+
@@ -109,35 +123,44 @@ Rendered, the table looks like this:
 
 Lists
 -----
-There are three types of possible lists: bullet lists, numbered lists, and definition lists. Bullet and numbered lists should be indented at the same level as the preceding paragraph (and not indented itself). Additional lines are indented to the first character of the text of the bullet list.
+There are three types of possible lists: bullet lists, numbered lists, and
+definition lists. Bullet and numbered lists should be indented at the same
+level as the preceding paragraph (and not indented itself). Additional lines
+are indented to the first character of the text of the bullet list.
 
 **Bullet List**
 
-For bullet lists you can use the asterisk ``*`` or hyphen ``-`` characters at the start of the item. Continuation of a item can be achieve with two spaces limitation below the item. 
+For bullet lists you can use the asterisk ``*`` or hyphen ``-`` characters at
+the start of the item. Continuation of a item can be achieve with two spaces
+limitation below the item.
 
 .. code-block:: rest
 
     * This is a bulleted list.
-    * This is a big item break between two or more lines. 
-      This is a big item break between two or more lines. This is a big item 
-      break between two or more lines. This is a big item break between two or more lines.
-        * Second-level bulleted list. This is a big item break between two or 
-          more lines. 
+    * This is a big item break between two or more lines.
+      This is a big item break between two or more lines. This is a big item
+      break between two or more lines. This is a big item break between two or
+      more lines.
+        * Second-level bulleted list. This is a big item break between two or
+          more lines.
 
 
 Rendered, the bullet list looks like this:
 
 * This is a bulleted list.
-* This is a big item break between two or more lines. 
-  This is a big item break between two or more lines. This is a big item 
-  break between two or more lines. This is a big item break between two or more lines.
+* This is a big item break between two or more lines.
+  This is a big item break between two or more lines. This is a big item
+  break between two or more lines. This is a big item break between two or more
+  lines.
 
-    * Second-level bulleted list. This is a big item break between two or 
-      more lines. 
+    * Second-level bulleted list. This is a big item break between two or
+      more lines.
 
 **Numbered List**
 
-For numbered lists you can start the list with a ``1.`` or ``a)``. To continue the auto-numbering, use the character ``#`` followed with ``.`` or ``)`` as used in the first list item. 
+For numbered lists you can start the list with a ``1.`` or ``a)``. To continue
+the auto-numbering, use the character ``#`` followed with ``.`` or ``)`` as
+used in the first list item.
 
 .. code-block:: rest
 
@@ -171,7 +194,7 @@ Rendered, the numbered list looks like this:
 
 **Definition List**
 
-This a convenient type of list to list one or more terms and their definition. 
+This a convenient type of list to list one or more terms and their definition.
 
 .. code-block:: rest
 
@@ -192,15 +215,21 @@ Term2
     This statement gives a definition for the Term2.
 
 .. note::
-    - Bullet lists **should** be used to display a list of itemized terms/sentences without a certain order.
+    - Bullet lists **should** be used to display a list of itemized
+      terms/sentences without a certain order.
     - Bullet lists **should** be used with more than two items.
-    - Numbered lists **must** be used to display an ordered/sequential list of itemized conclusions or steps.
+    - Numbered lists **must** be used to display an ordered/sequential list of
+      itemized conclusions or steps.
     - Numbered lists **should** be used with more than two items.
-    - Definition lists **must** be used when a term definition is in place. 
+    - Definition lists **must** be used when a term definition is in place.
 
 Code Blocks
 -----------
-The reST format uses the ``code-block`` directive to create a highlight block to showcase formatted code or console commands. You can choose the programming language has you can notice on the below example (``c``). Please beware of the intentional blank line following the code-block syntax. You need also to indent the code segment. 
+The reST format uses the ``code-block`` directive to create a highlight block
+to showcase formatted code or console commands. You can choose the programming
+language has you can notice on the below example (``c``). Please beware of the
+intentional blank line following the code-block syntax. You need also to indent
+the code segment.
 
 .. code-block:: rest
 
@@ -230,7 +259,8 @@ Rendered, the code blocks look like this:
 
         cd ~
 
-Moreover, you can also create a highlight a text segment with a code block. To achieve this, you just need to selected ``none`` as the "programming language".
+Moreover, you can also create a highlight a text segment with a code block. To
+achieve this, you just need to selected ``none`` as the "programming language".
 
 .. code-block:: rest
 
@@ -246,13 +276,16 @@ Rendered, the code block looks like this:
 
 .. note::
     - Code blocks **must** be used to display large code segments.
-    - Code blocks **must** be used with the appropriate programming language attribute (use the **none** attribute when the language is not supported by `Pygments <https://pygments.org/languages/>`_).
-    - Code blocks **can** be used to lightly highlight a large text segment. 
+    - Code blocks **must** be used with the appropriate programming language
+      attribute (use the **none** attribute when the language is not supported
+      by `Pygments <https://pygments.org/languages/>`_).
+    - Code blocks **can** be used to lightly highlight a large text segment.
 
 
 Referencing Links
 -----------------
-To create a implicit link to a title, you should know that all headings are considered as Hyperlinks. This is the syntax
+To create a implicit link to a title, you should know that all headings are
+considered as Hyperlinks. This is the syntax
 
 .. code-block:: rest
 
@@ -262,7 +295,8 @@ Rendered, the implicit link looks like this:
 
     this is a link to the `headings`_ sections in this page
 
-To create a explicit link within the reST files, you need first to create a target location by following this syntax:
+To create a explicit link within the reST files, you need first to create a
+target location by following this syntax:
 
 .. code-block:: rest
 
@@ -274,7 +308,8 @@ To reference a target location, you should use this notation:
 
     :ref:`label_name`
 
-If we reference a target located on the first three headings of this document, you should be able to navigate to all three spots:
+If we reference a target located on the first three headings of this document,
+you should be able to navigate to all three spots:
 
 - :ref:`headings`
 
@@ -308,7 +343,8 @@ Rendered, the image should look like this:
 
     Caption for the Bao logo picture.
 
-You can after reference the image :numref:`bao-logo-fig` by using the notation ``:numref:`bao-logo-fig```, specifying the image name field. 
+You can after reference the image :numref:`bao-logo-fig` by using the notation
+``:numref:`bao-logo-fig```, specifying the image name field.
 
 .. note::
     - Image files **must** be stored in the ``source/images/`` folder.
@@ -317,7 +353,9 @@ You can after reference the image :numref:`bao-logo-fig` by using the notation `
 
 Tabbed Content
 --------------
-For certain situations, instead of creating multiple documents describing similar content, you can use the ``tabs`` feature to merge all information in one document in an organized fashion. 
+For certain situations, instead of creating multiple documents describing
+similar content, you can use the ``tabs`` feature to merge all information
+in one document in an organized fashion.
 
 .. code-block:: rest
 
@@ -336,7 +374,7 @@ For certain situations, instead of creating multiple documents describing simila
         Platform C instructions.
 
 Rendered, the tabbed content looks like this:
-    
+
 .. tabs::
 
     .. tab:: Platform-A
@@ -356,10 +394,11 @@ Rendered, the tabbed content looks like this:
 
 Boxes
 -----
-To highlight within a colored box, you can use three different directives depending on your goal.
+To highlight within a colored box, you can use three different directives
+depending on your goal.
 
 .. code-block:: rest
-    
+
     .. seealso:: This is a **seealso** box.
 
     .. note:: This is a **note** box.
@@ -375,22 +414,29 @@ Rendered, the different boxes look like this:
 .. warning:: This is a **warning** box.
 
 .. note::
-    - See also boxes **should** be used to highlight (beginning with a preliminary description) additional text information referenced externally. 
+    - See also boxes **should** be used to highlight (beginning with a preliminary description) additional text information referenced externally.
     - Note boxes **should** be used for information that you want the user to pay particular attention to.
     - Warning boxes **should** be used for information the user must understand to avoid negative consequences.
 
-TODO and FIXME Tags 
+TODO and FIXME Tags
 -------------------
-While writing Bao documentation, the TODO and FIXME tags can be used as typical inline comments (``.. This is a comment.``) to tag content that is missing, needs refactoring or optimization, or is broken (in the sense that the output is not what is expected). See below the meaning of each tag and use it accordingly.  
+While writing Bao documentation, the TODO and FIXME tags can be used as typical
+inline comments (``.. This is a comment.``) to tag content that is missing,
+needs refactoring or optimization, or is broken (in the sense that the output
+is not what is expected). See below the meaning of each tag and use it
+accordingly.
 
-**TODO** tags can be used to mark documentation content that (i) is missing or should be added in the future or (ii) needs any refactoring or optimization. 
+**TODO** tags can be used to mark documentation content that (i) is missing or
+should be added in the future or (ii) needs any refactoring or optimization.
 
 .. code-block:: rest
-    
+
     .. TODO: This is a TODO tag.
 
-**FIXME** tags can be used to mark documentation content that is broken, in the sense that the output after building is not showing what is expected. Identified misuse of the markdown syntax can be marked with this tag. 
+**FIXME** tags can be used to mark documentation content that is broken, in the
+sense that the output after building is not showing what is expected.
+Identified misuse of the markdown syntax can be marked with this tag.
 
 .. code-block:: rest
-    
+
     .. FIXME: This is a FIXME tag.

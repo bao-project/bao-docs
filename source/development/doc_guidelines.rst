@@ -4,7 +4,7 @@ Documentation Guidelines
 The Bao hypervisor and tool documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`_ markup language and enhanced with `Sphinx <https://www.sphinx-doc.org/en/master/>`_ extensions. This documentation can be built into HTML content by using the Makefile command ``make html``. In the generated build folder, developers can drag and drop the ``index.html`` file to a web browser tab and navigate in a structured manner throughout the documentation. 
 
 .. note:: 
-    In order to mantain the consistency throughout Bao's documentation, for each reST syntax element, we have defined a set of guidelines specifying when each element should be applied. The guidelines are highlighted in a **Note** box like this one.
+    In order to maintain the consistency throughout Bao's documentation, for each reST syntax element, we have defined a set of guidelines specifying when each element should be applied. The guidelines are highlighted in a **Note** box like this one.
 
 .. _headings:
 
@@ -41,7 +41,7 @@ Headings
         - ``=`` underlining characters for the Document Title
         - ``-`` underlining characters for the First section level
         - ``=`` underlining characters for the Second sub-section level
-        - ``#`` underlining characters for the THird sub-section level
+        - ``#`` underlining characters for the Third sub-section level
 
 .. _text_formatting:
 
@@ -109,7 +109,7 @@ Rendered, the table looks like this:
 
 Lists
 -----
-There are three types of possible lists: bullet lists, numbered lists, and definition lists. Bullet and numbered lists should be indented at the same level as the preceding paragraph (and not indented itself). Aditional lines are indented to the first character of the text of the bullet list.
+There are three types of possible lists: bullet lists, numbered lists, and definition lists. Bullet and numbered lists should be indented at the same level as the preceding paragraph (and not indented itself). Additional lines are indented to the first character of the text of the bullet list.
 
 **Bullet List**
 
@@ -137,7 +137,7 @@ Rendered, the bullet list looks like this:
 
 **Numbered List**
 
-For numbered lists you can start the list with a ``1.`` or ``a)``. To continue the autonumbering, use the character ``#`` followed with ``.`` or ``)`` as used in the first list item. 
+For numbered lists you can start the list with a ``1.`` or ``a)``. To continue the auto-numbering, use the character ``#`` followed with ``.`` or ``)`` as used in the first list item. 
 
 .. code-block:: rest
 
@@ -171,7 +171,7 @@ Rendered, the numbered list looks like this:
 
 **Definition List**
 
-This a convenient type of list to list one or moder terms and their definition. 
+This a convenient type of list to list one or more terms and their definition. 
 
 .. code-block:: rest
 
@@ -200,7 +200,7 @@ Term2
 
 Code Blocks
 -----------
-The reST format uses the ``code-block`` directive to create a highlight block to showcase formatted code or console commands. You can choose the programming language has you can notice on the below example (``c``). Plese beware of the intentional blank line following the code-block syntax. You need also to indent the code segment. 
+The reST format uses the ``code-block`` directive to create a highlight block to showcase formatted code or console commands. You can choose the programming language has you can notice on the below example (``c``). Please beware of the intentional blank line following the code-block syntax. You need also to indent the code segment. 
 
 .. code-block:: rest
 
@@ -246,7 +246,7 @@ Rendered, the code block looks like this:
 
 .. note::
     - Code blocks **must** be used to display large code segments.
-    - Code blocks **must** be used with the appropiate programmming language attribute (use the **none** attribute when the language is not supported by `Pygments <https://pygments.org/languages/>`_).
+    - Code blocks **must** be used with the appropriate programming language attribute (use the **none** attribute when the language is not supported by `Pygments <https://pygments.org/languages/>`_).
     - Code blocks **can** be used to lightly highlight a large text segment. 
 
 
@@ -317,7 +317,7 @@ You can after reference the image :numref:`bao-logo-fig` by using the notation `
 
 Tabbed Content
 --------------
-For certain situations, instead of creating multipled documents describing similiar content, you can use the ``tabs`` feature to merge all information in one document in an organized fashion. 
+For certain situations, instead of creating multiple documents describing similar content, you can use the ``tabs`` feature to merge all information in one document in an organized fashion. 
 
 .. code-block:: rest
 
@@ -352,7 +352,7 @@ Rendered, the tabbed content looks like this:
         Platform C instructions.
 
 .. note::
-    - Tabs **should** be used to organize similiar information that differ in a "configuration option" (e.g., build instructions across different platforms).
+    - Tabs **should** be used to organize similar information that differ in a "configuration option" (e.g., build instructions across different platforms).
 
 Boxes
 -----

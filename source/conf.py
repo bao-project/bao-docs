@@ -30,9 +30,7 @@ release = '0.0.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx_tabs.tabs'
-    
-]
+extensions = ['sphinx_tabs.tabs', 'sphinxcontrib.spelling']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -57,3 +55,10 @@ html_static_path = []
 
 # To enable numbering of images
 numfig = True
+
+# -- Options for spelling builder ----------------------------------------------
+spelling_lang='en_US'
+tokenizer_lang='en_US'
+spelling_word_list_filename='spelling_wordlist.txt'
+spelling_show_suggestions=True
+spelling_show_whole_line=False

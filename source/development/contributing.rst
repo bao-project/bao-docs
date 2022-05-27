@@ -1,2 +1,2 @@
-Contibuting
-===========
+Contributing
+============

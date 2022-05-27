@@ -27,11 +27,12 @@ release = '0.0.0'
 
 # -- General configuration ---------------------------------------------------
 
+master_doc = 'index'
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-]
+extensions = ['sphinxcontrib.spelling']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,4 +53,12 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = []
+
+
+# -- Options for spelling builder ----------------------------------------------
+spelling_lang='en_US'
+tokenizer_lang='en_US'
+spelling_word_list_filename='spelling_wordlist.txt'
+spelling_show_suggestions=True
+spelling_show_whole_line=False

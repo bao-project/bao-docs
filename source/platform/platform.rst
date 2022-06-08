@@ -181,13 +181,13 @@ Platform Interrupt Facilities
 -----------------------------
 
 #. **Interrupt Controller**: Indicates the name and version of the interrupt
-controller available on the platform. For example, the Arm GIC-400.
+   controller available on the platform. For example, the Arm GIC-400.
 
 #. **Interrupts number**: Indicates the number of physical interrupts available
-on the platform. For example, 1024 interrupts.
+   on the platform. For example, 1024 interrupts.
 
 #. **Interrupt priority**: Indicates the maximum priority of the physical 
-interrupts available on the platform. For example, maximum priority of 256.
+   interrupts available on the platform. For example, maximum priority of 256.
 
 The platform interrupt facilities (IF) can be identified by a unique code, 
 i.e., IF-0[0-Z]-00000[0-9]-0000[0-9], where each alphanumeric symbol (0-Z) 

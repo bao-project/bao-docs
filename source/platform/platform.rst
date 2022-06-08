@@ -104,7 +104,7 @@ the following table:
      - 1-Level
      - Arm MMU-400
      - TZASC-380
-     - *reserved*
+     - TZPC
    * - 2
      - Armv8-A VE
      - Armv8-A TZ
@@ -112,7 +112,7 @@ the following table:
      - 2-Level
      - Arm MMU-401
      - TZASC-400
-     - *reserved*
+     - Xilinx XPPU
    * - 3
      - Armv8-R VE
      - Armv8-M TZ

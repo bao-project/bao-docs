@@ -102,39 +102,39 @@ the following table:
    * - 1
      - Armv7-A VE
      - Armv7-A TZ
-     - Arm MMU-400
      - 1-Level
-     - *reserved*
+     - 1-Level
+     - Arm MMU-400
      - *reserved*
      - *reserved*
    * - 2
      - Armv8-A VE
      - Armv8-A TZ
-     - Arm MMU-401
      - 2-Level
-     - sMMUv1
+     - 2-Level
+     - Arm MMU-401
      - *reserved*
      - *reserved*
    * - 3
      - Armv8-R VE
      - Armv8-M TZ
-     - Arm MMU-500
      - *reserved*
-     - sMMUv2
+     - *reserved*
+     - Arm MMU-500
      - *reserved*
      - *reserved*
    * - 4
      - RISC-V Hypervisor
      - *reserved*
-     - Arm MMU-600
      - *reserved*
-     - sMMUv3.1
+     - *reserved*
+     - Arm MMU-600
      - *reserved*
      - *reserved*
    * - 5
      - *reserved*
      - *reserved*
-     - Arm MMU-600AE
+     - *reserved*
      - *reserved*
      - *reserved*
      - *reserved*
@@ -142,15 +142,15 @@ the following table:
    * - 6
      - *reserved*
      - *reserved*
-     - Arm MMU-700
      - *reserved*
-     - sMMUv3.2
+     - *reserved*
+     - *reserved*
      - *reserved*
      - *reserved*
    * - 7
      - *reserved*
      - *reserved*
-     - Other 1-Level
+     - *reserved*
      - *reserved*
      - *reserved*
      - *reserved*
@@ -158,7 +158,7 @@ the following table:
    * - 8
      - *reserved*
      - *reserved*
-     - Other 2-Level
+     - *reserved*
      - *reserved*
      - *reserved*
      - *reserved*

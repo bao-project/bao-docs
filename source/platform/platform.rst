@@ -237,9 +237,9 @@ ZCU104 Hardware Isolation Primitives
      - SPU
    * - [2] Armv8-A VE
      - [2] Armv8-A TZ
-     - [3] Arm MMU-500
+     - [3] 2-Level
      - [0] none
-     - [3] sMMUv2
-     - [0] none 
-     - [] tbd
+     - [3] Arm MMU-500
+     - [5] Xilinx XMPU 
+     - [2] Xilinx XPPU
 

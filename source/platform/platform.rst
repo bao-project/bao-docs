@@ -103,7 +103,7 @@ the following table:
      - 1-Level
      - 1-Level
      - Arm MMU-400
-     - *reserved*
+     - TZASC-380
      - *reserved*
    * - 2
      - Armv8-A VE
@@ -111,7 +111,7 @@ the following table:
      - 2-Level
      - 2-Level
      - Arm MMU-401
-     - *reserved*
+     - TZASC-400
      - *reserved*
    * - 3
      - Armv8-R VE
@@ -119,7 +119,7 @@ the following table:
      - *reserved*
      - *reserved*
      - Arm MMU-500
-     - *reserved*
+     - NXP RDC
      - *reserved*
    * - 4
      - RISC-V Hypervisor
@@ -127,7 +127,7 @@ the following table:
      - *reserved*
      - *reserved*
      - Arm MMU-600
-     - *reserved*
+     - NXP xRDC
      - *reserved*
    * - 5
      - *reserved*
@@ -135,7 +135,7 @@ the following table:
      - *reserved*
      - *reserved*
      - *reserved*
-     - *reserved*
+     - Xilinx XMPU
      - *reserved*
    * - 6
      - *reserved*

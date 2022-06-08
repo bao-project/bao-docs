@@ -61,16 +61,14 @@ Bao partitioner and VMMs can leverage multiple hardware primitives.
    CPU MMU, the IOMMU maps device-visible virtual addresses to physical 
    addresses. For example, Arm sMMUv1, sMMUv2, and sMMUv3. 
 
-#. **IOMPU**: Input-Output memory protection unit. At the platform level, is an 
-   MPU that connects a bus master to the main memory. Similar to a 
-   CPU MPU, the IOMPU enforces access permissions to bus masters while accessing 
-   physical addresses. For example, RISC-V IOPMP. 
-
-#. **System Protection Units**: At the platform level, is a hardware unit / 
+#. **System Memory Protection Unit**: At the platform level, is a hardware unit / 
    controller that verifies if a specific system bus master is explicitly 
-   allowed to access an address by assigning specific addresses ranges (memories
-   and peripherals). For example, Arm TZASC and TZPC, NXP (x)RDC, and Xilinx 
-   XMPU and XPPU.
+   allowed to access a memory address by assigning specific addresses ranges. 
+   For example, Arm TZASC, NXP (x)RDC, and Xilinx XMPU.
+
+#. **System Peripheral Protection Unit**: At the platform level, is a hardware 
+   unit / controller that verifies if a specific system bus master is explicitly 
+   allowed to access a peripheral. For example, Arm TZPC and Xilinx XPPU.
 
 The hardware isolation primitives (HIP) can be identified by a unique code, 
 i.e., HIP-0000000[0-Z], where each alphanumeric symbol (0-Z) identifies the 
@@ -89,8 +87,8 @@ the following table:
      - MMU
      - MPU
      - IOMMU
-     - IOMPU
-     - SPU
+     - SMPU
+     - SPPU
    * - 0
      - none
      - none

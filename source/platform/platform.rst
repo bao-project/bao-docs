@@ -202,7 +202,7 @@ corresponds to the exact number and priority of interrupts.
    * - 0
      - Arm GIC-400
    * - 1
-     - reserved
+     - RISC-V PLIC
    * - 2
      - reserved
    * - 3

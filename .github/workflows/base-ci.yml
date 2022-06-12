@@ -1,0 +1,41 @@
+name: Bao component base workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+
+  gitlint:
+    runs-on: ubuntu-latest
+    container: baoproject/bao:latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: >
+          git config --global --add safe.directory $(realpath .) &&
+          gitlint -C .gitlint --commits ${{ github.event.pull_request.base.sha }}..
+
+  spell-check:
+    runs-on: ubuntu-latest
+    container: baoproject/bao:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make spelling
+
+  format-check:
+    runs-on: ubuntu-latest
+    container: baoproject/bao:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: doc8 source/ --ignore D000
+
+  build:
+    runs-on: ubuntu-latest
+    container: baoproject/bao:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make html

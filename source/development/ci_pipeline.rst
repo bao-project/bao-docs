@@ -1,2 +1,2 @@
-Continous Integration
-=====================
+Continuous Integration
+======================

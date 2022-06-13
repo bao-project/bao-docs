@@ -15,9 +15,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: >
-          git config --global --add safe.directory $(realpath .) &&
-          gitlint -C .gitlint --commits ${{ github.event.pull_request.base.sha }}..
+      - run: git config --global --add safe.directory $(realpath .)
+      - if: ${{ github.event_name == 'pull_request' }}
+        run: gitlint --commits ${{ github.event.pull_request.base.sha }}..
+      - if: ${{ github.event_name == 'push' }}
+        run: gitlint --commits ${{ github.event.before }}..
+      - if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: gitlint --commits HEAD
+
 
   spell-check:
     runs-on: ubuntu-latest

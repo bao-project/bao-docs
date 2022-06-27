@@ -41,7 +41,7 @@ vision. Also they are responsible for repository management tasks which
 include:
 
 * setting up :ref:`branch protection rules<branch_protection>`, in particular
-  for the `main` branch;
+  for the ``main`` branch;
 * assigning subsystems to code-owners through the :ref:`.CODEOWNERS
   file<github_files>`;
 * keep an updated :ref:`list of authors and contributors<github_files>`;
@@ -82,7 +82,7 @@ case. For example, when developing a new feature the branch should be named
 `feat/my_new_feature`.
 
 Once development on a topic branch ceases, either because it was merged to
-`main` or for some reason discarded, the branch must be deleted. Maintainers
+``main`` or for some reason discarded, the branch must be deleted. Maintainers
 are ultimately responsible for deleting stale of merged topic branches.
 
 Submitting Commits
@@ -94,18 +94,18 @@ repository <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`_.
 If you do have write privileges over the original repository, you carry out the
 development directly on it. Follow these steps:
 
-1. Create a topic branch from the `main` branch;
+1. Create a topic branch from the ``main`` branch;
 2. Make all the necessary commits and push your work to your remote fork.
    Make sure that all the introduced commits and the overall branch follow
    the :ref:`commit and pull-request guidelines<commit_guidelines>`;
-3. Make sure the branch is synced and can be merged or rebased on `main`
+3. Make sure the branch is synced and can be merged or rebased on ``main``
    without conflicts. If necessary, `rewrite the branch's history
    <https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History>`_, by rebasing
-   it on `main`;
+   it on ``main``;
 4. `Create a pull-request <https://docs.github.com/en/pull-requests/
    collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-
    requests/creating-a-pull-request>`_ targeting the original repository's
-   `main` branch;
+   ``main`` branch;
 5. Patiently wait for reviews and be engaged when they arrive:
 
     * participate in the discussion with reviewers;
@@ -130,7 +130,7 @@ maintainer (which can coincide with the assignee).
 If a code owners exist for the code being submitted, at least one of code
 owners (for each of the files/subsystems) must review the code. Code owners
 will be automatically assigned as reviewers given maintainers are correctly
-managing the :ref:`.CODEOWNERS` file. If there aren't enough reviewers, the
+managing the :ref:`.CODEOWNERS file<github_files>`. If there aren't enough reviewers, the
 assignee  is responsible for appointing a second reviewer. Preferably, a
 project's internal contributor. They might also require and invite more
 reviewers if there is no consensus.
@@ -178,8 +178,8 @@ The following are some tips all reviewers should take into account:
   tags are correctly added or updated;
 
 Review the code as much as possible by opening discussions and adding comments
-inline in the `Files Changed` tab of the PR, and opening a review. When you're
-done click the `Finish Review` button and submit the review either by only
+inline in the ``Files Changed`` tab of the PR, and opening a review. When you're
+done click the ``Finish Review`` button and submit the review either by only
 commenting or requesting explicit changes. As the contributor addresses your
 concerns mark each item as resolved. When you are happy with the current state
 with the pull-request and agree it should be merged, add a final review with an
@@ -191,7 +191,7 @@ Finally, although obvious, self-reviewing is prohibited.
 Final Approval and Merging
 **************************
 
-The final approval of the pull-request to `main` must be carried out by a
+The final approval of the pull-request to ``main`` must be carried out by a
 maintainer. They should verify the following checklist, although some of it
 might be automatically checked and enforced by GitHub:
 
@@ -199,11 +199,11 @@ might be automatically checked and enforced by GitHub:
 * all review comments, suggestions or modification requests have been
   addressed;
 * passes all :ref:`CI pipeline <ci>` checks;
-* can be rebased on `main` without any conflict;
+* can be rebased on ``main`` without any conflict;
 
 The maintainer shall have as the main objective when integrating the PR to
 maintain a clear git history. Therefore, it should preferably perform either a
-rebase of the PR branch on `main` (or fast-forward merge if possible) or
+rebase of the PR branch on ``main`` (or fast-forward merge if possible) or
 perform a squash merge if they deem necessary. If the PR originates from an
 internal topic branch, the branch should be deleted. Only in extreme cases
 where the PR has a long list of commits with heavy and intertwined refactoring,
@@ -236,7 +236,7 @@ that all commits within the PR:
 * make sure you code works: test you code in as many targets as possible
   and write the needed automated tests;
 * introduces or updates the necessary documentation;
-* the branch can be rebased on `main` without conflicts;
+* the branch can be rebased on ``main`` without conflicts;
 * the :ref:`appropriate license and copyright information<licensing>` is
   present and updated;
 * make sure you have the rights to all the submitted code and that
@@ -397,15 +397,15 @@ Github uses special files which might be used to highlight some information,
 or automate some specific functionality. The project's repositories must have
 the following files set up, relative to their top-level directory:
 
-* **`README`**: the readme file must have a summary about the repository's
+* ``README``: the readme file must have a summary about the repository's
   content, functionality, etc., as well as a quick guide on how to use it
   (build, install, etc.);
-* **`LICENSE`**: a document of the license chosen for the repository and other
+* ``LICENSE``: a document of the license chosen for the repository and other
   copyright or legal restrictions;
-* **`.github/CODEOWNERS`**: identifies the coder owners of the repository so
+* ``.github/CODEOWNERS``: identifies the coder owners of the repository so
   they can be automatically notified for code-review. The file first line
   must assign all files to the repository's maintainers;
-* **`.github/CONTRIBUTORS`** and **`.github/AUTHORS`**: list all contributors
+* ``.github/CONTRIBUTORS`` and ``.github/AUTHORS``: list all contributors
   and authors that submit code to that repository.
 
 
@@ -414,9 +414,9 @@ the following files set up, relative to their top-level directory:
 Branch Protection
 *****************
 
-All repositories' `main` branch must be configured with a set of protection
+All repositories' ``main`` branch must be configured with a set of protection
 rules that aim at ensuring some of the rules defined in
-:ref:`<contribution_workflow>`. In the repository's `Settings -> Branches`
+:ref:`<contribution_workflow>`. In the repository's ``Settings -> Branches``
 menu, a protection rules must be created with the following options:
 
 * Require a pull request before merging:
@@ -444,7 +444,7 @@ CI/GitHub Actions
 
 Every repository must have an automated :ref:`CI pipeline <ci>` setup using
 GitHub Actions. Specifically, by adding workflow yaml files to the
-.github/workflows directory. The :ref:`CI repository <ci_repo>` contains a
+``.github/workflows`` directory. The :ref:`CI repository <ci_repo>` contains a
 number of templates as well as further instructions on how to set it up.
 
 Here are a few workflows a maintainer should add to the repository's CI:

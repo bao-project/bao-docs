@@ -66,8 +66,8 @@ Contribution Workflow
 ---------------------
 
 The project's development flow for all repositories is centered around the
-`main` branch. Any code contribution, be it internal or external, takes the
-form of a Github PR to the main branch. The main branch is then
+``main`` branch. Any code contribution, be it internal or external, takes the
+form of a Github PR to the ``main`` branch. The ``main`` branch is then
 tagged periodically according to the defined :ref:`versioning
 scheme<versioning>`.
 
@@ -81,7 +81,7 @@ in the repository itself. Topic branch names should be prefixed with by
 ``<type>/`` (where type is one of the predetermined :ref:`branch types
 <commit_branch_types>`), followed by a short descriptor written in lower snake
 case. For example, when developing a new feature the branch should be named
-`feat/my_new_feature`.
+``feat/my_new_feature``.
 
 Once development on a topic branch ceases, either because it was merged to
 ``main`` or for some reason discarded, the branch must be deleted.
@@ -91,7 +91,7 @@ branches.
 Submitting Commits
 ******************
 
-If you are an external contributor, or do not have write permissions to the
+If you are an external contributor or do not have write permissions to the
 repository you wish to contribute to, first of all, you should `fork that
 repository <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`_.
 If you do have write privileges over the original repository, you carry out the
@@ -117,7 +117,7 @@ development directly on it. Follow these steps:
       commits to the existing pull request. If existing commits need to be
       modified, rewrite the history and force push them to maintain a clean
       linear history;
-    * if the **reviewers** are are taking too long, try contacting the PR
+    * if the **reviewers** are taking too long, try contacting the PR
       assignee.
 
 Review Assignment
@@ -132,14 +132,14 @@ be a **maintainer** (which can coincide with the assignee).
 
 If a **code owner** exist for the code being submitted, at least one of them
 (for each of the files/subsystems) must review the code. **Code owners**
-will be automatically assigned as **reviewers** given **maintainers** are
+will be automatically assigned as **reviewers** if the **maintainers** are
 correctly managing the :ref:`.CODEOWNERS file<github_files>`. If there aren't
-enough **reviewers**, the assignee  is responsible for appointing a second
+enough **reviewers**, the assignee is responsible for appointing a second
 **reviewer**. Preferably, a project's internal contributor. They might also
 require and invite more **reviewers** if there is no consensus.
 
-Reviewing Guide
-***************
+Review Guide
+************
 
 As much as possible, code quality and enforced standards/guidelines will be
 automatically checked in the :ref:`CI pipeline <ci>`. **Reviewers** must be
@@ -160,7 +160,7 @@ The following are some tips all **reviewers** should take into account:
 * The PR complies with all the relevant standards mandated for the specific
   language or repo in question (e.g. :ref:`MISRA<misra>`);
 * There are no obscure binary blobs included in the PR;
-* Understand the design an implementation decisions behind the PR; Try to
+* Understand the design and implementation decisions behind the PR; Try to
   imagine how you'd go about implementing the same functionality, and
   engage in discussion when it does not match the proposed approach.
   Discuss the trade-offs of the various approaches.
@@ -169,10 +169,10 @@ The following are some tips all **reviewers** should take into account:
     * how do the modifications affect other subsystems and the
       maintainability and evolution of the code base?;
     * does the design follow the same philosophy of the over module, repo
-      or project? Be it at the API, architecture or implementation levels.
+      or project? Be it at the API, architecture, or implementation levels.
 
-* Be on the look out for bugs on both a implementation (e.g. precision loss
-  or wrong operator precedence) and semantic (does it correctly achieve the
+* Be on the look out for bugs in both the  implementation (e.g. precision loss
+  or wrong operator precedence) and the semantic (does it correctly achieve the
   desired functionality). Try to reason about corner cases.
 * New files contain the necessary :ref:`license and copyright
   information<licensing>`;
@@ -237,7 +237,7 @@ that all commits within the PR:
 * tag the necessary :ref:`requirements<>`;
 * introduce code that is readable and sufficiently commented/documented;
 * pass all :ref:`base CI pipeline<ci>` checks, by running them locally;
-* make sure you code works: test you code in as many targets as possible
+* make sure your code works: test your code in as many targets as possible
   and write the needed automated tests;
 * introduces or updates the necessary documentation;
 * the branch can be rebased on ``main`` without conflicts;
@@ -294,7 +294,7 @@ summary of the code changes.
 The commit message **body** must be descriptive enough to address in the
 ``<free-form-description>`` at least the following points:
 
-* describes the introduced features, fixes, extensions, refactoring;
+* describes the introduced features, fixes, extensions, and refactoring;
 * provide a brief rationale for the chosen implementation or overall approach;
 * how are you sure it works, i.e., describe the tests and corner cases you ran;
 
@@ -371,8 +371,8 @@ This message must follow the format:
     Signed-off-by: Your Name <your.email@example.com>
 
 You can easily add this to your commit by using ``-s`` flag when running the
-``git commit`` command. Beware that if your changing and existing signed
-commit, you should add your sign-off right after the previous author.Make sure
+``git commit`` command. Beware that if your changing an existing signed
+commit, you should add your sign-off right after the previous author. Make sure
 that your local git name and email configuration are correct and match the ones
 used in you GitHub account.
 

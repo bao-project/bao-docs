@@ -207,12 +207,44 @@ might be automatically checked and enforced by GitHub:
 The **maintainer** shall have as the main objective when integrating the PR to
 maintain a clear git history. Therefore, it should preferably perform either a
 rebase of the PR branch on ``main`` (or fast-forward merge if possible) or
-perform a squash merge if they deem necessary. If the PR originates from an
-internal topic branch, the branch should be deleted. Only in extreme cases
+perform a squash merge if they deem necessary. Only in extreme cases
 where the PR has a long list of commits with heavy and intertwined refactoring,
-a direct merge is acceptable.
+a direct merge is acceptable. When rebasing, because it is not possible to
+:ref:`sign commits<commit_signing>` remotely using the web interface, there may
+be the need to perform the process locally using git CLI commands:
 
-At this point the **maintainer** should update any contributor,
+1. Rebase the topic branch to main
+
+.. code-block:: bash
+
+    git checkout topic-branch
+    git rebase -S main
+
+2. Force push the topic branch
+
+.. code-block:: bash
+
+    git push -f
+
+3. Merge the topic branch to main
+
+.. code-block:: bash
+
+    git checkout main
+    git merge topic-branch
+
+4. Push the main branch
+
+.. code-block:: bash
+
+    git push
+
+At this point, the PR should be marked as merged.
+
+If the PR originates from an internal topic branch, the branch should be
+deleted.
+
+Finally, the **maintainer** should update any contributor,
 :ref:`author and/or code owner files<github_files>`, especially when new files
 are created.
 

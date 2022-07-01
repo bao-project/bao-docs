@@ -9,25 +9,25 @@ violations following the :ref:`Guideline Enforcement Plan <misra_gep>` and the
 :ref:`Guideline Requalification Plan <misra_gep>` using automated checker tools
 in the :ref:`CI pipeline <ci>`. Developers should continuously check for MISRA
 violations by :ref:`running the checker tools locally<misra_check_locally>` at
-each commit. Any violation identified in submitted code must be justifiable and
+each commit. Any violation identified in the submitted code must be justifiable and
 duly :ref:`deviated<deviations>`. These processes must be properly documented,
 peer-reviewed, and authorized according to the project's :ref:`contribution
 process <contributing>` and the guidance provided by the official `MISRA
 Compliance:2020 document
 <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_.
 
-Every developer, reviewer or maintainer should make themselves familiar with,
-first and foremost, the guidelines themselves, and secondly with the processes
+Every developer, reviewer, or maintainer should familiarize themselves with,
+first and foremost, the guidelines themselves, and secondly, the processes
 described in this document.
 
-Each repository in the project might abide to the guidelines with varying
-degrees of fidelity. Each will have its own independent :ref:`MISRA
+Each repository in the project might abide by the guidelines with varying
+degrees of fidelity. Each will have its independent :ref:`MISRA
 artefacts<misra_artefacts>`, although these might derive from the same base and
 be easily migrated from one repository to another. The processes and artefacts
 described in this document shall be overseen and enforced by the appointed
 repository's :ref:`MISRA manager`.
 
-The guidelines' text document itself is under strict licensing restrictions
+The guidelines' text document is under strict licensing restrictions
 and, therefore, the project cannot provide it to outside contributors. The
 document can be licensed on a per-person basis at the official's `MISRA website
 shop <https://www.misra.org.uk/shop/>`_.
@@ -39,8 +39,8 @@ Guideline Enforcement Plan (GEP) and Checker Tool
 
 The Guideline Enforcement Plan (GEP) describes, for each MISRA guideline, what
 are the checker tools or processes that are being used to enforce it. For each
-tool, a specific version and configuration information must be specified. For
-each process, such as manual review, it shall provide instructions and
+tool, a specific version and configuration information must be specified. Each
+process, such as manual review, shall provide instructions and
 checklists to aid reviewers. Ideally, the GEP should also prescribe measures on
 how to detect and deal with each :ref:`undecidable
 guidelines<misra_undecidable_false_positive>`. :ref:`Each
@@ -52,7 +52,7 @@ The main tool used by the project to check for MISRA guideline violations is
 `cppcheck <https://cppcheck.sourceforge.io/>`_. cppcheck is a completely free
 and open-source static analysis tool that provides a python-based add-on
 implementing the MISRA checks. The project's core team may use proprietary
-tools to periodically scan the code for cppcheck false positive or negatives,
+tools to periodically scan the code for cppcheck false positives or negatives,
 as well as providing an overall higher degree of confidence that the guidelines
 are being followed. However, the use of these tools will not be available to
 external contributors, and the output of such tools will not be openly
@@ -66,7 +66,7 @@ Rule Categories and Guideline Requalification Plan (GRP)
 
 MISRA rules can be categorized as mandatory, required, or advisory. This
 categorization defines whether or not a :ref:`deviation<deviations>` is allowed
-and, in case it is, if a :ref:`deviation record or permit<deviation_records>``
+and, in case it is, if a :ref:`deviation record or permit<deviation_records>`
 is required:
 
 * **Mandatory**: a deviation is never allowed;
@@ -93,7 +93,7 @@ the following manner:
 
     * required guidelines can be promoted to mandatory;
 
-    * advisory guidelines might be promoted to required, to mandatory or, on
+    * advisory guidelines might be promoted to required, mandatory, or, on
       the contrary, completely misapplied.
 
 A project's GRP must start with the original category for every rule. Every
@@ -118,7 +118,7 @@ recategorization must:
       reconfigure the tools accordingly.
 
 As described in :ref:`Repository MISRA Artefacts`, each repository must provide
-a GEP in a CSV format, for which a baseline is provided in the `CI repository
+a GEP in a CSV format, for which a baseline is provided in the :ref:`CI repository
 <ci_repo>`.
 
 .. _deviations:
@@ -130,15 +130,15 @@ All new :ref:`code submissions via a GitHub pull-requests <contributing>`, will
 be subject to the automatic checking of MISRA compliance by the :ref:`CI
 pipeline <ci>`. Ideally, the pull-request should not introduce any new MISRA
 violations. Developers should always strive to follow the MISRA coding
-guidelines. However, they may come to the conclusion that a violation is
+guidelines. However, they may conclude that a violation is
 unavoidable and justifiable according to at least one of the :ref:`deviation
 reasons <deviation_reasons>`. If so, developers must document and request the
-introduction of the violation in the code base, which will be subject to
-approval of code reviewer. These approved violations are called deviations. To
+introduction of the violation in the code base, which will be subject to the
+approval of a code reviewer. These approved violations are called deviations. To
 introduce a deviation, a developer must follow the :ref:`deviation procedure
 <deviation_procedure>` which include providing a :ref:`deviation record
 <deviation_records>`, :ref:`annotate<deviation_annotations>` all violations,
-and being explicitly approved by :ref:`MISRA managers<misra_manager>`-
+and being explicitly approved by :ref:`MISRA managers<misra_manager>`.
 
 .. _deviation_reasons:
 
@@ -165,7 +165,7 @@ violation is justifiable mainly due to the following reasons:
 
 * **Performance and latency**. Not introducing the violation would result in a
   significant performance hit or latency/jitter increase, especially when it
-  constitutes a bottleneck on an critical path.
+  constitutes a bottleneck on a critical path.
 
 * **Access to hardware**, i.e., using ISA or MMIO facilities. Not introducing
   the violation would inhibit the developer to perform an operation, to
@@ -181,7 +181,7 @@ violation is justifiable mainly due to the following reasons:
   manager<_misra_manager>`.
 
 * **Implementation or compliance of standards**. If it would preclude the
-  developer from implementing, using or following a standard or externally
+  developer from implementing, using, or following a standard or externally
   defined API.
 
 .. _deviation_procedure:
@@ -232,7 +232,7 @@ When a pull-request introduces new violations, the reviewers must:
 Deviation annotations
 *********************
 
-Deviation annotations are placed in comments preceding to the code that is
+Deviation annotations are placed in comments preceding the code
 incurring the violation. Their main role is to identify the code locations
 related to a given deviation record or permit, as well as suppress violation
 diagnostics issued by the checker tools. A deviation annotation follows a
@@ -279,15 +279,15 @@ classes of deviation annotations, depending on the used header:
 Managing Stale Deviations
 *************************
 
-It is important to make sure the deviation records, and more specifically,
+It is important to ensure the deviation records, and more specifically,
 annotations are up-to-date, that is, truly flagging an existing annotation and
-not an old, already gone one. Otherwise the code might become infested with
+not an old, already gone one. Otherwise, the code might become infested with
 stale annotations, making it difficult to discern what annotations are flagging
-a an active violation. More importantly, a stale annotation must not be hiding
+an active violation. More importantly, a stale annotation must not be hiding
 a new violation for which a record or permit does not exist.
 
-Although some checker tools might have the capacity to flag when a stale
-annotation appears, code developers, reviewers and maintainers must always be
+Although some checker tools might be able to flag when a stale
+annotation appears, code developers, reviewers, and maintainers must always be
 attentive. If a modification changes or removes code that is under the effect
 of a deviation annotation, the same code submission should remove the
 deviation's annotations, and if no other mentions of the deviation exist, the
@@ -297,7 +297,7 @@ associated deviation records.
 deviations. However, it only allows us to suppress violations on either a
 single-line or file-wide basis. The aforementioned :ref:`range
 annotations<deviation_annotation>` are translated to multiple single-line
-suppressions, and have to be paired with a suppression for the "unmatched
+suppressions, and must be paired with a suppression for the "unmatched
 suppression" warning itself. Therefore, these type of annotations might more
 easily result in stale deviations.
 
@@ -306,10 +306,10 @@ easily result in stale deviations.
 Deviation Records and Permits
 *****************************
 
-A deviation record is a document which describes a deviation and justifies why
+A deviation record is a document that describes a deviation and justifies why
 it is being taken. It should mainly address why the deviation is needed and
 cannot be avoided by citing at least one valid :ref:`deviation reason
-<deviation_reasons>`. It should also explain why is the deviation still safe in
+<deviation_reasons>`. It should also explain why the deviation is still safe in
 light of the violated guideline's rationale. It must be written in a yaml file
 following the format:
 
@@ -322,7 +322,7 @@ following the format:
     # The tag should always be the same name of the file, start with MDR
     followed # by the record ID. tag: MDR1
 
-    # Optionally, list a deviation permits used as base fot the deviation.
+    # Optionally, list a deviation permits used as a base for the deviation.
     permits:
       - "MDP1"
       - "MPD2"
@@ -343,7 +343,7 @@ following the format:
     # Detail the use cases and reasons listed above. description: >
         Provide a detailed description of the record.
 
-    # Assess how the risks described the guideline's rationale affect this
+    # Assess how the risks described in the guideline's rationale affect this
     violation # and describe how they are managed or mitigated in this
     violation. In case a # permit is selected, detail point by point how the
     deviation fulfils the # permit's requirements. risk: >
@@ -352,12 +352,12 @@ following the format:
 
 Deviation permits main purpose is to speed-up and reduce the effort of the
 deviation procedure, by avoiding the duplication of deviation records for
-frequently occurred deviation classes which have similar rationales and
-therefore also saving time during the review process. Therefore, a deviation
+frequently occurred deviation classes with similar rationales, and,
+consequently, save time during the review process. Therefore, a deviation
 permit provides a baseline for deviation records by describing a justification
 for a class of deviations. A deviation permit must enumerate the use case and
-requirements that must be met a violation and described by a deviation record
-to supported by the permit. Permits must follow this yaml template:
+requirements that must be met for a violation and described by a deviation record
+to be supported by the permit. Permits must follow this ``yaml`` template:
 
 .. code-block:: yaml
 
@@ -378,8 +378,8 @@ to supported by the permit. Permits must follow this yaml template:
       - Code quality (usability).
       - ....
 
-    # Detail the use cases and reasons list above. background: >
-        Provide a detail description of the guideline,
+    # Detail the use cases and reasons listed above. background: >
+        Provide a detailed description of the guideline,
 
     # Explicitly list the requirements a violation/deviation must fulfill to #
     properly assess and manage all the possible risks raised by the violation #
@@ -406,13 +406,13 @@ repository MISRA manager.
 Dealing with Pre-existing Violations
 ------------------------------------
 
-Pre-existing violations might be encountered in the existing code, and not
+Pre-existing violations might be encountered in the existing code and not
 necessarily be introduced by a new pull-request. This might happen, for
 example, whenever the checker tools are updated or reconfigured.
 
 When pre-existing violations are detected, the repository maintainer is
 responsible for either modify the code to remove the violations or introduce
-new deviations following the `deviation_procedure`.
+new deviations following the :ref:`deviation procedure<deviation_procedure>`.
 
 False Positive Diagnostics
 --------------------------
@@ -435,10 +435,10 @@ tool providers, and remove it as soon as the issue is fixed. For example:
 Undecidable Guidelines and False Negative Diagnostics
 -----------------------------------------------------
 
-Developers, reviewers and maintainers must be aware that violations might not
-be flagged by the checker tools. This might happen because the guideline is
-undecidable or because the tool is failing to detect the violation in a
-specific scenario. When a violation is detected by manual inspection it should
+Developers, reviewers, and maintainers must be aware that the checker tools
+might not flag violations. This might happen because the guideline is
+undecidable or because the tool fails to detect the violation in a
+specific scenario. When a violation is detected by manual inspection, it should
 follow the normal :ref:`deviation procedure<deviation_procedure>`. If the
 guideline is decidable, the issue should be communicated to the :ref:`MISRA
 managers<_misra_manager>` who shall forward it to the tool's providers.
@@ -448,8 +448,8 @@ managers<_misra_manager>` who shall forward it to the tool's providers.
 Repository MISRA Artefacts
 --------------------------
 
-Each repository that is subject to MISRA compliance check shall have a
-dedicated misra directory in the top level. The misra directory shall contain:
+Each repository subject to MISRA compliance check shall have a
+dedicated ``misra`` directory at the top level. The ``misra`` directory shall contain:
 
     * the :ref:`GEP<misra_gep>` in CSV format
     * the :ref:`GRP<misra_grp>` in CSV format
@@ -458,7 +458,7 @@ dedicated misra directory in the top level. The misra directory shall contain:
     * a permits sub-directory, containing a file for each :ref:`deviation
       permit<deviations>` in yaml format
 
-Templates for all these documents are provided in the misra directory of the
+Templates for all these documents are provided in the ``misra`` directory of the
 :ref:`CI repository <ci_repo>`.
 
 .. _misra_manager:
@@ -467,11 +467,11 @@ MISRA managers
 --------------
 
 On top of the roles described in :ref:`ci`, every repository shall be assigned
-at least one MISRA manager that will be responsible for enforcing the processes
-described in this document and guarantee the `MISRA compliance best practices
+at least one MISRA manager responsible for enforcing the processes
+described in this document and guaranteeing the `MISRA compliance best practices
 <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_ are
 being followed as best as possible. Therefore, they will have the ultimate say
-on the decisions taken regarding the guidelines. Their responsibilities
+in the decisions taken regarding the guidelines. Their responsibilities
 include, but are not limited to:
 
     * enforce the processes described in this document;
@@ -501,5 +501,5 @@ for checking compliance for the *qemu-aarch64-virt* platform:
     make PLATFORM=qemu-aarch64-virt misra-check
 
 It is suggested to use the provided :ref:`Docker container image <docker>` for
-running the checks, otherwise you will first have to :ref:`setup all the
+running the checks; otherwise, you will first have to :ref:`setup all the
 necessary tools locally<local_environment>`.

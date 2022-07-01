@@ -438,12 +438,44 @@ the following files set up, relative to their top-level directory:
   (build, install, etc.);
 * ``LICENSE``: a document of the license chosen for the repository and other
   copyright or legal restrictions;
+* ``CONTRIBUTORS`` and ``AUTHORS``: list all
+  :ref:`contributors and authors<_authors_and_contributors>` that submit code
+   to that repository.
 * ``.github/CODEOWNERS``: identifies the coder owners of the repository so
   they can be automatically notified for code-review. The file first line
   must assign all files to the repository's **maintainers**;
-* ``.github/CONTRIBUTORS`` and ``.github/AUTHORS``: list all contributors
-  and authors that submit code to that repository.
 
+.. _authors_and_contributors:
+
+Author and Contributors
+***********************
+
+Besides the git log, Bao Project's repositories should explictly list their
+contributors in to files at the repo's top-level:
+
+* The ``CONTRIBUTORS`` file must list every person that contributors to the
+  project even in a minor way with bug fixes, optimizations, etc.
+
+* The ``AUTHORS`` files lists the developers who have mande same signficant
+  contribution to the system such as implementing a new feature, subsystem,
+  port to a new architecture/platform and the like.
+
+These files must list contributor/author per line, preferably in the format
+
+.. code-block:: none
+
+    Contributor's Name <contributors@email.com>
+
+using the name and e-mail associated with their Github accounts and commits.
+However, if some contributor requests to be listed in another format this
+(e.g. using some alias) can also be accommodated.
+
+If a contributor does not wish to be listed or have any of their information
+removed, maintainers must fulfill their request.
+
+Preferably, these files should list the contributors/authors in a chronologic
+order regarding their first contribution. That means each times a new person
+is added it is appended at the end of the file.
 
 .. _branch_protection:
 

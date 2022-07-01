@@ -7,7 +7,7 @@ are fully written in the [reStructureText](https://docutils.sourceforge.io/rst.h
 web service. We also use the [Sphinx](https://www.sphinx-doc.org/) tool to
 generate the documentation in the html format.
 
-## General Overview
+## Overview
 The repository of bao-docs follows the basic directory layout defined by Sphinx
 , having on the top-level two main directories:
 
@@ -16,7 +16,6 @@ the Sphinx build
 - ``source``: folder to hold each reST document, which we explain the
 organization structure [below](#organization)
 
-### Organization
 The organization of documentation under the ``source`` directory is structured
 into 4 top-level folders. The following table specifies the meaning of each
 folder:
@@ -56,17 +55,46 @@ folder:
 </table>
 
 ## Generating the Documentation
+### Prerequisites
 To generate the documentation locally, developers need to install a set of
 prerequisites, depending on the host machine. Follow the steps described below
 for your specific machine.
 
-### Linux Prerequisites
+For **Linux** users, start by installing dependencies and each tool package
+(i.e., Sphinx, the spell checker extension [sphinxcontrib.spelling](https://sphinxcontrib-spelling.readthedocs.io/), and the format checker
+[doc8](https://github.com/PyCQA/doc8)).
 
+```bash
+sudo apt-get install enchant
+pip install sphinx sphinxcontrib-spelling pyenchant doc8
+```
 
-### Windows Prerequisites
+### Building and Checking
+If you wish to contribute to the documentation you should first take a close
+look in the [contribution](source/development/contributing.rst) and
+follow the [documentation](source/development/doc_guidelines.rst) guidelines.
+The documentation is verified in terms of spelling and format with the help of
+the [bao CI](https://github.com/bao-project/bao-ci) documentation checkers.
 
-### Building
+For **Linux** users, start by checking the documentation for spell and format
+errors. To check for spelling typos, you need to run the following command:
 
-#### Linux
+```bash
+make spelling
+```
 
-#### Windows
+To check for format issues, you need to run the following command:
+
+```bash
+doc8 source/ --ignore D000
+```
+
+After correcting all outputted errors, you can build the documentation and
+generate the html files:
+
+```bash
+make html
+```
+
+The html files are under the `build` folder and you can visualize them by
+opening the `html/index.html` file on your browser.

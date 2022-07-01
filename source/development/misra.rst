@@ -9,11 +9,11 @@ violations following the :ref:`Guideline Enforcement Plan <misra_gep>` and the
 :ref:`Guideline Requalification Plan <misra_gep>` using automated checker tools
 in the :ref:`CI pipeline <ci>`. Developers should continuously check for MISRA
 violations by :ref:`running the checker tools locally<misra_check_locally>` at
-each commit. Any violation identified in the submitted code must be justifiable and
-duly :ref:`deviated<deviations>`. These processes must be properly documented,
-peer-reviewed, and authorized according to the project's :ref:`contribution
-process <contributing>` and the guidance provided by the official `MISRA
-Compliance:2020 document
+each commit. Any violation identified in the submitted code must be justifiable
+and duly :ref:`deviated<deviations>`. These processes must be properly
+documented, peer-reviewed, and authorized according to the project's
+:ref:`contribution process <contributing>` and the guidance provided by the
+official `MISRA Compliance:2020 document
 <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_.
 
 Every developer, reviewer, or maintainer should familiarize themselves with,
@@ -118,8 +118,8 @@ recategorization must:
       reconfigure the tools accordingly.
 
 As described in :ref:`Repository MISRA Artefacts`, each repository must provide
-a GEP in a CSV format, for which a baseline is provided in the :ref:`CI repository
-<ci_repo>`.
+a GEP in a CSV format, for which a baseline is provided in the :ref:`CI
+repository <ci_repo>`.
 
 .. _deviations:
 
@@ -130,12 +130,12 @@ All new :ref:`code submissions via a GitHub pull-requests <contributing>`, will
 be subject to the automatic checking of MISRA compliance by the :ref:`CI
 pipeline <ci>`. Ideally, the pull-request should not introduce any new MISRA
 violations. Developers should always strive to follow the MISRA coding
-guidelines. However, they may conclude that a violation is
-unavoidable and justifiable according to at least one of the :ref:`deviation
-reasons <deviation_reasons>`. If so, developers must document and request the
+guidelines. However, they may conclude that a violation is unavoidable and
+justifiable according to at least one of the :ref:`deviation reasons
+<deviation_reasons>`. If so, developers must document and request the
 introduction of the violation in the code base, which will be subject to the
-approval of a code reviewer. These approved violations are called deviations. To
-introduce a deviation, a developer must follow the :ref:`deviation procedure
+approval of a code reviewer. These approved violations are called deviations.
+To introduce a deviation, a developer must follow the :ref:`deviation procedure
 <deviation_procedure>` which include providing a :ref:`deviation record
 <deviation_records>`, :ref:`annotate<deviation_annotations>` all violations,
 and being explicitly approved by :ref:`MISRA managers<misra_manager>`.
@@ -448,8 +448,8 @@ managers<_misra_manager>` who shall forward it to the tool's providers.
 Repository MISRA Artefacts
 --------------------------
 
-Each repository subject to MISRA compliance check shall have a
-dedicated ``misra`` directory at the top level. The ``misra`` directory shall contain:
+Each repository subject to MISRA compliance check shall have a dedicated
+``misra`` directory at the top level. The ``misra`` directory shall contain:
 
     * the :ref:`GEP<misra_gep>` in CSV format
     * the :ref:`GRP<misra_grp>` in CSV format
@@ -458,8 +458,8 @@ dedicated ``misra`` directory at the top level. The ``misra`` directory shall co
     * a permits sub-directory, containing a file for each :ref:`deviation
       permit<deviations>` in yaml format
 
-Templates for all these documents are provided in the ``misra`` directory of the
-:ref:`CI repository <ci_repo>`.
+Templates for all these documents are provided in the ``misra`` directory of
+the :ref:`CI repository <ci_repo>`.
 
 .. _misra_manager:
 
@@ -467,8 +467,8 @@ MISRA managers
 --------------
 
 On top of the roles described in :ref:`ci`, every repository shall be assigned
-at least one MISRA manager responsible for enforcing the processes
-described in this document and guaranteeing the `MISRA compliance best practices
+at least one MISRA manager responsible for enforcing the processes described in
+this document and guaranteeing the `MISRA compliance best practices
 <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_ are
 being followed as best as possible. Therefore, they will have the ultimate say
 in the decisions taken regarding the guidelines. Their responsibilities

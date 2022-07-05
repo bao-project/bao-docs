@@ -8,13 +8,12 @@ web service. We also use the [Sphinx](https://www.sphinx-doc.org/) tool to
 generate the documentation in the html format.
 
 ## Overview
-The repository of bao-docs follows the basic directory layout defined by Sphinx
-, having on the top-level two main directories:
+The bao-docs repository follows the basic directory layout defined by Sphinx
+, , with two top-level directories:
 
-- ``build``: folder to hold the resulted rendered documentation after running
+- ``build``: contains the resulting rendered documentation after running
 the Sphinx build
-- ``source``: folder to hold each reST document, which we explain the
-organization structure [below](#organization)
+- ``source``: holds each reST document following the structure as explained [below](#organization)
 
 The organization of documentation under the ``source`` directory is structured
 into 4 top-level folders. The following table specifies the meaning of each
@@ -30,10 +29,10 @@ folder:
 <tbody>
   <tr>
     <td class="tg-0pky">development<br></td>
-    <td class="tg-0pky">Holds all documentation that specifies all guidelines
+    <td class="tg-0pky">Holds all documentation that specifies the guidelines
     to take into consideration during the development activities, namely,
-    the coding and documentation style, contributing workflow, the CI
-    pipeline, the testing suite, among others.</td>
+    coding and documentation style, contributing workflow, the CI
+    pipeline, testing framework, among others.</td>
   </tr>
   <tr>
     <td class="tg-0pky">internals</td>
@@ -71,9 +70,9 @@ pip install sphinx sphinxcontrib-spelling pyenchant doc8
 
 ### Building and Checking
 If you wish to contribute to the documentation you should first take a close
-look in the [contribution](source/development/contributing.rst) and
+look at the [contribution](source/development/contributing.rst) and
 follow the [documentation](source/development/doc_guidelines.rst) guidelines.
-The documentation is verified in terms of spelling and format with the help of
+The documentation sources' spelling and formatting are automatically verified with the help of
 the [bao CI](https://github.com/bao-project/bao-ci) documentation checkers.
 
 For **Linux** users, start by checking the documentation for spell and format

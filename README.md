@@ -28,17 +28,6 @@ folder:
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">development<br></td>
-    <td class="tg-0pky">Holds all documentation that specifies the guidelines
-    to take into consideration during the development activities, namely,
-    coding and documentation style, contributing workflow, the CI
-    pipeline, testing framework, among others.</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">internals</td>
-    <td class="tg-0pky"></td>
-  </tr>
-  <tr>
     <td class="tg-0pky">introduction</td>
     <td class="tg-0pky">Holds all documentation that is supposed to be the
     first contact to the project, presenting an overview of the project and
@@ -49,6 +38,17 @@ folder:
     <td class="tg-0pky">user_manual</td>
     <td class="tg-0pky">Holds all documentation that intend to assist users
     during the utilization of the Bao framework.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">internals</td>
+    <td class="tg-0pky"></td>Holds all documentation that describes th
+  </tr>
+  <tr>
+    <td class="tg-0pky">development<br></td>
+    <td class="tg-0pky">Holds all documentation that specifies the guidelines
+    to take into consideration during the development activities, namely,
+    coding and documentation style, contributing workflow, the CI
+    pipeline, testing framework, among others.</td>
   </tr>
 </tbody>
 </table>

@@ -10,11 +10,12 @@ documentation in the html format.
 
 ## Overview
 The bao-docs repository follows the basic directory layout defined by Sphinx
-, , with two top-level directories:
+, with two top-level directories:
 
-- ``build``: contains the resulting rendered documentation after running
-the Sphinx build
-- ``source``: holds each reST document following the structure as explained [below](#organization)
+- ``build``: contains the resulting rendered documentation after running the
+Sphinx build
+- ``source``: holds each reST document following the structure as explained
+  [below](#organization)
 
 The organization of documentation under the ``source`` directory is structured
 into 4 top-level folders. The following table specifies the meaning of each
@@ -62,8 +63,9 @@ prerequisites, depending on the host machine. Follow the steps described below
 for your specific machine.
 
 For **Linux** users, start by installing dependencies and each tool package
-(i.e., Sphinx, the spell checker extension [sphinxcontrib.spelling](https://sphinxcontrib-spelling.readthedocs.io/), and the format checker
-[doc8](https://github.com/PyCQA/doc8)).
+(i.e., Sphinx, the spell checker extension
+[sphinxcontrib.spelling](https://sphinxcontrib-spelling.readthedocs.io/), and
+the format checker [doc8](https://github.com/PyCQA/doc8)).
 
 ```bash
 sudo apt-get install enchant
@@ -72,10 +74,11 @@ pip install sphinx sphinxcontrib-spelling pyenchant doc8
 
 ### Building and Checking
 If you wish to contribute to the documentation you should first take a close
-look at the [contribution](source/development/contributing.rst) and
-follow the [documentation](source/development/doc_guidelines.rst) guidelines.
-The documentation sources' spelling and formatting are automatically verified with the help of
-the [bao CI](https://github.com/bao-project/bao-ci) documentation checkers.
+look at the [contribution](source/development/contributing.rst) and follow the
+[documentation](source/development/doc_guidelines.rst) guidelines. The
+documentation sources' spelling and formatting are automatically verified with
+the help of the [bao CI](https://github.com/bao-project/bao-ci) documentation
+checkers.
 
 For **Linux** users, start by checking the documentation for spell and format
 errors. To check for spelling typos, you need to run the following command:
@@ -87,7 +90,7 @@ make spelling
 To check for format issues, you need to run the following command:
 
 ```bash
-doc8 source/ --ignore D000
+make format
 ```
 
 After correcting all outputted errors, you can build the documentation and

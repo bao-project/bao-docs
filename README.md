@@ -2,10 +2,11 @@
 
 This repository aims at centralizing the artifacts related to the full
 documentation of the [Bao Project](http://www.bao-project.org/). The documents
-are fully written in the [reStructureText](https://docutils.sourceforge.io/rst.html)
-(reST) format and are hosted in the [ReadTheDocs](https://bao-project.readthedocs.io/)
-web service. We also use the [Sphinx](https://www.sphinx-doc.org/) tool to
-generate the documentation in the html format.
+are fully written in American English, following the
+[reStructureText](https://docutils.sourceforge.io/rst.html) (reST) format, and
+hosted in the [ReadTheDocs](https://bao-project.readthedocs.io/) web service.
+We also use the [Sphinx](https://www.sphinx-doc.org/) tool to generate the
+documentation in the html format.
 
 ## Overview
 The bao-docs repository follows the basic directory layout defined by Sphinx
@@ -41,7 +42,8 @@ folder:
   </tr>
   <tr>
     <td class="tg-0pky">internals</td>
-    <td class="tg-0pky"></td>Holds all documentation that describes th
+    <td class="tg-0pky"></td>Holds all documentation that describes in detail
+    each internal component of Bao.
   </tr>
   <tr>
     <td class="tg-0pky">development<br></td>

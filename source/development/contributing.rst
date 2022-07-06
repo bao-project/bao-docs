@@ -450,15 +450,15 @@ the following files set up, relative to their top-level directory:
 Author and Contributors
 ***********************
 
-Besides the git log, Bao Project's repositories should explictly list their
+Besides the ``git log``, Bao Project's repositories should explicitly list their
 contributors in to files at the repo's top-level:
 
-* The ``CONTRIBUTORS`` file must list every person that contributors to the
-  project even in a minor way with bug fixes, optimizations, etc.
+* The ``CONTRIBUTORS`` file must list every person who contributes to the
+  project, even in a minor way with bug fixes, optimizations, etc.
 
-* The ``AUTHORS`` files lists the developers who have mande same signficant
-  contribution to the system such as implementing a new feature, subsystem,
-  port to a new architecture/platform and the like.
+* The ``AUTHORS`` files list the developers who have made some significant
+  contribution to the system, such as implementing a new feature, subsystem,
+  port to a new architecture/platform, and the like.
 
 These files must list contributor/author per line, preferably in the format
 
@@ -467,8 +467,8 @@ These files must list contributor/author per line, preferably in the format
     Contributor's Name <contributors@email.com>
 
 using the name and e-mail associated with their Github accounts and commits.
-However, if some contributor requests to be listed in another format this
-(e.g. using some alias) can also be accommodated.
+However, if some contributor requests to be listed in another format, 
+(e.g. using some alias), we can also accommodate it.
 
 If a contributor does not wish to be listed or have any of their information
 removed, maintainers must fulfill their request.

@@ -450,8 +450,8 @@ the following files set up, relative to their top-level directory:
 Author and Contributors
 ***********************
 
-Besides the ``git log``, Bao Project's repositories should explicitly list their
-contributors in to files at the repo's top-level:
+Besides the ``git log``, Bao Project's repositories should explicitly list
+their contributors in to files at the repo's top-level:
 
 * The ``CONTRIBUTORS`` file must list every person who contributes to the
   project, even in a minor way with bug fixes, optimizations, etc.
@@ -467,14 +467,14 @@ These files must list contributor/author per line, preferably in the format
     Contributor's Name <contributors@email.com>
 
 using the name and e-mail associated with their Github accounts and commits.
-However, if some contributor requests to be listed in another format, 
+However, if some contributor requests to be listed in another format,
 (e.g. using some alias), we can also accommodate it.
 
 If a contributor does not wish to be listed or have any of their information
 removed, maintainers must fulfill their request.
 
 Preferably, these files should list the contributors/authors in a chronologic
-order regarding their first contribution. That means each times a new person
+order regarding their first contribution. That means each time a new person
 is added it is appended at the end of the file.
 
 .. _branch_protection:

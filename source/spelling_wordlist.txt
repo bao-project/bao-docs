@@ -6,6 +6,7 @@ Struct
 cyclomatic
 initializations
 Initializations
+chronologic
 const
 boolean
 typedef

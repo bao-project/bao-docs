@@ -9,5 +9,6 @@ Development
    code_documentation
    testing
    ci_pipeline
+   licensing
    contributing
    misra

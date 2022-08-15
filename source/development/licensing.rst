@@ -11,13 +11,13 @@ read the license to fully understand all the terms.
 License and Copyright Notice
 ----------------------------
 
-Contributions to this project should provide in an individual files:
+Any file contributed to this project must start with an header comment with the following information:
 
 * a copyright notice similar to the following:
 
 .. code-block:: none
 
-    Copyright (c) YYYY-YYYY, <organization-name> (<website>). All rights reserved.
+    Copyright (c)  <project-name> and contributors. All rights reserved.
 
 * the SDPX identifier that tags the Apache 2.0 license, as shown below.
 

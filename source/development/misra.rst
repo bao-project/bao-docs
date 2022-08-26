@@ -25,7 +25,7 @@ degrees of fidelity. Each will have its independent :ref:`MISRA
 artefacts<misra_artefacts>`, although these might derive from the same base and
 be easily migrated from one repository to another. The processes and artefacts
 described in this document shall be overseen and enforced by the appointed
-repository's :ref:`MISRA manager`.
+repository's :ref:`MISRA managers<misra_manager>`.
 
 The guidelines' text document is under strict licensing restrictions
 and, therefore, the project cannot provide it to outside contributors. The
@@ -82,7 +82,7 @@ requiring a deviation record for advisory guidelines, the project will require
 that the identified violation points at least to a deviation permit. If a
 deviation permit that covers the violation use case does not exist, a deviation
 record must be supplied. Even when a permit for the violation use case exists,
-the code reviewers, maintainers or :ref:`MISRA managers<_misra_manager>` might
+the code reviewers, maintainers or :ref:`MISRA managers<misra_manager>` might
 choose to require a deviation record for a more intricate or convoluted
 violation.
 
@@ -114,8 +114,8 @@ recategorization must:
         - if a rule is misapplied, all deviations as well as records or permits
           concerning the rule can be removed.
 
-    * be approved by all the repository's MISRA managers, which must
-      reconfigure the tools accordingly.
+    * be approved by all the repository's :ref:`MISRA managers<misra_manager>`,
+      which must reconfigure the tools accordingly.
 
 As described in :ref:`Repository MISRA Artefacts`, each repository must provide
 a GEP in a CSV format, for which a baseline is provided in the :ref:`CI
@@ -178,7 +178,7 @@ violation is justifiable mainly due to the following reasons:
   be subject to the practices detailed in `MISRA Compliance:2020 documentation
   <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_
   and to the reviewing and approval process by maintainers and the :ref:`MISRA
-  manager<_misra_manager>`.
+  manager<misra_manager>`.
 
 * **Implementation or compliance of standards**. If it would preclude the
   developer from implementing, using, or following a standard or externally
@@ -224,7 +224,7 @@ When a pull-request introduces new violations, the reviewers must:
     * verify that all introduced deviations annotations are correctly tagged
       with the rule and record/permit;
 
-    * notify at least one of the :ref:`MISRA managers<_misra_manager>` and wait
+    * notify at least one of the :ref:`MISRA managers<misra_manager>` and wait
       for their final approval.
 
 .. _deviation_annotation:
@@ -395,13 +395,13 @@ deviation meets the permit requirements. The reviewer's job is also verifying
 the justifications for meeting the permit's requirements are valid, with no
 need to make sure the justification itself is valid. When this is the case, the
 deviation can be accepted without the explicit acknowledgement of the
-:ref:`MISRA managers<_misra_manager>`.
+:ref:`MISRA managers<misra_manager>`.
 
 Whenever reviewers or maintainers identify that a relatively significant group
 of existing deviations have a common ground cause and justification, or if they
 predict that a guideline will be frequently deviated for a given use-case, they
 should submit the proposal for the introduction of a new MISRA permit to the
-repository MISRA manager.
+repository :ref:`MISRA manager<misra_manager>`.
 
 Dealing with Pre-existing Violations
 ------------------------------------
@@ -420,7 +420,7 @@ False Positive Diagnostics
 A checker tool may wrongly identify a rule violation. These are called false
 positive diagnostics. If a contributor by itself, or during a discussion in the
 reviewing process, concludes that one of the checker tools is issuing a false
-positive, they should notify the :ref:`MISRA managers<_misra_manager>` who
+positive, they should notify the :ref:`MISRA managers<misra_manager>` who
 shall issue a bug ticket with the checker provider or developers. Meanwhile,
 the false positive can be tagged with a special deviation annotation with the
 format :code:`MISRAFP:RULE:` while waiting for the issue to be solved by the
@@ -441,7 +441,7 @@ undecidable or because the tool fails to detect the violation in a
 specific scenario. When a violation is detected by manual inspection, it should
 follow the normal :ref:`deviation procedure<deviation_procedure>`. If the
 guideline is decidable, the issue should be communicated to the :ref:`MISRA
-managers<_misra_manager>` who shall forward it to the tool's providers.
+managers<misra_manager>` who shall forward it to the tool's providers.
 
 .. _misra_artefacts:
 

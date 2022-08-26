@@ -74,8 +74,8 @@ Developer Certification of Origin (DCO)
 ---------------------------------------
 
 In the good faith of the open source spirit, we require that all contributors
-agrees to the DCO. The DCO should be link to each contributor commit message,
-by simply adding a ``Signed-off-by`` statement that attests its agreement to
+agree to the DCO. The DCO should be link to each contributor commit message,
+by simply adding a ``Signed-off-by`` statement that attests their agreement to
 the DCO describe below.
 
 .. code-block:: none

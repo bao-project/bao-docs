@@ -29,10 +29,9 @@ In the end, the header of each individual file must look like this:
 
 .. code-block:: c
 
-    /*
-     * Copyright (c) 2021-2023, Bao Project (www.bao-project.com). All rights reserved.
-     *
+    /**
      * SPDX-License-Identifier: Apache-2.0
+     * Copyright (c) Bao Project and Contributors. All rights reserved.
      */
 
 .. _dco:

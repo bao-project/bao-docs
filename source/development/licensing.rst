@@ -73,10 +73,11 @@ In C language, the header would look like the example below.
 Developer Certification of Origin (DCO)
 ---------------------------------------
 
-In the good faith of the open source spirit, we require that all contributors
-agree to the DCO. The DCO should be link to each contributor commit message,
-by simply adding a ``Signed-off-by`` statement that attests their agreement to
-the DCO describe below.
+To guarantee authors have all the necessary rights/permissions over the
+contributed artifacts and therefore do not incur in any license or legal
+violations, we require that every commit author adheres to a DCO. The
+contributors' agreement to the DCO must be attested to in every commit message
+by simply appending a ``Signed-off-by`` statement for each author.
 
 .. code-block:: none
 

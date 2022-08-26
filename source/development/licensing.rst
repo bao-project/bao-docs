@@ -11,7 +11,8 @@ read the license to fully understand all the terms.
 License and Copyright Notice
 ----------------------------
 
-Any file contributed to this project must start with an header comment with the following information:
+Any file contributed to this project must start with an header comment with the
+following information:
 
 * a copyright notice similar to the following:
 
@@ -25,7 +26,9 @@ Any file contributed to this project must start with an header comment with the 
 
     SPDX-License-Identifier: Apache-2.0
 
-In the end, the header of each individual file must look like this:
+In the end, this header should be added as a comment on the top of each
+individual file, according to the programming language the file is written.
+In C language, the header would look like the example below.
 
 .. code-block:: c
 

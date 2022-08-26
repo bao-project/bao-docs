@@ -3,10 +3,41 @@
 Licensing
 =========
 
-Our software is provided under the `Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0>`_
-, a permissive open source license. As a developer, all you need to know
-regarding your rights is described in this license. Before contributing, please
-read the license to fully understand all the terms.
+Our software is provided under the
+`Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0>`_, a
+permissive open source license. As a developer, all you need to know regarding
+your rights is described in this license. Before contributing, please read the
+license to fully understand all the terms.
+
+Apache 2.0 Summary
+------------------
+
+With Apache 2.0 license, a developer can do what they like with the software;
+however, the required notices must be included in the code. In the following
+list we describe succinctly some of the modalities regarding the license.
+Beware that this is only a short summary of the license. You should read the
+full text to fully capture it.
+
+With Apache 2.0. a developer **can**...
+
+* Use the software for commercial purposes
+* Modify the software and create derivatives
+* Distribute the original or modified software
+* Use or modify the software freely without distributing it
+
+With Apache 2.0. a developer **can't**...
+
+* Hold liable the owner of this software for eventual charges derived from any
+  damages
+* Use any contributors' names, trademarks, or logos
+
+With Apaches 2.0 a developer **must**...
+
+* Include a copy of the license, copyright, and any NOTICE file notice with the
+  software to be distributed
+* Indicate that changes were made to the code
+
+
 
 License and Copyright Notice
 ----------------------------

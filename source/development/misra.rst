@@ -6,7 +6,7 @@ MISRA Compliance
 The project aims to comply with the MISRA C:2012 coding guidelines in all C
 code across all repositories. All submitted code will be checked for MISRA
 violations following the :ref:`Guideline Enforcement Plan <misra_gep>` and the
-:ref:`Guideline Requalification Plan <misra_gep>` using automated checker tools
+:ref:`Guideline Requalification Plan <misra_grp>` using automated checker tools
 in the :ref:`CI pipeline <ci>`. Developers should continuously check for MISRA
 violations by :ref:`running the checker tools locally<misra_check_locally>` at
 each commit. Any violation identified in the submitted code must be justifiable

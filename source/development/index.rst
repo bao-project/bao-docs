@@ -7,6 +7,7 @@ Development
 
    coding_style
    code_documentation
+   doc_guidelines
    testing
    ci_pipeline
    licensing

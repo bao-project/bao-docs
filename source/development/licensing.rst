@@ -3,10 +3,10 @@
 Licensing
 =========
 
-Our software is provided under the
-`Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0>`_, a
-permissive open source license. As a developer, all you need to know regarding
-your rights is described in this license. Before contributing, please read the
+Our software is provided under the `Apache 2.0 license
+<https://www.apache.org/licenses/LICENSE-2.0>`_, a permissive open source
+license. As a developer, all you need to know regarding your rights and
+obligations are described in this license. Before contributing, please read the
 license to fully understand all the terms.
 
 Apache 2.0 Summary
@@ -27,7 +27,7 @@ With Apache 2.0. a developer **can**...
 
 With Apache 2.0. a developer **can't**...
 
-* Hold liable the owner of this software for eventual charges derived from any
+* Hold the software owners liable for eventual charges derived from any
   damages
 * Use any contributors' names, trademarks, or logos
 
@@ -58,8 +58,8 @@ following information:
     SPDX-License-Identifier: Apache-2.0
 
 In the end, this header should be added as a comment on the top of each
-individual file, according to the programming language the file is written.
-In C language, the header would look like the example below.
+individual file, according to the programming language in which the file is
+written. In the C language, the header would look like the example below.
 
 .. code-block:: c
 

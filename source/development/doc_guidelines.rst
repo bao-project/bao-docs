@@ -1,19 +1,19 @@
 Documentation Guidelines
 ========================
 
-The Bao hypervisor and tool documentation is written in
-`reStructuredText <https://docutils.sourceforge.io/rst.html>`_ markup language
-and enhanced with `Sphinx <https://www.sphinx-doc.org/en/master/>`_ extensions.
-This documentation can be built into HTML content by using the Makefile command
-``make html``. In the generated build folder, developers can drag and drop the
-``index.html`` file to a web browser tab and navigate in a structured manner
-throughout the documentation.
+The Bao hypervisor and tool documentation is written in `reStructuredText
+<https://docutils.sourceforge.io/rst.html>`_ markup language and enhanced with
+`Sphinx <https://www.sphinx-doc.org/en/master/>`_ extensions. This
+documentation can be built into HTML content by the running ``make html`` in
+the documentation repo's top level directory. Developers can open
+the``index.html`` file created in the build folder in a web browser to inspect
+the final output and how it is rendered.
 
 .. note::
-    In order to maintain the consistency throughout Bao's documentation, for
+    In order to maintain consistency throughout Bao's documentation, for
     each reST syntax element, we have defined a set of guidelines specifying
-    when each element should be applied. The guidelines are highlighted in a
-    **Note** box like this one.
+    where, when and how each element should be applied. The guidelines are
+    highlighted in a **Note** box like this one.
 
 .. _headings:
 
@@ -88,10 +88,11 @@ delimiters. Use before the character.
 Tables
 ------
 Throughout our documentation there are a few tables to systematically present
-relevant information. We use `Grid tables <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables>`_
-to create tables, which have the most flexibility to merge rows and columns.
-There are plenty of tools online that help to generate compatible grid tables,
-such as `TablesGenerator <https://www.tablesgenerator.com/>`_.
+relevant information. We use `Grid tables
+<http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables>`_
+to create tables, which have provides a lot of flexibility to merge rows and
+columns. There are plenty of other tools online to help generate compatible
+grid tables, such as `TablesGenerator <https://www.tablesgenerator.com/>`_.
 
 .. code-block:: rest
 
@@ -131,7 +132,7 @@ are indented to the first character of the text of the bullet list.
 **Bullet List**
 
 For bullet lists you can use the asterisk ``*`` or hyphen ``-`` characters at
-the start of the item. Continuation of a item can be achieve with two spaces
+the start of the item. Continuation of an item can be achieve with two spaces
 limitation below the item.
 
 .. code-block:: rest
@@ -227,9 +228,9 @@ Code Blocks
 -----------
 The reST format uses the ``code-block`` directive to create a highlight block
 to showcase formatted code or console commands. You can choose the programming
-language has you can notice on the below example (``c``). Please beware of the
-intentional blank line following the code-block syntax. You need also to indent
-the code segment.
+language as exemplified in the example below for the C language and shell
+syntaxes. Please beware of the intentional blank line following the code-block
+syntax. You also need to indent the code segment.
 
 .. code-block:: rest
 
@@ -259,7 +260,7 @@ Rendered, the code blocks look like this:
 
         cd ~
 
-Moreover, you can also create a highlight a text segment with a code block. To
+Moreover, you can also highlight a text segment using a code block. To
 achieve this, you just need to selected ``none`` as the "programming language".
 
 .. code-block:: rest
@@ -343,7 +344,7 @@ Rendered, the image should look like this:
 
     Caption for the Bao logo picture.
 
-You can after reference the image :numref:`bao-logo-fig` by using the notation
+The image :numref:`bao-logo-fig` can be later referenced by using the notation
 ``:numref:`bao-logo-fig```, specifying the image name field.
 
 .. note::
@@ -394,7 +395,7 @@ Rendered, the tabbed content looks like this:
 
 Boxes
 -----
-To highlight within a colored box, you can use three different directives
+To highlight text within a colored box, you can use three different directives
 depending on your goal.
 
 .. code-block:: rest
@@ -447,3 +448,4 @@ Identified misuse of the markdown syntax can be marked with this tag.
     mr
     mheader
     mc
+    html

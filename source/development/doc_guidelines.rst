@@ -80,7 +80,8 @@ delimiters. Use before the character.
     - Bold format **should** be used to strongly emphasize information.
     - Italic format **should** be used to lightly emphasize information.
     - Inline code format **must** be used when small code samples are used in
-      the text.
+      the text (i.e., file paths, shell commands, programming language
+      directives/keywords/identifiers, syntax characters).
     - Link format **must** be used when referencing any external link.
 
 .. _tables:

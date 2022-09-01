@@ -442,6 +442,52 @@ Identified misuse of the markdown syntax can be marked with this tag.
 
     .. FIXME: This is a FIXME tag.
 
+Running the Spelling and Format Checkers Locally
+------------------------------------------------
+To keep the consistency of the documentation, the CI runs two checkers to find
+misspelled words and invalid reST format styles. The checkers can be run
+locally by just running the following Make rules:
+
+To run the `sphinxcontrib.spelling
+<https://sphinxcontrib-spelling.readthedocs.io/en/latest/>`_ spell checker:
+
+.. code-block:: shell
+
+    make spelling
+
+To run the `doc8 <https://github.com/PyCQA/doc8>`_ format checker:
+
+.. code-block:: shell
+
+    make format
+
+**Spelling Dictionaries**
+
+The spell checker uses standard enchant dictionaries to validate words.
+However, some specific words are not recognized, and can be added into a
+internal dictionary to avoid the spelling error. The
+``source/spelling_wordlist.txt`` plain text file contains the extended
+dictionary words - one word per line. Use this dictionary to add meaningful
+words (e.g., fallthrough, requalification) or nouns that can be used throughout
+other documentation files, such as tool names (e.g., Doxygen, Github),
+programming languages keywords (e.g., struct, typedef), or others.
+
+Some words that don't have a particular meaning (e.g., the words ``mc``,
+``mr``, etc used in this document to represent rows and columns on the
+`tables`_ section) will only make sense on this document, therefore the
+following directive should be used to create a list of words known to be
+spelled correctly within a single file.
+
+.. code-block:: rest
+
+    .. spelling::
+
+        mc
+        mr
+        mheader
+        mc
+        html
+
 .. spelling::
 
     mc

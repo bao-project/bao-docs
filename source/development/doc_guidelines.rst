@@ -285,8 +285,8 @@ Rendered, the code block looks like this:
 
 Referencing Links
 -----------------
-To create a implicit link to a title, you should know that all headings are
-considered as Hyperlinks. This is the syntax
+To create a implicit link to a section title, you should know that all headings
+automatically generate hyperlink targets. This is the syntax:
 
 .. code-block:: rest
 
@@ -319,8 +319,10 @@ you should be able to navigate to all three spots:
 - :ref:`tables`
 
 .. note::
-    - Implicit referencing links **should** be used to reference internal document information.
-    - Explicit referencing links **should** be used to reference external document information.
+    - Implicit referencing links **should** be used to reference section titles
+      within the respective reST file that they are used.
+    - Explicit referencing links **should** be used to reference an arbitrary
+      location within or outside of a document.
 
 Images
 ------

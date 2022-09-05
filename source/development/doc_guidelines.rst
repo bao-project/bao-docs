@@ -422,8 +422,9 @@ Rendered, the different boxes look like this:
     - Note boxes **should** be used for information that you want the user to pay particular attention to.
     - Warning boxes **should** be used for information the user must understand to avoid negative consequences.
 
-TODO and FIXME Tags
--------------------
+TODO, FIXME and DEPRECATED Tags
+-------------------------------
+
 While writing Bao documentation, the TODO and FIXME tags can be used as typical
 inline comments (``.. This is a comment.``) to tag content that is missing,
 needs refactoring or optimization, or is broken (in the sense that the output
@@ -444,6 +445,13 @@ Identified misuse of the markdown syntax can be marked with this tag.
 .. code-block:: rest
 
     .. FIXME: This is a FIXME tag.
+
+**DEPRECATED** tags can be used to mark documentation content that is
+deprecated and must be updated.
+
+.. code-block:: rest
+
+    .. DEPRECATED: This is a DEPRECATED tag.
 
 Running the Spelling and Format Checkers Locally
 ------------------------------------------------

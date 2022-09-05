@@ -62,14 +62,15 @@ To generate the documentation locally, developers need to install a set of
 prerequisites, depending on the host machine. Follow the steps described below
 for your specific machine.
 
-For **Linux** users, start by installing dependencies and each tool package
-(i.e., Sphinx, the spell checker extension
-[sphinxcontrib.spelling](https://sphinxcontrib-spelling.readthedocs.io/), and
-the format checker [doc8](https://github.com/PyCQA/doc8)).
+For **Linux** users, start by installing dependencies and each tool package and
+extension (i.e., Sphinx, the spell checker extension
+[sphinxcontrib.spelling](https://sphinxcontrib-spelling.readthedocs.io/), the
+[sphinx tabs](https://sphinx-tabs.readthedocs.io/en/latest/) extension and the
+format checker [doc8](https://github.com/PyCQA/doc8)).
 
 ```bash
 sudo apt-get install enchant
-pip install sphinx sphinxcontrib-spelling pyenchant doc8
+pip install sphinx sphinxcontrib-spelling sphinx-tabs pyenchant doc8
 ```
 
 ### Building and Checking

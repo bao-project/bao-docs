@@ -6,7 +6,7 @@ The Bao hypervisor and tool documentation is written in `reStructuredText
 `Sphinx <https://www.sphinx-doc.org/en/master/>`_ extensions. This
 documentation can be built into HTML content by the running ``make html`` in
 the documentation repo's top level directory. Developers can open
-the``index.html`` file created in the build folder in a web browser to inspect
+the ``index.html`` file created in the build folder in a web browser to inspect
 the final output and how it is rendered.
 
 .. note::
@@ -49,7 +49,7 @@ Headings
 
         - ``=`` underlining characters for the Document Title
         - ``-`` underlining characters for the First section level
-        - ``=`` underlining characters for the Second sub-section level
+        - ``*`` underlining characters for the Second sub-section level
         - ``#`` underlining characters for the Third sub-section level
 
 .. _text_formatting:
@@ -80,8 +80,8 @@ delimiters. Use before the character.
     - Bold format **should** be used to strongly emphasize information.
     - Italic format **should** be used to lightly emphasize information.
     - Inline code format **must** be used when small code samples are used in
-      the text (i.e., file paths, shell commands, programming language
-      directives/keywords/identifiers, syntax characters).
+      the text (i.e., file paths, file names, shell commands, programming
+      language directives/keywords/identifiers, syntax characters).
     - Link format **must** be used when referencing any external link.
 
 .. _tables:
@@ -121,7 +121,7 @@ Rendered, the table looks like this:
 
 .. note::
     - Tables **can** be used to represent well-defined tabular information.
-    - Tables **must** be wider than a two-line structure (including the header)
+    - Tables **must** be wider than a two-row structure (including the header)
 
 Lists
 -----
@@ -219,7 +219,7 @@ Term2
 .. note::
     - Bullet lists **should** be used to display a list of itemized
       terms/sentences without a certain order.
-    - Bullet lists **should** be used with more than two items.
+    - Bullet lists **should** be used with at least two items.
     - Numbered lists **must** be used to display an ordered/sequential list of
       itemized conclusions or steps.
     - Numbered lists **should** be used with more than two items.
@@ -291,11 +291,13 @@ automatically generate hyperlink targets. This is the syntax:
 
 .. code-block:: rest
 
-    this is a link to the `headings`_ sections in this page
+    this is a link to the `Code Blocks`_ section in this page
+    this is a link to the Lists_ section in this page
 
 Rendered, the implicit link looks like this:
 
-    this is a link to the `headings`_ sections in this page
+* this is a link to the `Code Blocks`_ section in this page
+* this is a link to the Lists_ section in this page
 
 To create a explicit link within the reST files, you need first to create a
 target location by following this syntax:
@@ -309,6 +311,7 @@ To reference a target location, you should use this notation:
 .. code-block:: rest
 
     :ref:`label_name`
+    :ref:`Text<label_name>`
 
 If we reference a target located on the first three headings of this document,
 you should be able to navigate to all three spots:
@@ -317,7 +320,7 @@ you should be able to navigate to all three spots:
 
 - :ref:`text_formatting`
 
-- :ref:`tables`
+- :ref:`Tables are here<tables>`
 
 .. note::
     - Implicit referencing links **should** be used to reference section titles
@@ -331,7 +334,7 @@ To include images in the reST files, the following directive must be use:
 
 .. code-block:: rest
 
-    .. figure:: ../images/bao-logo.png
+    .. figure:: img/bao-logo.png
         :width: 200px
         :align: center
         :name: bao-logo-fig
@@ -340,7 +343,7 @@ To include images in the reST files, the following directive must be use:
 
 Rendered, the image should look like this:
 
-.. figure:: ../images/bao-logo.png
+.. figure:: img/bao-logo.png
     :width: 200px
     :align: center
     :name: bao-logo-fig
@@ -351,7 +354,8 @@ The image :numref:`bao-logo-fig` can be later referenced by using the notation
 ``:numref:`bao-logo-fig```, specifying the image name field.
 
 .. note::
-    - Image files **must** be stored in the ``source/images/`` folder.
+    - Image files **must** be stored in the current directory ``img`` folder
+      (e.g., ``development/img/``).
     - Images **must** contain a description in the caption.
     - Images **should** be in a ``.png`` file format.
 

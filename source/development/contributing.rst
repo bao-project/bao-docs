@@ -176,7 +176,6 @@ The following are some tips all **reviewers** should take into account:
   desired functionality). Try to reason about corner cases.
 * New files contain the necessary :ref:`license and copyright
   information<licensing>`;
-* All :ref:`commits are signed correctly<commit_signing>`;
 * All the necessary :ref:`requirement and traceability artifacts<>` or
   tags are correctly added or updated;
 
@@ -205,41 +204,9 @@ might be automatically checked and enforced by GitHub:
 * can be rebased on ``main`` without any conflict;
 
 The **maintainer** shall have as the main objective when integrating the PR to
-maintain a clear git history. Therefore, it should preferably perform either a
+maintain a linear git history. Therefore, it should preferably perform either a
 rebase of the PR branch on ``main`` (or fast-forward merge if possible) or
-perform a squash merge if they deem necessary. Only in extreme cases
-where the PR has a long list of commits with heavy and intertwined refactoring,
-a direct merge is acceptable. When rebasing, because it is not possible to
-:ref:`sign commits<commit_signing>` remotely using the web interface, there may
-be the need to perform the process locally using git CLI commands:
-
-1. Rebase the topic branch to main
-
-.. code-block:: bash
-
-    git checkout topic-branch
-    git rebase -S main
-
-2. Force push the topic branch
-
-.. code-block:: bash
-
-    git push -f
-
-3. Merge the topic branch to main
-
-.. code-block:: bash
-
-    git checkout main
-    git merge topic-branch
-
-4. Push the main branch
-
-.. code-block:: bash
-
-    git push
-
-At this point, the PR should be marked as merged.
+perform a squash merge if they deem necessary.
 
 If the PR originates from an internal topic branch, the branch should be
 deleted.
@@ -338,7 +305,7 @@ The ``<footer>`` consists of a list of optional references when the commit:
 * ``<ref-misra>``: introduces a misra deviation (misra deviation or permit ID)
 * ``<ref-req>``: implements a given requirement (requirement ID)
 * ``<sign-off>``: a sign-off message that attests that he agrees with the
-  contributor adheres :ref:`dco` (see :ref:`commit_signing`)
+  contributor adheres :ref:`dco` (see :ref:`commit_signoff`)
 
 **Commit Example:**
 
@@ -384,10 +351,10 @@ rules that comply with the following list:
 * **Body** must contain references to certain files if those files are changed
   in the last commit
 
-.. _commit_signing:
+.. _commit_signoff:
 
-Commit Signing
-**************
+Commit Sign-off
+***************
 
 All commits must contain a sign-off message that attests you adhere to the
 :ref:`DCO<dco>` containing:
@@ -413,13 +380,6 @@ used in you GitHub account.
     git config --global user.name "Your Name"
     git config --global user.email "your.email@example.com"
 
-All commits in a PR must be signed. To understand how to do this
-checkout the `GitHub's Signing commits guide <https://docs.github.com/en/
-authentication/managing-commit-signature-verification/signing-commits>`_. Make
-sure that your `keys are correctly associated with the email <https://docs.
-github.com/en/authentication/managing-commit-signature-verification/
-associating-an-email-with-your-gpg-key>`_ associated with your GitHub account.
-
 
 Github Repository Setup and Management
 --------------------------------------
@@ -440,7 +400,7 @@ the following files set up, relative to their top-level directory:
   copyright or legal restrictions;
 * ``CONTRIBUTORS`` and ``AUTHORS``: list all
   :ref:`contributors and authors<_authors_and_contributors>` that submit code
-   to that repository.
+  to that repository.
 * ``.github/CODEOWNERS``: identifies the coder owners of the repository so
   they can be automatically notified for code-review. The file first line
   must assign all files to the repository's **maintainers**;
@@ -498,7 +458,6 @@ menu, the protection rules must be created with the following options:
     * Require branches to be up to date before merging
 
 * Require conversation resolution before merging
-* Require signed commits
 * Require linear history
 * Include administrators
 

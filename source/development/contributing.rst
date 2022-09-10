@@ -440,7 +440,7 @@ the following files set up, relative to their top-level directory:
   copyright or legal restrictions;
 * ``CONTRIBUTORS`` and ``AUTHORS``: list all
   :ref:`contributors and authors<_authors_and_contributors>` that submit code
-   to that repository.
+  to that repository.
 * ``.github/CODEOWNERS``: identifies the coder owners of the repository so
   they can be automatically notified for code-review. The file first line
   must assign all files to the repository's **maintainers**;
@@ -541,19 +541,22 @@ Commit and Branch Types
 The following are the allowed types for topic branches and commits:
 
 * ``fix``: bug fix
-* ``ref``: refactoring of a code block that neither fixes a bug nor adds a feature
+* ``ref``: refactoring of a code block that neither fixes a bug nor adds a
+  feature
 * ``feat``: a new feature
 * ``build``: changes that affect the build system or external dependencies
-* ``doc``: documentation only changes
+* ``doc``: documentation only changes [#]_
 * ``perf``: a code change that improves performance
 * ``wip``: a code change that is still a work in progress
 * ``exp``: a code change that is purely experimental for now
 * ``test``: adding missing tests or correcting existing ones
 * ``opt``: modifications pertaining only to optimizations
-* ``ci``: changes to the CI configuration files and scripts
+* ``ci``: changes to the CI configuration files and scripts [#]_
 * ``style``: changes that do not affect the meaning of the code (formatting,
   typos, naming, etc.)
 
+.. [#] Cannot be used in the `bao-docs <https://github.com/bao-project/bao-docs>`_ repo.
+.. [#] Cannot be used in the `bao-ci <https://github.com/bao-project/bao-ci>`_  repo.
 
 .. TODO:
 

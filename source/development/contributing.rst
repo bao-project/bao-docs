@@ -540,18 +540,18 @@ Commit and Branch Types
 
 The following are the allowed types for topic branches and commits:
 
-* fix: bug fix
-* ref: refactoring of a code block that neither fixes a bug nor adds a feature
-* feat: a new feature
-* build: changes that affect the build system or external dependencies
-* doc: documentation only changes
-* perf: a code change that improves performance
-* wip: a code change that is still a work in progress
-* exp: a code change that is purely experimental for now
-* test: adding missing tests or correcting existing ones
-* opt: modifications pertaining only to optimizations
-* ci: changes to the CI configuration files and scripts
-* style: changes that do not affect the meaning of the code (formatting,
+* ``fix``: bug fix
+* ``ref``: refactoring of a code block that neither fixes a bug nor adds a feature
+* ``feat``: a new feature
+* ``build``: changes that affect the build system or external dependencies
+* ``doc``: documentation only changes
+* ``perf``: a code change that improves performance
+* ``wip``: a code change that is still a work in progress
+* ``exp``: a code change that is purely experimental for now
+* ``test``: adding missing tests or correcting existing ones
+* ``opt``: modifications pertaining only to optimizations
+* ``ci``: changes to the CI configuration files and scripts
+* ``style``: changes that do not affect the meaning of the code (formatting,
   typos, naming, etc.)
 
 

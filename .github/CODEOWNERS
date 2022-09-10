@@ -1,2 +1,7 @@
 # Maintainers
-* @danielRep @sandro2pinto
+* @danielRep @josecm
+
+source/development/doc_guidelines.rst @danielRep
+
+source/development/contributing.rst @josecm
+source/development/misra.rst @josecm

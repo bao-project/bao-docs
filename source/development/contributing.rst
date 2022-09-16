@@ -513,6 +513,9 @@ The following are the allowed types for topic branches and commits:
 * ``ci``: changes to the CI configuration files and scripts [#]_
 * ``style``: changes that do not affect the meaning of the code (formatting,
   typos, naming, etc.)
+* ``update``: changes that brings a feature, setup, or configuration up to date
+  by adding new or updated information (e.g., updating a version, adding a new
+  item to a list, updating CODEOWNERS, bumping the CI repo)
 
 .. [#] Cannot be used in the `bao-docs <https://github.com/bao-project/bao-docs>`_ repo.
 .. [#] Cannot be used in the `bao-ci <https://github.com/bao-project/bao-ci>`_  repo.

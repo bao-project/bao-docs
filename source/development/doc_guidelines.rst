@@ -538,8 +538,9 @@ which transforms ``term1`` in a hyperlink to its glossary entry.
     - While writing the documentation, a best-effort **should** be in-place to
       guarantee that each new term (i.e., abbreviations, siglums, bao's
       architectural components/services/entities) are added to the glossary.
-    - If a new term is added to the glossary, you **must** mark it with the
-      ``:term:`` keyword to created a link to the glossary entry. However, this
-      should be avoided if the term has a dedicated file documenting it
-      (e.g., :ref:`CI <ci_pipeline>`, :ref:`MISRA <misra>`). Use explicit
-      referencing instead. Notwithstanding, add the term to the glossary.
+    - If a new term is added to the glossary, you **must** search for each
+      reference in all other documents and mark it with the ``:term:`` keyword
+      to created a link to the glossary entry. However, this should be
+      avoided if the term has a dedicated file documenting it (e.g.,
+      :ref:`CI <ci_pipeline>`, :ref:`MISRA <misra>`). Use explicit referencing
+      instead. Notwithstanding, add the term to the glossary.

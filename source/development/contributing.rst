@@ -6,8 +6,8 @@ Contributing
 The development of Bao projects' components uses the Github ecosystem for
 contributions, code review, bug reporting, discussion of ideas or any other
 community development, or project management activities. Therefore, every
-contributor should first create a Github account, if they do not have one
-already.
+:term:`contributor` should first create a Github account, if they do not have
+one already.
 
 If you plan to contribute a significant portion of code, such as an
 architecture or platform port, a new subsystem or feature, please consider
@@ -17,6 +17,8 @@ debated among the community and **maintainers**.
 We also recommend you to read our :ref:`licensing terms and the DCO
 claim <licensing>` before making any contribution.
 
+.. _contrib_roles:
+
 Roles
 -----
 
@@ -24,8 +26,8 @@ The project defines three essential types of roles in the development and
 contribution process: **developer**, **code owner**, and **maintainer**.
 
 A **developer** can be internal (if they are part of the project's core team)
-or are an outside contributor. Anyone that contributes in any way to the
-project (e.g., code, reviews, issues, etc) is assigned to this role.
+or are an outside :term:`contributor`. Anyone that contributes in any way to
+the project (e.g., code, reviews, issues, etc) is assigned to this role.
 
 A **code owner** must either be part of the core team or someone invited and
 marked as an outside collaborator by a **maintainer**. He is responsible for
@@ -47,7 +49,7 @@ repository management tasks which include:
   file<github_files>`;
 * keep an updated :ref:`list of authors and contributors<github_files>`;
 * coordinating and moderating code reviews;
-* final approval and merging of pull-requests (PR);
+* final approval and merging of pull-requests (:term:`PR`);
 * coordinating, moderating and closing of issues;
 * setting up the repository's :ref:`CI pipeline via Github
   Actions<github_actions>`;
@@ -67,7 +69,7 @@ Contribution Workflow
 
 The project's development flow for all repositories is centered around the
 ``main`` branch. Any code contribution, be it internal or external, takes the
-form of a Github PR to the ``main`` branch. The ``main`` branch is then
+form of a Github :term:`PR` to the ``main`` branch. The ``main`` branch is then
 tagged periodically according to the defined :ref:`versioning
 scheme<versioning>`.
 
@@ -91,7 +93,7 @@ branches.
 Submitting Commits
 ******************
 
-If you are an external contributor or do not have write permissions to the
+If you are an external :term:`contributor` or do not have write permissions to the
 repository you wish to contribute to, first of all, you should `fork that
 repository <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`_.
 If you do have write privileges over the original repository, you carry out the
@@ -117,26 +119,26 @@ development directly on it. Follow these steps:
       commits to the existing pull request. If existing commits need to be
       modified, rewrite the history and force push them to maintain a clean
       linear history;
-    * if the **reviewers** are taking too long, try contacting the PR
+    * if the **reviewers** are taking too long, try contacting the :term:`PR`
       assignee.
 
 Review Assignment
 *****************
 
-A PR must have at least one assignee and be approved by at least two
+A :term:`PR` must have at least one assignee and be approved by at least two
 **reviewers**. The assignee must be a **maintainer** which will be responsible
-for getting the PR through, having the ultimate say on its acceptance and that
-must carry out the final merge. **Maintainers** must coordinate to choose among
-them the assignee as PRs arrive. One of the **reviewers** must also
-be a **maintainer** (which can coincide with the assignee).
+for getting the :term:`PR` through, having the ultimate say on its acceptance
+and that must carry out the final merge. **Maintainers** must coordinate to
+choose among them the assignee as PRs arrive. One of the **reviewers** must
+also be a **maintainer** (which can coincide with the assignee).
 
 If a **code owner** exist for the code being submitted, at least one of them
-(for each of the files/subsystems) must review the code. **Code owners**
-will be automatically assigned as **reviewers** if the **maintainers** are
-correctly managing the :ref:`.CODEOWNERS file<github_files>`. If there aren't
-enough **reviewers**, the assignee is responsible for appointing a second
-**reviewer**. Preferably, a project's internal contributor. They might also
-require and invite more **reviewers** if there is no consensus.
+(for each of the files/subsystems) must review the code. **Code owners** will
+be automatically assigned as **reviewers** if the **maintainers** are correctly
+managing the :ref:`.CODEOWNERS file<github_files>`. If there are not enough
+**reviewers**, the assignee is responsible for appointing a second
+**reviewer**. Preferably, a project's internal :term:`contributor`. They might
+also require and invite more **reviewers** if there is no consensus.
 
 Review Guide
 ************
@@ -149,7 +151,7 @@ tools.
 The following are some tips all **reviewers** should take into account:
 
 * Make sure the code is readable, well commented (includes doxygen comments),
-  and the PR provide the appropriate/necessary documentation;
+  and the :term:`PR` provide the appropriate/necessary documentation;
 * The code follows the project's :ref:`coding guidelines<coding_guidelines>` as
   much as possible, especially those not automatically checked such as:
 
@@ -157,13 +159,13 @@ The following are some tips all **reviewers** should take into account:
       architecture specific files in the *arch* directory);
     * naming conventions for files, functions, variables, types, etc.
 
-* The PR complies with all the relevant standards mandated for the specific
-  language or repo in question (e.g. :ref:`MISRA<misra>`);
-* There are no obscure binary blobs included in the PR;
-* Understand the design and implementation decisions behind the PR; Try to
-  imagine how you'd go about implementing the same functionality, and
-  engage in discussion when it does not match the proposed approach.
-  Discuss the trade-offs of the various approaches.
+* The :term:`PR` complies with all the relevant standards mandated for the
+  specific language or repo in question (e.g. :ref:`MISRA<misra>`);
+* There are no obscure binary blobs included in the :term:`PR`;
+* Understand the design and implementation decisions behind the :term:`PR`; Try
+  to imagine how you'd go about implementing the same functionality, and engage
+  in discussion when it does not match the proposed approach. Discuss the
+  trade-offs of the various approaches.
 * Have a holistic view of the code in mind:
 
     * how do the modifications affect other subsystems and the
@@ -180,20 +182,21 @@ The following are some tips all **reviewers** should take into account:
   tags are correctly added or updated;
 
 Review the code as much as possible by opening discussions and adding comments
-inline in the ``Files Changed`` tab of the PR, and opening a review. When you
-are done click the ``Finish Review`` button and submit the review either by
-only commenting or requesting explicit changes. As the contributor addresses
-your concerns mark each item as resolved. When you are happy with the current
-state with the PR and agree it should be merged, add a final review
-with an explicit approval. Beware there might still be new commits after you
-have approved the PR and you might need or be asked to review it again.
+inline in the ``Files Changed`` tab of the :term:`PR`, and opening a review.
+When you are done click the ``Finish Review`` button and submit the review
+either by only commenting or requesting explicit changes. As the
+:term:`contributor` addresses your concerns mark each item as resolved. When
+you are happy with the current state with the :term:`PR` and agree it should be
+merged, add a final review with an explicit approval. Beware there might still
+be new commits after you have approved the :term:`PR` and you might need or be
+asked to review it again.
 
 Finally, although obvious, self-reviewing is prohibited.
 
 Final Approval and Merging
 **************************
 
-The final approval of the PR to ``main`` must be carried out by a
+The final approval of the :term:`PR` to ``main`` must be carried out by a
 **maintainer**. They should verify the following checklist, although some of it
 might be automatically checked and enforced by GitHub:
 
@@ -203,15 +206,15 @@ might be automatically checked and enforced by GitHub:
 * passes all :ref:`CI pipeline <ci>` checks;
 * can be rebased on ``main`` without any conflict;
 
-The **maintainer** shall have as the main objective when integrating the PR to
-maintain a linear git history. Therefore, it should preferably perform either a
-rebase of the PR branch on ``main`` (or fast-forward merge if possible) or
-perform a squash merge if they deem necessary.
+The **maintainer** shall have as the main objective when integrating the
+:term:`PR` to maintain a linear git history. Therefore, it should preferably
+perform either a rebase of the :term:`PR` branch on ``main`` (or fast-forward
+merge if possible) or perform a squash merge if they deem necessary.
 
-If the PR originates from an internal topic branch, the branch should be
-deleted.
+If the :term:`PR` originates from an internal topic branch, the branch should
+be deleted.
 
-Finally, the **maintainer** should update any contributor,
+Finally, the **maintainer** should update any :term:`contributor`,
 :ref:`author and/or code owner files<github_files>`, especially when new files
 are created.
 
@@ -221,7 +224,7 @@ Commit and Pull-Request Guidelines
 ----------------------------------
 
 All contributions must be submitted via Github PRs. You should ensure
-that all commits within the PR:
+that all commits within the :term:`PR`:
 
 * have messages that follow the :ref:`conventional commit style<>`
 * introduce small, self-contained logical units of modifications/extensions
@@ -230,7 +233,8 @@ that all commits within the PR:
 * are logically related (unrelated modifications or fixes must be addressed
   in a separate ``branch/pull-request``);
 * follow a logical order. That is, a commit that has a dependence on the
-  modifications by a different commit of the same PR, is after the former.
+  modifications by a different commit of the same :term:`PR`, is after the
+  former.
 * adhere to the project's :ref:`coding guidelines<>` for the targeted
   languages;
 * tag the necessary :ref:`requirements<>`;
@@ -305,7 +309,7 @@ The ``<footer>`` consists of a list of optional references when the commit:
 * ``<ref-misra>``: introduces a misra deviation (misra deviation or permit ID)
 * ``<ref-req>``: implements a given requirement (requirement ID)
 * ``<sign-off>``: a sign-off message that attests that he agrees with the
-  contributor adheres :ref:`dco` (see :ref:`commit_signoff`)
+  :term:`contributor` adheres :ref:`dco` (see :ref:`commit_signoff`)
 
 **Commit Example:**
 
@@ -420,18 +424,19 @@ their contributors in to files at the repo's top-level:
   contribution to the system, such as implementing a new feature, subsystem,
   port to a new architecture/platform, and the like.
 
-These files must list contributor/author per line, preferably in the format
+These files must list :term:`contributor`/author per line, preferably in the
+format
 
 .. code-block:: none
 
     Contributor's Name <contributors@email.com>
 
 using the name and e-mail associated with their Github accounts and commits.
-However, if some contributor requests to be listed in another format,
+However, if some :term:`contributor` requests to be listed in another format,
 (e.g. using some alias), we can also accommodate it.
 
-If a contributor does not wish to be listed or have any of their information
-removed, maintainers must fulfill their request.
+If a :term:`contributor` does not wish to be listed or have any of their
+information removed, maintainers must fulfill their request.
 
 Preferably, these files should list the contributors/authors in a chronologic
 order regarding their first contribution. That means each time a new person
@@ -474,7 +479,8 @@ GitHub Actions. Specifically, by adding workflow yaml files to the
 ``.github/workflows`` directory. The :ref:`CI repository <ci_repo>` contains a
 number of templates as well as further instructions on how to set it up.
 
-Here are a few workflows a **maintainer** should add to the repository's CI:
+Here are a few workflows a **maintainer** should add to the repository's
+:term:`CI`:
 
 * commit message linting: apply gitlint to verify all the PRs'
   commit messages follow the conventional commit style;
@@ -510,12 +516,12 @@ The following are the allowed types for topic branches and commits:
 * ``exp``: a code change that is purely experimental for now
 * ``test``: adding missing tests or correcting existing ones
 * ``opt``: modifications pertaining only to optimizations
-* ``ci``: changes to the CI configuration files and scripts [#]_
+* ``ci``: changes to the :term:`CI` configuration files and scripts [#]_
 * ``style``: changes that do not affect the meaning of the code (formatting,
   typos, naming, etc.)
 * ``update``: changes that brings a feature, setup, or configuration up to date
   by adding new or updated information (e.g., updating a version, adding a new
-  item to a list, updating CODEOWNERS, bumping the CI repo)
+  item to a list, updating CODEOWNERS, bumping the :term:`CI` repo)
 
 .. [#] Cannot be used in the `bao-docs <https://github.com/bao-project/bao-docs>`_ repo.
 .. [#] Cannot be used in the `bao-ci <https://github.com/bao-project/bao-ci>`_  repo.

@@ -15,5 +15,6 @@ Bao Documentation
    development/index
    internals/index
    security/index
+   glossary
 
 

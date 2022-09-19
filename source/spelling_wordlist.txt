@@ -54,3 +54,5 @@ specificities
 chronologic
 reST
 syntaxes
+siglums
+PRs

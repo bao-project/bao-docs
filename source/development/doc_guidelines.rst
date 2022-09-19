@@ -15,10 +15,13 @@ the final output and how it is rendered.
     where, when and how each element should be applied. The guidelines are
     highlighted in a **Note** box like this one.
 
+reST Syntax
+-----------
+
 .. _headings:
 
 Headings
---------
+********
 
 .. code-block:: rest
 
@@ -55,7 +58,7 @@ Headings
 .. _text_formatting:
 
 Text Formatting
----------------
+***************
 reST uses some few special characters to format text. The following table
 resumes the inline markup samples used throughout our documentation.
 
@@ -87,7 +90,7 @@ delimiters. Use before the character.
 .. _tables:
 
 Tables
-------
+******
 Throughout our documentation there are a few tables to systematically present
 relevant information. We use `Grid tables
 <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables>`_
@@ -124,7 +127,7 @@ Rendered, the table looks like this:
     - Tables **must** be wider than a two-row structure (including the header)
 
 Lists
------
+*****
 There are three types of possible lists: bullet lists, numbered lists, and
 definition lists. Bullet and numbered lists should be indented at the same
 level as the preceding paragraph (and not indented itself). Additional lines
@@ -200,16 +203,12 @@ This a convenient type of list to list one or more terms and their definition.
 
 .. code-block:: rest
 
-    Glossary:
-
     Term1
         This statement gives a definition for the Term1.
     Term2
         This statement gives a definition for the Term2.
 
 Rendered, the definition list looks like this:
-
-Glossary:
 
 Term1
     This statement gives a definition for the Term1.
@@ -226,7 +225,7 @@ Term2
     - Definition lists **must** be used when a term definition is in place.
 
 Code Blocks
------------
+***********
 The reST format uses the ``code-block`` directive to create a highlight block
 to showcase formatted code or console commands. You can choose the programming
 language as exemplified in the example below for the C language and shell
@@ -285,7 +284,7 @@ Rendered, the code block looks like this:
 
 
 Referencing Links
------------------
+*****************
 To create a implicit link to a section title, you should know that all headings
 automatically generate hyperlink targets. This is the syntax:
 
@@ -329,7 +328,7 @@ you should be able to navigate to all three spots:
       location within or outside of a document.
 
 Images
-------
+******
 To include images in the reST files, the following directive must be use:
 
 .. code-block:: rest
@@ -360,7 +359,7 @@ The image :numref:`bao-logo-fig` can be later referenced by using the notation
     - Images **should** be in a ``.png`` file format.
 
 Tabbed Content
---------------
+**************
 For certain situations, instead of creating multiple documents describing
 similar content, you can use the ``tabs`` feature to merge all information
 in one document in an organized fashion.
@@ -401,7 +400,7 @@ Rendered, the tabbed content looks like this:
     - Tabs **should** be used to organize similar information that differ in a "configuration option" (e.g., build instructions across different platforms).
 
 Boxes
------
+*****
 To highlight text within a colored box, you can use three different directives
 depending on your goal.
 
@@ -427,7 +426,7 @@ Rendered, the different boxes look like this:
     - Warning boxes **should** be used for information the user must understand to avoid negative consequences.
 
 TODO, FIXME and DEPRECATED Tags
--------------------------------
+*******************************
 
 While writing Bao documentation, the TODO and FIXME tags can be used as typical
 inline comments (``.. This is a comment.``) to tag content that is missing,
@@ -457,11 +456,12 @@ deprecated and must be updated.
 
     .. DEPRECATED: This is a DEPRECATED tag.
 
-Running the Spelling and Format Checkers Locally
-------------------------------------------------
-To keep the consistency of the documentation, the CI runs two checkers to find
-misspelled words and invalid reST format styles. The checkers can be run
-locally by just running the following Make rules:
+Spelling and Format Checkers
+----------------------------
+To keep the consistency of the documentation, the :ref:`CI pipeline
+<ci_pipeline>` runs two checkers to find misspelled words and invalid reST
+format styles. The checkers can be run locally by just running the following
+Make rules:
 
 To run the `sphinxcontrib.spelling
 <https://sphinxcontrib-spelling.readthedocs.io/en/latest/>`_ spell checker:
@@ -510,3 +510,36 @@ spelled correctly within a single file.
     mheader
     mc
     html
+
+Glossary of Terms
+-----------------
+Throughout Bao's documentation we try to maintain an updated and consolidated
+global glossary, that references terms to their definitions. The
+:ref:`glossary` is located in the ``source`` top-level directory, under the
+file ``glossary.rst``. Each glossary entry, must be written as a definition
+list, with a term, followed by a single-line indented definition (see the code
+block below to verify the format).
+
+.. code-block:: rest
+
+    .. glossary::
+        :sorted:
+
+        term1
+            name : brief explanation
+
+        term2
+            name : brief explanation
+
+To link terms with the glossary, the keyword ``:term:`term1``` must be used,
+which transforms ``term1`` in a hyperlink to its glossary entry.
+
+.. note::
+    - While writing the documentation, a best-effort **should** be in-place to
+      guarantee that each new term (i.e., abbreviations, siglums, bao's
+      architectural components/services/entities) are added to the glossary.
+    - If a new term is added to the glossary, you **must** mark it with the
+      ``:term:`` keyword to created a link to the glossary entry. However, this
+      should be avoided if the term has a dedicated file documenting it
+      (e.g., :ref:`CI <ci_pipeline>`, :ref:`MISRA <misra>`). Use explicit
+      referencing instead. Notwithstanding, add the term to the glossary.

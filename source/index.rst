@@ -12,6 +12,7 @@ Bao Documentation
 
    introduction/index
    user_manual/index
+   design/index
    development/index
    internals/index
    requirements/index

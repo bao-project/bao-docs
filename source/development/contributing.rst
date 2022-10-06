@@ -119,6 +119,8 @@ development directly on it. Follow these steps:
       commits to the existing pull request. If existing commits need to be
       modified, rewrite the history and force push them to maintain a clean
       linear history;
+    * re-request a review from **reviewers'** after you've address all their
+      concerns and modification requests;
     * if the **reviewers** are taking too long, try contacting the :term:`PR`
       assignee.
 

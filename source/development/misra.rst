@@ -45,7 +45,7 @@ instructions and checklists to aid reviewers. Ideally, the GEP should also
 prescribe measures on how to detect and deal with each :ref:`undecidable
 guidelines<misra_undecidable_false_positive>`. :ref:`Each
 repository<misra_artefacts>` must provide a GEP in a CSV format. The base GEP
-is provided in the :ref:`CI repository <ci>`.
+is provided in the `CI repository <https://github.com/bao-project/bao-ci>`_.
 
 
 The main tool used by the project to check for :term:`MISRA` guideline
@@ -463,7 +463,7 @@ contain:
       permit<deviations>` in yaml format
 
 Templates for all these documents are provided in the ``misra`` directory of
-the :ref:`CI repository <gitact_templates>`.
+the `CI repository <https://github.com/bao-project/bao-ci>`_.
 
 .. _misra_manager:
 
@@ -507,4 +507,4 @@ example, for checking compliance for the *qemu-aarch64-virt* platform:
 
 It is suggested to use the provided :ref:`Docker container image <docker>` for
 running the checks; otherwise, you will first have to :ref:`setup all the
-necessary tools locally<local_environment>`.
+necessary tools locally<gitact_local_env>`.

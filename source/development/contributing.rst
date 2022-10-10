@@ -178,8 +178,8 @@ The following are some tips all **reviewers** should take into account:
   desired functionality). Try to reason about corner cases.
 * New files contain the necessary :ref:`license and copyright
   information<licensing>`;
-* All the necessary :ref:`requirement and traceability artifacts<reqs>` or
-  tags are correctly added or updated;
+* All the necessary :ref:`requirement and traceability
+  artifacts<requirement_framework>` or tags are correctly added or updated;
 
 Review the code as much as possible by opening discussions and adding comments
 inline in the ``Files Changed`` tab of the :term:`PR`, and opening a review.
@@ -237,7 +237,7 @@ that all commits within the :term:`PR`:
   former.
 * adhere to the project's :ref:`coding guidelines<coding_guidelines>` for the
   targeted languages;
-* tag the necessary :ref:`requirements<reqs>`;
+* tag the necessary :ref:`requirements<requirement_framework>`;
 * introduce code that is readable and sufficiently commented/documented;
 * pass all :ref:`base CI pipeline<ci>` checks, by running them locally;
 * make sure your code works: test your code in as many targets as possible
@@ -333,11 +333,12 @@ The ``<footer>`` consists of a list of optional references when the commit:
 Message Format
 ##############
 
-The format of the message, especially the header, is checked using the
-`gitlint <https://jorisroovers.com/gitlint/>`_ tool referenced in :ref:`CI
+The format of the message, especially the header, is checked using the `gitlint
+<https://jorisroovers.com/gitlint/>`_ tool referenced in :ref:`CI
 pipeline<ci>`. For detailed information on the commit format check the
-``.gitlint`` file in the :ref:`CI repository<gitact_templates>`, which defines
-a certain set of rules that comply with the following list:
+``.gitlint`` file in the `CI repository
+<https://github.com/bao-project/bao-ci>`_, which defines a certain set of rules
+that comply with the following list:
 
 * **Header** must follow Conventional Commits style
 * **Header** length must be < 80 chars and > 10 chars.
@@ -476,9 +477,9 @@ CI/GitHub Actions
 
 Every repository must have an automated :ref:`CI pipeline <ci>` setup using
 GitHub Actions. Specifically, by adding workflow yaml files to the
-``.github/workflows`` directory. The :ref:`CI repository <gitact_templates>`
-contains a number of templates as well as further instructions on how to set it
-up.
+``.github/workflows`` directory. The `CI repository
+<https://github.com/bao-project/bao-ci>`_ contains a number of templates as
+well as further instructions on how to set it up.
 
 Here are a few workflows a **maintainer** should add to the repository's
 :term:`CI`:

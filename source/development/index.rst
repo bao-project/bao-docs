@@ -13,3 +13,4 @@ Development
    licensing
    contributing
    misra
+   versioning

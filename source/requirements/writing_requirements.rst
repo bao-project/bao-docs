@@ -19,7 +19,7 @@ requirements starting from :ref:`Objectives`. The following diagram illustrates
 the portion of the requirement hierarchy managed through doorstop.
 
 
-.. code-block:: None
+.. code-block:: none
 
    OBJ
     │

@@ -45,7 +45,7 @@ instructions and checklists to aid reviewers. Ideally, the GEP should also
 prescribe measures on how to detect and deal with each :ref:`undecidable
 guidelines<misra_undecidable_false_positive>`. :ref:`Each
 repository<misra_artefacts>` must provide a GEP in a CSV format. The base GEP
-is provided in the :ref:`CI repository <ci_repo>`.
+is provided in the :ref:`CI repository <ci>`.
 
 
 The main tool used by the project to check for :term:`MISRA` guideline
@@ -117,9 +117,9 @@ recategorization must:
     * be approved by all the repository's :ref:`MISRA managers<misra_manager>`,
       which must reconfigure the tools accordingly.
 
-As described in :ref:`Repository MISRA Artefacts`, each repository must provide
-a GEP in a CSV format, for which a baseline is provided in the :ref:`CI
-repository <ci_repo>`.
+As described in :ref:`Repository MISRA Artefacts<misra_artefacts>`, each
+repository must provide a GEP in a CSV format, for which a baseline is provided
+in the :ref:`CI repository <ci>`.
 
 .. _deviations:
 
@@ -205,7 +205,7 @@ A :term:`developer` should take the following steps when introducing a new
        identified permits;
 
     3. Annotate all code locations related to the deviation using the formats
-       described in :ref:`deviation_annotation`;
+       described in :ref:`deviation_annotations`;
 
     4. :ref:`Re-run the MISRA checker tools<misra_check_locally>` to make sure
        the violations are not flagged anymore;
@@ -229,7 +229,7 @@ When a pull-request introduces new violations, the reviewers must:
     * notify at least one of the :ref:`MISRA managers<misra_manager>` and wait
       for their final approval.
 
-.. _deviation_annotation:
+.. _deviation_annotations:
 
 Deviation annotations
 *********************
@@ -298,7 +298,7 @@ associated deviation records.
 :ref:`Cppcheck<misra_gep>` does have the capability of detecting stale
 deviations. However, it only allows us to suppress violations on either a
 single-line or file-wide basis. The aforementioned :ref:`range
-annotations<deviation_annotation>` are translated to multiple single-line
+annotations<deviation_annotations>` are translated to multiple single-line
 suppressions, and must be paired with a suppression for the "unmatched
 suppression" warning itself. Therefore, these type of annotations might more
 easily result in stale deviations.
@@ -463,7 +463,7 @@ contain:
       permit<deviations>` in yaml format
 
 Templates for all these documents are provided in the ``misra`` directory of
-the :ref:`CI repository <ci_repo>`.
+the :ref:`CI repository <gitact_templates>`.
 
 .. _misra_manager:
 
@@ -497,7 +497,7 @@ include, but are not limited to:
 Running the MISRA Checker Locally
 ---------------------------------
 
-Every project shall instantiate the :ref:`CI<ci_repo>` :code:`misra-check` Make
+Every project shall instantiate the :ref:`CI<ci>` :code:`misra-check` Make
 rule that takes care of running all the necessary :term:`MISRA` checks. For
 example, for checking compliance for the *qemu-aarch64-virt* platform:
 

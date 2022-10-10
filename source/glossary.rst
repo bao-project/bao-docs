@@ -13,7 +13,7 @@ Glossary
     CI
         Continuous Integration: process that automates the integration of
         new changes to the repositories. More information
-        :ref:`here <ci_pipeline>`.
+        :ref:`here <ci>`.
 
     MISRA
         Set of software development guidelines for the C programming language
@@ -24,6 +24,7 @@ Glossary
         Top-level role in the administration of a repository. More information
         :ref:`here <contrib_roles>`.
 
+    developer
     contributor
         Internal or external developer that in any way contributes to the project.
         More information :ref:`here <contrib_roles>`.

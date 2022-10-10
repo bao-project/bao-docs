@@ -117,5 +117,6 @@ by simply appending a ``Signed-off-by`` statement for each author.
         this project or the open source license(s) involved.
 
 The process to sign-off the commit message is described step-by-step in the
-commit :ref:`dco-sign-off` section of the :ref:`contributing` guides. Please
-consult the full guide if you are planning to contribute to the project.
+:ref:`commit sign-off<commit_signoff>` section of the :ref:`contributing`
+guides. Please consult the full guide if you are planning to contribute to the
+project.

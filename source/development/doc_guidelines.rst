@@ -459,7 +459,7 @@ deprecated and must be updated.
 Spelling and Format Checkers
 ----------------------------
 To keep the consistency of the documentation, the :ref:`CI pipeline
-<ci_pipeline>` runs two checkers to find misspelled words and invalid reST
+<ci>` runs two checkers to find misspelled words and invalid reST
 format styles. The checkers can be run locally by just running the following
 Make rules:
 
@@ -495,7 +495,7 @@ spelled correctly within a single file.
 
 .. code-block:: rest
 
-    .. spelling::
+    .. spelling:word-list::
 
         mc
         mr
@@ -503,7 +503,7 @@ spelled correctly within a single file.
         mc
         html
 
-.. spelling::
+.. spelling:word-list::
 
     mc
     mr
@@ -542,5 +542,5 @@ which transforms ``term1`` in a hyperlink to its glossary entry.
       reference in all other documents and mark it with the ``:term:`` keyword
       to created a link to the glossary entry. However, this should be
       avoided if the term has a dedicated file documenting it (e.g.,
-      :ref:`CI <ci_pipeline>`, :ref:`MISRA <misra>`). Use explicit referencing
+      :ref:`CI <ci>`, :ref:`MISRA <misra>`). Use explicit referencing
       instead. Notwithstanding, add the term to the glossary.

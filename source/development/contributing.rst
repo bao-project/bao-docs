@@ -178,7 +178,7 @@ The following are some tips all **reviewers** should take into account:
   desired functionality). Try to reason about corner cases.
 * New files contain the necessary :ref:`license and copyright
   information<licensing>`;
-* All the necessary :ref:`requirement and traceability artifacts<>` or
+* All the necessary :ref:`requirement and traceability artifacts<reqs>` or
   tags are correctly added or updated;
 
 Review the code as much as possible by opening discussions and adding comments
@@ -226,7 +226,7 @@ Commit and Pull-Request Guidelines
 All contributions must be submitted via Github PRs. You should ensure
 that all commits within the :term:`PR`:
 
-* have messages that follow the :ref:`conventional commit style<>`
+* have messages that follow the :ref:`conventional commit style<commits_style>`
 * introduce small, self-contained logical units of modifications/extensions
   and don't include irrelevant changes (typo or formatting fixes should be
   submitted in dedicated PRs);
@@ -235,9 +235,9 @@ that all commits within the :term:`PR`:
 * follow a logical order. That is, a commit that has a dependence on the
   modifications by a different commit of the same :term:`PR`, is after the
   former.
-* adhere to the project's :ref:`coding guidelines<>` for the targeted
-  languages;
-* tag the necessary :ref:`requirements<>`;
+* adhere to the project's :ref:`coding guidelines<coding_guidelines>` for the
+  targeted languages;
+* tag the necessary :ref:`requirements<reqs>`;
 * introduce code that is readable and sufficiently commented/documented;
 * pass all :ref:`base CI pipeline<ci>` checks, by running them locally;
 * make sure your code works: test your code in as many targets as possible
@@ -246,14 +246,14 @@ that all commits within the :term:`PR`:
 * the branch can be rebased on ``main`` without conflicts;
 * the :ref:`appropriate license and copyright information<licensing>` is
   present and updated;
-* make sure you have the rights to all the submitted code and that
-  :ref:`all commits contain a sign-off message`, acknowledging the
+* make sure you have the rights to all the submitted code and that :ref:`all
+  commits contain a sign-off message<commit_signoff>`, acknowledging the
   :ref:`DCO<dco>`;
 
 Commits: Structure and Format
 *****************************
 
-.. _dco-sign-off:
+.. _commits_style:
 
 Message Structure
 #################
@@ -333,11 +333,11 @@ The ``<footer>`` consists of a list of optional references when the commit:
 Message Format
 ##############
 
-The format of the message, especially the header, is checked using the `gitlint
-<https://jorisroovers.com/gitlint/>`_ tool referenced in :ref:`CI
+The format of the message, especially the header, is checked using the
+`gitlint <https://jorisroovers.com/gitlint/>`_ tool referenced in :ref:`CI
 pipeline<ci>`. For detailed information on the commit format check the
-``.gitlint`` file in the :ref:`CI repository<>`, which defines a certain set of
-rules that comply with the following list:
+``.gitlint`` file in the :ref:`CI repository<gitact_templates>`, which defines
+a certain set of rules that comply with the following list:
 
 * **Header** must follow Conventional Commits style
 * **Header** length must be < 80 chars and > 10 chars.
@@ -403,7 +403,7 @@ the following files set up, relative to their top-level directory:
 * ``LICENSE``: a document of the license chosen for the repository and other
   copyright or legal restrictions;
 * ``CONTRIBUTORS`` and ``AUTHORS``: list all
-  :ref:`contributors and authors<_authors_and_contributors>` that submit code
+  :ref:`contributors and authors<authors_and_contributors>` that submit code
   to that repository.
 * ``.github/CODEOWNERS``: identifies the coder owners of the repository so
   they can be automatically notified for code-review. The file first line
@@ -448,8 +448,8 @@ Branch Protection
 *****************
 
 All repositories' ``main`` branch must be configured with a set of protection
-rules that aim at ensuring some of the rules defined in
-:ref:`<contribution_workflow>`. In the repository's ``Settings -> Branches``
+rules that aim at ensuring some of the rules defined in :ref:`contribution
+workflow<contribution_workflow>`. In the repository's ``Settings -> Branches``
 menu, the protection rules must be created with the following options:
 
 * Require a pull request before merging:
@@ -476,21 +476,22 @@ CI/GitHub Actions
 
 Every repository must have an automated :ref:`CI pipeline <ci>` setup using
 GitHub Actions. Specifically, by adding workflow yaml files to the
-``.github/workflows`` directory. The :ref:`CI repository <ci_repo>` contains a
-number of templates as well as further instructions on how to set it up.
+``.github/workflows`` directory. The :ref:`CI repository <gitact_templates>`
+contains a number of templates as well as further instructions on how to set it
+up.
 
 Here are a few workflows a **maintainer** should add to the repository's
 :term:`CI`:
 
-* commit message linting: apply gitlint to verify all the PRs'
-  commit messages follow the conventional commit style;
-* copyright and license check: making sure all files have the necessary
-  license and copyright information;
-* language format/linting: apply the language format checkers defined in
-  the :ref:`CI repository <ci_repo>` for the repo's used languages (e.g.
+* commit message linting: apply gitlint to verify all the PRs' commit messages
+  follow the conventional commit style;
+* copyright and license check: making sure all files have the necessary license
+  and copyright information;
+* language format/linting: apply the language format checkers defined in the
+  :ref:`CI repository <gitact_checkers>` for the repo's used languages (e.g.
   clang-format for C or pylint for python);
 * static analysis: apply static analyses defined in :ref:`CI repository
-  <ci_repo>` for the repo's used language (e.g. misra-check for C
+  <gitact_checkers>` for the repo's used language (e.g. misra-check for C
   language);
 * build: build the repository for a representative set of targets and
   configurations (using GitHub Actions' strategy matrix);

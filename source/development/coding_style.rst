@@ -1,2 +1,4 @@
-Coding Style
-============
+.. _coding_guidelines:
+
+Coding Guidelines and Style
+===========================

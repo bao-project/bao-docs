@@ -21,7 +21,7 @@ the expected security threats Bao might face. The Security Assumptions and
 Security Threat Model are used to derive :ref:`Security
 Objectives<Objectives>`. The Safety Assumptions, in their turn, are used to
 derive :ref:`Safety Objectives<Objectives>`. The objectives give rise to
-:ref:`HLR`, which are used to derive :ref:`DLR`. The :ref:`DLRs<DLRs>` are the
+:ref:`HLR`, which are used to derive :ref:`DLR`. The :ref:`DLRs<DLR>` are the
 basis to define :ref:`DELR` and :ref:`ILR`.
 
 
@@ -72,6 +72,7 @@ desirable functionality not related to security or safety. Security objectives
 address security concerns brought to light by the threat model and assumptions.
 The same is true for safety objectives, regarding safety threats.
 
+.. _reqs_types:
 
 Requirements
 ------------

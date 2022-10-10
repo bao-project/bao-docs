@@ -56,3 +56,6 @@ reST
 syntaxes
 siglums
 PRs
+Linters
+Formatters
+Ymllint

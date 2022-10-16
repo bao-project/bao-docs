@@ -1,4 +1,4 @@
-# PR Description
+## PR Description
 
 Please include a summary of the change that tries to answer the following
 questions:
@@ -7,7 +7,7 @@ questions:
 - Is the bug described in any issue ticket number?
 - Which main documentation topics are affected?
 
-## Type of change
+### Type of change
 
 Before saving the PR, please delete this description and the below options that
 are not relevant. If you are not sure which type of change are you introducing,
@@ -30,15 +30,12 @@ please read [Contributing](source/development/contributing.rst) documentation.
   - CI checker unit: <name>
 - [ ] **style**: changes that do not affect the meaning of the code
   (formatting, typos, naming, etc.)
-- [ ] **update**: changes that brings a feature, setup, or configuration up to
-  date by adding new or updated information
+- [ ] **update**: changes that brings a feature, setup, or configuration up to date by adding new or updated information
   - Logical unit: <name>
 
-# Checklist:
+## Checklist:
 
-- [ ] The documentation follows the style guidelines described in
-  [here](source/development/doc_guidelines.rst).
+- [ ] The documentation follows the style guidelines described in [here](source/development/doc_guidelines.rst).
 - [ ] I have performed a self-review of all the English grammar.
-- [ ] My changes generate no new warnings when building the documentation
-  (`make html`). If so, I have justified above.
-- [ ] I have run the CI checkers
+- [ ] My changes generate no new warnings when building the documentation. If so, I have justified above.
+- [ ] I have run the CI checkers.

@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve
 title: "[BUG] add short description of bug"
 labels: bug
-assignees: danielRep
+assignees: ''
 
 ---
 

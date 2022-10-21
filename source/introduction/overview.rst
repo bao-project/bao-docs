@@ -16,5 +16,5 @@ mapping of virtual to physical CPUs, with no need for a scheduler. Bao has no
 external dependencies, such as on privileged VMs running untrustable, large
 monolithic general-purpose operating systems (e.g., Linux), and, as such,
 encompasses a much smaller TCB. Bao originally targets the Armv8-A
-architecture, but there is experimental support for the RISC-V architecture. 
+architecture, but there is experimental support for the RISC-V architecture.
 

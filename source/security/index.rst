@@ -70,7 +70,7 @@ T.ADMIN_ERROR
 T.CONFIGURATION_INTEGRITY
     The system may be placed in a configuration not consistent with the
     configuration vector due to improper loading or incorrect use of the
-    configuration vector during TOE initialization.
+    configuration vector during the system initialization.
 
 T.COVERT_CHANNEL_EXPLOIT
     An unauthorized information flow may occur between partitions as a result

@@ -1,12 +1,7 @@
 Security Threat Model and Assumptions
 =====================================
 
-This document presents the security threats which the system addresses, as well
-as the assumptions made about the operational and development environment. We
-used several Common Criteria Protection Profiles (PP), and Security Targets
-(ST), as a base to define the system's threats and assumptions. These include
-PP and ST for PikeOS, FinxRTOS, QNX Neutrino, Huawei HongMeng, GreenHilss
-Integrity, and Kinibi.
+This document presents the security threats the system addresses and the assumptions made about the operational and development environment. We followed several publicly available Common Criteria's Protection Profiles (PP) and Security Targets (ST) as a foundation to define the system's threats and assumptions. These include PPs and STs from SYSGO's `PikeOS<https://www.atsec.de/wp-content/uploads/2019/01/1041b_pdf.pdf>`_, `FINX RTOS<https://www.commoncriteriaportal.org/files/epfiles/tds_finx_rtos_se_v31_lite01.pdf>`_, QNX's `Neutrino RTOS<https://www.commoncriteriaportal.org/files/epfiles/qnx-neutrino-v640-sec-eng.pdf>`_, Huawei's `HongMengOS<https://www.tuv-nederland.nl/assets/files/cerfiticaten/2019/11/st-hongmeng-v2.8.pdf>`_, Green Hill's `Integrity hypervisor<https://www.commoncriteriaportal.org/files/epfiles/st_vid10362-st.pdf>`_, and Trustonic's `Kinibi Trusted Execution Environment<https://www.ssi.gouv.fr/uploads/2017/02/anssi_cc-2017_03-cible-publique.pdf>`_.
 
 Glossary
 --------

@@ -3,44 +3,6 @@ Security Threat Model and Assumptions
 
 This document presents the security threats the system addresses and the assumptions made about the operational and development environment. We followed several publicly available Common Criteria's Protection Profiles (PP) and Security Targets (ST) as a foundation to define the system's threats and assumptions. These include PPs and STs from SYSGO's `PikeOS<https://www.atsec.de/wp-content/uploads/2019/01/1041b_pdf.pdf>`_, `FINX RTOS<https://www.commoncriteriaportal.org/files/epfiles/tds_finx_rtos_se_v31_lite01.pdf>`_, QNX's `Neutrino RTOS<https://www.commoncriteriaportal.org/files/epfiles/qnx-neutrino-v640-sec-eng.pdf>`_, Huawei's `HongMengOS<https://www.tuv-nederland.nl/assets/files/cerfiticaten/2019/11/st-hongmeng-v2.8.pdf>`_, Green Hill's `Integrity hypervisor<https://www.commoncriteriaportal.org/files/epfiles/st_vid10362-st.pdf>`_, and Trustonic's `Kinibi Trusted Execution Environment<https://www.ssi.gouv.fr/uploads/2017/02/anssi_cc-2017_03-cible-publique.pdf>`_.
 
-Glossary
---------
-
-.. glossary::
-    :sorted:
-
-    Attacker
-        An eentity that leverages the privileges of a :term:`subject` to
-        exploited to achieve malicious operations.
-
-    Subject
-        An entity of system that has control over system resources.
-
-    Administrator
-        Subject authorized to make modifications to the system images,
-        including executable programs and system configuration data.
-
-    Configuration vector
-        Data that establishes the systems security policies`, resource
-        distribution over system entities and initial system register and MMIO
-        devices state, i.e., the collection of the :term:`PACV` and
-        :term:`PIV`.
-
-    PACV
-        Partition Access Control Vector, which establishes the access control
-        policy over system resources.
-
-    PIV
-        Platform Initialization Vector, which establishes the initial
-        configuration of systems registers, and relevant memory mapped IO.
-
-    Partition
-        Collection of system resources (e.g., CPUs, memory regions, etc) and
-        the programs which can access them.
-
-    Operational configuration
-        Configuration vector which is used in a running system.
-
 
 Threats
 -------

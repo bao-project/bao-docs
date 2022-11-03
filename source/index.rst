@@ -15,7 +15,7 @@ Bao Documentation
    development/index
    internals/index
    requirements/index
-   security/index
+   security/threats_and_assumptions.rst
    glossary
 
 

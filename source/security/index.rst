@@ -1,6 +1,52 @@
 Security Threat Model and Assumptions
 =====================================
 
+This document presents the security threats which the system addresses, as well
+as the assumptions made about the operational and development environment. We
+used several Common Criteria Protection Profiles (PP), and Security Targets
+(ST), as a base to define the system's threats and assumptions. These include
+PP and ST for PikeOS, FinxRTOS, QNX Neutrino, Huawei HongMeng, GreenHilss
+Integrity, and Kinibi.
+
+Glossary
+--------
+
+.. glossary::
+    :sorted:
+
+    Attacker
+        An eentity that leverages the privileges of a :term:`subject` to
+        exploited to achieve malicious operations.
+
+    Subject
+        An entity of system that has control over system resources.
+
+    Administrator
+        Subject authorized to make modifications to the system images,
+        including executable programs and system configuration data.
+
+    Configuration vector
+        Data that establishes the systems security policies`, resource
+        distribution over system entities and initial system register and MMIO
+        devices state, i.e., the collection of the :term:`PACV` and
+        :term:`PIV`.
+
+    PACV
+        Partition Access Control Vector, which establishes the access control
+        policy over system resources.
+
+    PIV
+        Platform Initialization Vector, which establishes the initial
+        configuration of systems registers, and relevant memory mapped IO.
+
+    Partition
+        Collection of system resources (e.g., CPUs, memory regions, etc) and
+        the programs which can access them.
+
+    Operational configuration
+        Configuration vector which is used in a running system.
+
+
 Threats
 -------
 
@@ -9,74 +55,69 @@ T.DISCLOSURE
     preserved.
 
 T.MODIFICATION
-    An attacker writes an asset of which the property integrity shall be
+    An attacker modifies an asset of which the property integrity shall be
     maintained.
 
+T.UNAUTHORIZED_ACCESS
+    A subject may gain access to resources or system security management
+    functions for which it is not authorized according to the :term:`PACV`.
+
 T.ADMIN_ERROR
-    An administrator may incorrectly install or configure the TOE (including
-    the misapplication of the protections afforded by the PIFP), or install a
-    corrupted TOE resulting in ineffective security mechanisms.
+    An administrator may incorrectly install or configure the system (including
+    the misapplication of the protections afforded by the :term:`PACV`) or
+    install a corrupted system resulting in ineffective security mechanisms.
 
 T.CONFIGURATION_INTEGRITY
-    The TOE may be placed in a configuration that is not consistent with that
-    of the configuration vector due to the improper loading of the
-    configuration vector or incorrect use of the configuration vector during
-    TOE initialization.
+    The system may be placed in a configuration not consistent with the
+    configuration vector due to improper loading or incorrect use of the
+    configuration vector during TOE initialization.
 
 T.COVERT_CHANNEL_EXPLOIT
     An unauthorized information flow may occur between partitions as a result
     of covert channel exploitation.
 
 T.DENIAL_OF_SERVICE
-    A malicious subject may block others from system resources (e.g., system
+    A attacker may block others from system resources (e.g., system
     memory, persistent storage, and processing time) via a resource exhaustion
     attack.
 
 T.INCORRECT_CONFIG
     The configuration vectors are not an accurate and complete description of
-    the operational configuration of the TOE as used by an organization.
+    the operational configuration of the system as used by an organization.
 
 T.INSECURE_STATE
-    The TOE may be placed in an insecure state as a result of an erroneous
+    The system may be placed in an insecure state due to an erroneous
     initialization, halt, reconfiguration or restart, transition to maintenance
-    mode, or as a result of an unsuccessful recovery from a system failure or
-    discontinuity.
+    mode, or an unsuccessful recovery from a system failure or discontinuity.
 
 T.POOR_DESIGN
-    Unintentional or intentional errors in requirements specification or design
-    of the TOE may occur, leading to flaws that may be exploited by a malicious
-    subject.
-
-T.UNAUTHORIZED_ACCESS
-    A subject may gain access to resources or TOE security management functions
-    for which it is not authorized according to the TOE security policy.
+    Unintentional or intentional errors in requirements specification, design,
+    or implementation of the system may occur, leading to flaws that may be
+    exploited by an attacker.
 
 
 Assumptions
 -----------
 
 A.PHYSICAL
-    It is assumed that the non-IT environment provides the TOE with appropriate
-    physical security commensurate with the value of the IT assets protected by
-    the TOE.
+    It is assumed that the non-IT environment provides the system with
+    appropriate physical security commensurate with the value of the IT assets
+    protected by the system.
 
-A.SUBJECT_ALLOCATION
+A.RESOURCE_ALLOCATION
     It is assumed that a properly trained trusted individual will create
-    configuration vectors such that, for those partitions to which subjects are
-    allocated, each partition is allocated one or more subjects (i.e., subjects
-    with homogeneous access requirements, or subjects with heterogeneous access
-    requirements) that are appropriate for the policy abstraction supported by
-    the TOE.
+    configuration vectors that allocated resources to partitions such that it
+    is possible to establish an access control policy over these resources
+    (i.e., :term:`PACV`).
 
 A.TRUSTED_INDIVIDUAL
     It is assumed that any individual allowed to perform procedures upon which
-    the security of the TOE may depend is trusted with assurance commensurate
-    with the value of the IT assets.
+    the security of the system may depend is trusted with assurance
+    commensurate with the value of the IT assets.
 
 A.HARDWARE
     The underlying hardware, firmware and bootloader needed by BAO hypervisor
     to guarantee secure operation provide the necessary properties, are working
     correctly and have no undocumented or unintended security critical side
-    effect on the functions of the TOE.
-
+    effect on the system functions.
 

@@ -116,7 +116,7 @@ A.TRUSTED_INDIVIDUAL
     commensurate with the value of the IT assets.
 
 A.HARDWARE
-    The underlying hardware, firmware and bootloader needed by BAO hypervisor
+    The underlying hardware, firmware and bootloader needed by the system
     to guarantee secure operation provide the necessary properties, are working
     correctly and have no undocumented or unintended security critical side
     effect on the system functions.

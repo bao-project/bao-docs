@@ -106,7 +106,7 @@ A.PHYSICAL
 
 A.RESOURCE_ALLOCATION
     It is assumed that a properly trained trusted individual will create
-    configuration vectors that allocated resources to partitions such that it
+    configuration vectors that allocate resources to partitions such that it
     is possible to establish an access control policy over these resources
     (i.e., :term:`PACV`).
 

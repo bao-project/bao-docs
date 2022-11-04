@@ -1,20 +1,5 @@
-Bao Tool Architecture
-=====================
-
-Block Diagram
-----------------------
-TBD...
-
-Components
-----------
-TBD...
-
-.. toctree::
-    :maxdepth: 3
-
-    bao_tool_backend
-    bao_tool_frontend
-
+System Tool Backend
+===================
 
 Process Flow Diagram
 --------------------

@@ -29,7 +29,9 @@ jobs:
     container: baoproject/bao:latest
     steps:
       - uses: actions/checkout@v2
-      - run: make spelling
+      - run: | 
+          git config --global --add safe.directory $(realpath .)
+          make spelling
 
   format-check:
     runs-on: ubuntu-latest

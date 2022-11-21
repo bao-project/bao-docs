@@ -130,8 +130,8 @@ hierarchy.
 
 .. Note::
    The CI workflows will automatically fail if there are any issues with the
-   requirement documents including the issue of broken requirement links due to
-   unreviews changes.
+   requirement documents including broken requirement links due to unreviewed
+   changes.
 
 
 Adding Objectives
@@ -163,7 +163,7 @@ Adding DLR
 In :ref:`DLR` we again use a modified UID. In DLR the UIDs take the form of:
 DLR_<COMPONENT>_XXX. Where DLR identifies the DLR document. <COMPONENT>
 identifies the system component which the requirement targets. Currently Bao
-has DLR for the following components (componente → Abreviation used in UID):
+has DLR for the following components (component → Abbreviation used in UID):
 Tool→ TOOL, Partitioner→ PART, VMM Static→ VMMSTATIC.
 
 

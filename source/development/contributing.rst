@@ -597,6 +597,37 @@ At least two issue templates must be created:
 * ``.github/ISSUE_TEMPLATE/feature_request.md``: details an idea/suggestion for
   a new feature and analyzes its trade-offs
 
+Git Submodules Setup
+********************
+
+The Git submodules feature is used across several repositories. For example,
+the CI workflow is typically added as a submodule on other repository
+subsystems to enable the CI pipeline. When creating a submodule, a developer
+must ensure that the ``.gitmodules`` configuration file (that stores the
+mapping between the project’s URL and the local subdirectory) uses the SSH URL.
+
+To add a submodule using an SSH URL, you can use the ``git submodule add``
+command followed by the SSH URL of the repository you want to add as a
+submodule.
+
+For example:
+
+.. code-block:: shell
+
+    git submodule add ssh://git@example.com/path/to/repo.git
+
+This will add the repository at the specified SSH URL as a submodule to your
+current Git repository. Keep in mind that you need to have access to the
+repository that you want to add as a submodule and be authenticated with the
+appropriate credentials in order to use an SSH URL.
+
+Final layout of the ``.gitmodules`` configuration file:
+
+.. code-block:: none
+
+    [submodule "ci"]
+    path = ci
+    url = git@github.com:bao-project/bao-ci.git
 
 .. TODO:
 

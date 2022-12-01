@@ -62,3 +62,7 @@ Ymllint
 Partitioner
 partitioner
 unreviewed
+submodule
+submodules
+Submodules
+subdirectory

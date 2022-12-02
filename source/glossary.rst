@@ -45,10 +45,10 @@ Glossary
         functions: it translates virtual addresses into physical addresses, and
         it controls memory access permissions.
 
-    SPrvI
+    SPI
         Same Privilege Isolation. This software technique enables to isolated
         software entities running on the same execution privilege by
-        deprovisioning the entity's image binaries from instructions that
+        removing the entity's image binaries from instructions that
         modify the hardware isolation mechanisms accessed only on that
         execution level.
 

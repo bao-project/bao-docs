@@ -13,6 +13,15 @@ Major Subsystems
 ----------------
 TBD...
 
+Protection Mechanisms
+---------------------
+
+.. raw:: html
+   :file: prot-mech-tbl-v1.html
+
+.. raw:: html
+   :file: prot-mech-tbl-v2.html
+
 Partitioner
 ***********
 

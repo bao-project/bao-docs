@@ -62,3 +62,11 @@ Ymllint
 Partitioner
 partitioner
 unreviewed
+minimality
+staticity
+dynamicity
+Backend
+backend
+frontend
+Frontend
+virtualized

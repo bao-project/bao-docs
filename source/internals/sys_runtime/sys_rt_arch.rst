@@ -1,5 +1,5 @@
-System Runtime Architecture
-===========================
+System Run-time Architecture
+============================
 
 Block Diagram
 -------------

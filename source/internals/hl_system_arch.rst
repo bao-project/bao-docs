@@ -6,7 +6,7 @@ Block Diagram
 -------------
 TBD...
 
-.. image:: img/system_arch.png
+.. image:: img/system_arch.svg
       :align: center
 
 Major Subsystems
@@ -17,10 +17,7 @@ Protection Mechanisms
 ---------------------
 
 .. raw:: html
-   :file: prot-mech-tbl-v1.html
-
-.. raw:: html
-   :file: prot-mech-tbl-v2.html
+   :file: prot-mech-tbl.html
 
 Partitioner
 ***********

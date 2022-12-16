@@ -1,18 +1,30 @@
 High-level System Architecture
 ==============================
-TBD...
+
+The ... system is composed by two main components: (i) the static configuration
+tool and (ii) the run-time ... . The former implements ... Regarding the
+run-time system it implements ...
 
 Block Diagram
 -------------
 TBD...
 
-Armv8-A Architectures
-*********************
+Arm-based Architectures
+***********************
+
+Armv8-A Family
+##############
+
 .. image:: img/sys_rt_armv8_arch.svg
       :align: center
 
-RISC-V Architectures
-********************
+Armv9-A Family
+##############
+
+
+RISC-V-based Architectures
+**************************
+
 .. image:: img/sys_rt_riscv_arch.svg
       :align: center
 
@@ -38,7 +50,23 @@ Configuration Tool
 Protection Mechanisms
 ---------------------
 
-Armv8-A Architectures
-*********************
+Arm-based Architectures
+***********************
+
+Armv8-A Family
+##############
+
 .. raw:: html
-   :file: prot-mech-tbl.html
+   :file: prot-mech-armv8.html
+
+Armv9-A Family
+##############
+
+.. raw:: html
+   :file: prot-mech-armv8.html
+
+RISC-V-based Architectures
+**************************
+
+.. raw:: html
+   :file: prot-mech-armv8.html

@@ -93,8 +93,8 @@ branches.
 Submitting Commits
 ******************
 
-If you are an external :term:`contributor` or do not have write permissions to the
-repository you wish to contribute to, first of all, you should `fork that
+If you are an external :term:`contributor` or do not have write permissions to
+the repository you wish to contribute to, first of all, you should `fork that
 repository <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`_.
 If you do have write privileges over the original repository, you carry out the
 development directly on it. Follow these steps:
@@ -127,6 +127,10 @@ development directly on it. Follow these steps:
       commits to the existing pull request. If existing commits need to be
       modified, rewrite the history and force push them to maintain a clean
       linear history;
+    * always reply to each inline comment/conversation topic opened by the
+      reviewer and never mark it as resolved yourself. The **reviewer**
+      must be the one to close that conversation in case they agree with the
+      changes;
     * re-request a review from **reviewers'** after you've address all their
       concerns and modification requests;
     * if the **reviewers** are taking too long, try contacting the :term:`PR`

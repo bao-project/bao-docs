@@ -100,6 +100,14 @@ If you do have write privileges over the original repository, you carry out the
 development directly on it. Follow these steps:
 
 1. Create a topic branch from the ``main`` branch;
+
+.. note::
+
+    It is possible to create a topic branch based on another branch. This may
+    be necessary if the changes are dependent on that specific branch.
+    However, if this occurs during **step 4** of the process, it is mandatory
+    to make the target branch the one that the new branch is based on.
+
 2. Make all the necessary commits and push your work to your remote fork.
    Make sure that all the introduced commits and the overall branch follow
    the :ref:`commit and PR guidelines<commit_guidelines>`;

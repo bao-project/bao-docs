@@ -34,3 +34,26 @@ Glossary
         invited by a maintainer to oversee the development of one or multiple
         subsystems in a repository. More information
         :ref:`here <contrib_roles>`.
+
+    PIV
+        The Platform Initialization Vector (PIV) is a data structure that
+        stores information regarding the initialization state of different
+        system components at both the CPU and platform level.
+
+    PACV
+        The Partition Access Control Vector (PACV) is a data structure that
+        contains the access control policy for a system's partitions. This
+        policy establishes the permissions for each partition to access the
+        platform's resources.
+
+    Asset
+        An asset is a valuable resource that must be properly maintained and
+        managed. The state of an asset must be carefully monitored and
+        controlled to prevent vulnerabilities or errors from causing harm or
+        decreasing an assets value.
+
+    Subject
+        A subject is an entity that can access or interact with a system, its
+        resources and its assets. This can include individuals, other systems
+        (e.g., through a remote connection), and specific system components
+        such as VMs and VMMs.

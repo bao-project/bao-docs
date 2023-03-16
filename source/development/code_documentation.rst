@@ -1,28 +1,29 @@
 Code Documentation
 ==================
 
-Code documentation is essential to ease code readability, maintenance and thus,
-scalability. This becomes even more crucial in an open-source project, given
-the number of diverse contributors that must be able clearly to understand
-every aspect of code even when contributing without direct contact with each
-other or the code owners and maintainers.
+Code documentation is essential to ease code readability, maintenance, and
+scalability. This becomes even more crucial in open-source projects, where a
+diverse group of contributors must understand the codebase without direct
+contact with each other, the code owners, or the maintainers.
 
 All code should be thoroughly commented not with obvious, explicit descriptions
 of the code (e.g. ``x++; // increment x``), but provide:
 
-* Detailed, high-level semantics descriptions;
+* Detailed, high-level semantic descriptions of the code functionality,
+  purpose, and expected behavior;
 * Clarifications on why a particular approach, technique, or algorithm was
   used;
 * Any trade-offs or constraints that have been detected;
-* Any other useful information.
+* Any other useful information that can help readers understand and maintain
+  the code.
 
-Besides "traditional" code description and clarification comments that should
-be applied to all code, regardless of used language, Doxygen comments are also
-mandatory for all interfaces in C code and optional for private/static items.
-Doxygen is a documentation generator tool used to document API's. This tool
-extracts information from specially-formatted comments called tags. The
-remaining sections of this tutorial will define guidelines and requirements on
-how to use Doxygen within Bao Project's repository.
+In addition to the "traditional" code description and clarification comments
+that are essential for all code, we use the Doxygen documentation generator
+tool to comment all Application Programming Interfaces (APIs). Doxygen extracts
+information from specially-formatted comments, known as **tags**, and produces
+documentation in various formats. The remaining sections of this tutorial will
+outline the guidelines and requirements for using Doxygen within the project
+repositories.
 
 .. _generic:
 

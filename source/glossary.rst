@@ -20,16 +20,16 @@ Glossary
         developed by The MISRA Consortium and followed by the Bao project. More
         information :ref:`here <misra>`
 
-    maintainer
+    Maintainer
         Top-level role in the administration of a repository. More information
         :ref:`here <contrib_roles>`.
 
-    developer
-    contributor
+    Developer
+    Contributor
         Internal or external developer that in any way contributes to the project.
         More information :ref:`here <contrib_roles>`.
 
-    code owner
+    Code Owner
         High-level role in the administration of a repository, marked and
         invited by a maintainer to oversee the development of one or multiple
         subsystems in a repository. More information

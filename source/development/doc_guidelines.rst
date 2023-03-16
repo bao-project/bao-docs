@@ -517,8 +517,8 @@ Throughout Bao's documentation we try to maintain an updated and consolidated
 global glossary, that references terms to their definitions. The
 :ref:`glossary` is located in the ``source`` top-level directory, under the
 file ``glossary.rst``. Each glossary entry, must be written as a definition
-list, with a term (in upper-case), followed by a single-line indented
-definition (see the code block below to verify the format).
+list, with a capitalized term, followed by a single-line indented definition
+(see the code block below to verify the format).
 
 .. code-block:: rest
 

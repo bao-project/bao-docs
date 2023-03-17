@@ -75,29 +75,28 @@ they must be structured, i.e., what tags must be detailed.
 Functions
 *********
 
-Functions are documented by three mandatory tags, following the mandatory
-order: *brief*, *param*, *return*.
-For a more complete description, optional tags can also be used (*pre*, *post*,
-*invariant*, *warning*, *note*, *see*).
+Functions **must** be documented by three mandatory tags that follow a specific
+order: *brief*, *parameters*, and *return*.
+For a more complete description, optional tags **should** also be used, namely,
+*pre*, *post*, *invariant*, *warning*, *note*, and *see*.
 
 **Brief**
 
-This first tag is used to describe the purpose of the function. Use
-descriptive-style sentences for ``@brief`` descriptions, for example:
-"Creates a task.", "Sends the events to the task.", or "Obtains the
-semaphore.".
-
-Do not use descriptions like "Returns this and that.". Leave the function
-returns descriptions to the ``@return`` tag description.
+The tag ``@brief`` **must** be used to describe the purpose of the function.
+The tag should provide a useful description of the function, such as: *Creates
+a task*, *Sends the events to the task*, or *Obtains the semaphore*. Do not use
+flat, code-oriented descriptions like *Returns the buffer x* or *Increments
+variable a with b*. Beware that function return descriptions **must** use the
+``@return`` tag description.
 
 **Parameters**
 
-All function parameters must be documented in the order they appear on the
-function arguments. Each function parameter should have its own ``@param`` tag.
-After the tag, the user must write the parameter name, followed by a brief
-description of its purpose in the function.
+The tag ``@param`` **must** be used to describe each function parameter in the
+order they appear on the function arguments. Each function parameter **must**
+have its own tag. After the tag, the user must write the parameter name,
+followed by a brief description of its purpose in the function.
 
-Whenever non-const pointer parameters are used, the following tags must be
+Whenever non-const pointer parameters are used, the following tags **must** be
 employed:
 
 * ``@param[out]``, if the function writes under some conditions to memory
@@ -111,59 +110,56 @@ employed:
 
 **Return**
 
-This tag should be followed by an explanation of what the function returns. If
-nothing is returned, then it can be omitted.
-If the function returns a boolean value, use the ``@return`` description with
-a phrase like this: “Returns true, if some condition is satisfied,
-otherwise false.”. However, if the function changes a global variable, leave
-that description to the ``@post`` tag.
+The tag ``@return`` **must** be used to provide an description on the function
+return. Only if nothing is returned, then the tag can be omitted. If the
+function returns a boolean value, use the tag with a condition-oriented
+description such as: *Returns true, if some condition is satisfied, otherwise
+false.*. However, if the function changes a global variable, leave that
+description to the ``@post`` tag.
 
 **Pre**
 
-This tag is used to inform the user about pre conditions to execute a function.
-A pre-condition is a condition that must be true before the function or method
-is called, in order for the function or method to work correctly.
-For example, if a bit in a register must be set to execute the function.
+The tag ``@pre`` **should** be used to inform the user about pre conditions to
+execute a function. A pre-condition is a condition that must be true before the
+function or method is called, in order for the function or method to work
+correctly. For example, if a bit in a register must be set to execute the
+function.
 
 **Post**
 
-Use this tag whenever a function has any side-effect on the system (changing a
-global variable, or an output). Those effects **must** be documented/described
-on the ``@post`` tag.
+The tag ``@post`` **should** be used whenever a function has any side-effect on
+the system (changing a global variable, or an output).
 
 **Invariant**
 
-Whenever there is an invariant it must be documented on this tag.
-An invariant is a condition that must always be met by a field of a struct
-or a parameter of the function.
+The tag ``@invariant`` **should**  be used whenever there is an invariant that
+must be documented. An invariant is a condition that must always be met by a
+field of a struct or a parameter of the function.
 
 **See**
 
-This is an optional tag that can be used to provide a cross-reference to
-related documentation, within the code documentation or some external source,
-through an URL. This is useful when information to understand the code is based
-on external sources of the function.
+The ``@see`` tag **should**  be used to provide a cross-reference to related
+documentation, within the code documentation or some external source, through
+an URL. This is useful when information to understand the code is based on
+external sources of the function.
 
 **Note**
 
-This is an optional tag that is used to inform the user about any updates that
+The tag ``@note`` **should**  be used to inform the user about any updates that
 has to be made, as well as to highlight important information or even providing
 additional context for the documentation.
 
-Template and Examples
-#####################
+Template/Examples
+#################
 
-This is a generic (*template*) description of all tags available for the user
-to describe a function.
-
-The last five tags (*pre*, *post*, *invariant*, *see* and *note*) are optional.
+Template:
 
 .. code-block:: c
 
  /**
   *  @brief <description>
-  *  @param[in/out] <variable name> <description>
-  *  @return <variable type> <description>
+  *  @param[in/out] <variable_name> <description>
+  *  @return <variable_type> <description>
   *
   *  @pre <description>
   *  @post <description>
@@ -172,104 +168,98 @@ The last five tags (*pre*, *post*, *invariant*, *see* and *note*) are optional.
   *  @note <description>
   */
 
-Example of the ``@return`` tag usage:
+Several examples:
 
 .. code-block:: c
 
- /**
-  *  @brief Get link registers from GICH
-  *  @return Returns the number of link registers
-  */
- size_t gich_num_lrs()
- {
+  /**
+   *  @brief Get link registers from GICH
+   *  @return Returns the number of link registers
+   */
+  size_t gich_num_lrs()
+  {
     return ((MRS(ICH_VTR_EL2) & ICH_VTR_MSK) >> ICH_VTR_OFF) + 1;
- }
-
-*Examples* from Bao hypervisor's code on functions with and without return
-types as well with and without arguments.
+  }
 
 .. code-block:: c
 
- /**
-  *  @brief Handle the exceptions exceptions such as guest page-faults or
-  *         hypercalls.
-  */
- void aborts_sync_handler()
+  /**
+   *  @brief Handle the exceptions exceptions such as guest page-faults or
+   *         hypercalls.
+   */
+  void aborts_sync_handler()
 
 .. code-block:: c
 
- /**
-  *  @brief Checks if GICR got any pending interrupts to attend.
-  *  @param int_id Interrupt id.
-  *  @param gicr_id GICR id.
-  *  @return True if 'int_id' interrupt is pending for the 'gicr_id'
-  *          redistributor.
-  */
- bool gicr_get_pend(irqid_t int_id, cpuid_t gicr_id)
+  /**
+   *  @brief Checks if GICR got any pending interrupts to attend.
+   *  @param int_id Interrupt id.
+   *  @param gicr_id GICR id.
+   *  @return True if 'int_id' interrupt is pending for the 'gicr_id'
+   *          redistributor.
+   */
+  bool gicr_get_pend(irqid_t int_id, cpuid_t gicr_id)
 
 
 .. _types:
 
-Type Definitions (``struct``, ``enum``, ``unions`` and ``typedefs``)
-********************************************************************
+Type Definitions
+****************
 
-Regarding data structures there are three types of mandatory tags:
-*data type*, *brief* and *var*.
+Type definitions (``struct``, ``enum``, ``unions`` and ``typedefs``) **must**
+be documented by three mandatory types of tags that follow a specific order:
+the *data type*, *brief*, and *variables*.
 
 **Data Type**
 
-The comment block must start with the tag identifying the type of data
-structure (``@struct`` for structures, ``@enum`` for enumerations, ``@typedef``
-for ``typedef``, and ``@union`` for unions) following the name of that data
-structure.
+This tag **must** be used to identify the type of data structure (``@struct``
+for structures, ``@enum`` for enumerations, ``@typedef`` for ``typedef``, and
+``@union`` for unions) following the name of that data structure.
 
 **Brief**
 
-Each type (``typedef``, ``struct``, ``enum``, ``union``) defined in a header
-file shall be documented with a ``@brief`` description informing the developer
-about the role and the impact of the data structure on the code. This field
-should be a one-liner describing the purpose of the struct. However the
+The tag ``@brief`` **must**  be used to inform the developer about the role
+and the impact of the data structure on the code. This field should be a
+one-line description of the purpose of the data structure. However the
 developer can, when necessary, feel free to give a more detailed, multi-line
-description. Nonetheless, this multi-line comment mustn't be more than a couple
-of lines, or a small paragraph.
+description, but keep it short. Use concise and clear descriptions like *This
+type represents...*, *This structure represents...*, *This structure provides
+...*, or *This enumeration represents...*.
 
-For the ``@brief`` description of types use phrases like "This type
-represents ...", "This structure represents ...", "This structure provides ..."
-, or "This enumeration represents ...".
+**Struct Variables**
 
-**Struct variables**
+Members in a structure **must** be documented with a comment within their
+declaration that starts with ``/**<`` and closes with ``*/``. This is used to
+describe the context/role of each variable within the data structure. Note that
+the variable description **must** start with a capital letter (see examples).
+For the description of each type members you can use concise and clear
+descriptions such as *This member represents...*, *The X lock protects...*,
+*Used to...*, *Contains...*, *Stores ...*.
 
-The third tag (``@var``) is used to describe the context/role of each variable
-within the data structure. Note that the variable description must start with
-a capital letter (see examples).
-
-For the description of each type members you can use phrases like "This member
-represents...", "The X lock protects...", "Used to...", "Contains...",
-"Stores ..."
-
-Template and Examples
-#####################
+Template/Examples
+#################
 
 Bellow we showcase a *template* of the available tags to describe a structure.
 
 .. code-block:: c
 
   /**
-  * @struct <struct_name>
-  * @brief <Description>
-  */
+   * @struct <struct_name>
+   * @brief <Description>
+   */
+  struct <struct_name>
+  {
+    <type> <variable_name>; /**< <Description> */
+  };
 
-*Examples* for the *memory protection* struct and the two distinct
-approaches to comment on this type of data.The variables can either be
-commented on the header with the tag ``@var`` or within their declaration with
-the comment starting with ``/**<``.
+Examples:
 
 .. code-block:: c
 
   /**
-  * @struct memory_protection
-  * @brief This structure represents a memory region
-  */
+   * @struct memory_protection
+   * @brief This structure represents a memory region
+   */
   struct memory_protection
   {
     bool assigned;         /**< Memory region assign flag */
@@ -279,51 +269,61 @@ the comment starting with ``/**<``.
     mem_flags_t mem_flags; /**< Region memory attributes */
   };
 
+.. code-block:: c
+
+  /**
+   * @enum wakeup_reason
+   * @brief PSCI wakeup reason for CPUs.
+   */
+  enum wakeup_reason {
+    PSCI_WAKEUP_CPU_OFF,    /**< Wakeup reason CPU off */
+    PSCI_WAKEUP_POWERDOWN,  /**< Wakeup reason CPU powerdown */
+    PSCI_WAKEUP_IDLE,       /**< Wakeup reason CPU idle */
+    PSCI_WAKEUP_NUM         /**< Wakeup reason number of variants */
+  };
 
 .. _files:
 
 Files
 *****
 
-All files must have a doxygen comment after the mandatory license header
-(see :ref:`generic`), detailing the purpose and use for the file.
-The two tags on the doxygen-style comments are *file* and *brief*.
+All files must have a doxygen comment after the mandatory license header (see
+:ref:`generic`), detailing the purpose and use for the file. The two mandatory
+tags on the doxygen-style comments are *file* and *brief*.
 
 **File**
 
-The ``@file`` tag identifies the filename and its type (e.g., ``.h``, ``.c``).
+The ``@file`` tag **must** be used to identify the filename and its type (e.g.,
+``.h``, ``.c``).
 
 **Brief**
 
-The ``@brief`` is then used to describe the general purpose of the functions in
-the file or/and to explain why a specific set of functions or data structures
-are grouped together in the file.
+The ``@brief`` tag **must** be used to describe the general purpose of the
+functions in the file or/and to explain why a specific set of functions or data
+structures are grouped together in the file. Use concise and clear descriptions
+such as *This header file provides...*, *This header file provides the API
+of...*, or *This file provides interfaces and functions used to implement...*.
 
-On the ``@brief`` description it can have sentences like "This header file
-provides ...", "This header file provides the API of ...", or "This file
-provides interfaces and functions used to implement ...".
+Template/Examples
+#################
 
-Template and Examples
-#####################
-
-*Template* of the license and available tags to describe a file.
+Template:
 
 .. code-block:: c
 
   /**
-  * @file <filename.type>
-  * @brief <Text>
-  */
+   * @file <filename.type>
+   * @brief <Text>
+   */
 
-*Practical Example* on the *vm.h* file header, which provides VM structures
-and functions.
+Example:
 
 .. code-block:: c
 
   /**
-  * @file vm.h
-  * @brief This header file provides VM structures and functions
-  */
+   * @file vm.h
+   * @brief This header file provides VM structures and functions
+   */
 
 
 .. _macros:
@@ -331,10 +331,22 @@ and functions.
 Macros
 ******
 
-To document macros, the tag ``@def`` must be used. Following the tag, the
-macro, with the name and the parameters must be explicit. The other mandatory
-tag is the ``@brief`` tag, that must briefly describe the objective of the
-macro.
+Macros **must** be documented by two mandatory tags that follow a specific
+order: *definition* and *brief*.
+
+**Definition**
+
+The ``@def`` tag **must** be used to explicitly describe the macro name and
+parameters.
+
+**Brief**
+
+The ``@brief`` tag **must** be used to describe the macro purpose.
+
+Template/Examples
+#################
+
+Template:
 
 .. code-block:: c
 
@@ -344,18 +356,38 @@ macro.
   */
   #define MACRO(arg1, arg2) ((arg1) + (arg2))
 
+Example:
+
+.. code-block:: c
+
+  /**
+  * @def BIT(x)
+  * @brief Returns a bit mask with the bit at position x set.
+  */
+  #define BIT(x) (1UL << (x))
 
 .. _variables:
 
 Variables
 *********
 
-For variables you must start the comment with ``/*!<`` and end it normally
-with ``*/``. Describe the objective of the variable. For a boolean type use
-a phrase like: “The variable X is true, if some condition is satisfied,
-otherwise it is false.”. This should be used on global variables or on any
-other variable (when appropriate).
+For variables you **must** start the comment with ``/**<`` and end it normally
+with ``*/``. Describe concisely and clearly the objective of the variable. For
+a boolean type use a phrase like: *The variable X is true, if some condition is
+satisfied, otherwise it is false.*. This should be used on global variables or
+on any other variables (when appropriate).
+
+Template/Examples
+#################
+
+Template:
 
 .. code-block:: c
 
-  int var; /*!< Detailed description after the variable */
+  int var; /**< Detailed description after the variable */
+
+Example:
+
+.. code-block:: c
+
+  uint64_t start_addr; /**< Start address of the memory region */

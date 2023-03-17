@@ -22,8 +22,8 @@ secondly, the processes described in this document.
 
 Each repository in the project might abide by the guidelines with varying
 degrees of fidelity. Each will have its independent :ref:`MISRA
-artefacts<misra_artefacts>`, although these might derive from the same base and
-be easily migrated from one repository to another. The processes and artefacts
+artifacts<misra_artifacts>`, although these might derive from the same base and
+be easily migrated from one repository to another. The processes and artifacts
 described in this document shall be overseen and enforced by the appointed
 repository's :ref:`MISRA managers<misra_manager>`.
 
@@ -44,7 +44,7 @@ must be specified. Each process, such as manual review, shall provide
 instructions and checklists to aid reviewers. Ideally, the GEP should also
 prescribe measures on how to detect and deal with each :ref:`undecidable
 guidelines<misra_undecidable_false_positive>`. :ref:`Each
-repository<misra_artefacts>` must provide a GEP in a CSV format. The base GEP
+repository<misra_artifacts>` must provide a GEP in a CSV format. The base GEP
 is provided in the `CI repository <https://github.com/bao-project/bao-ci>`_.
 
 
@@ -117,7 +117,7 @@ recategorization must:
     * be approved by all the repository's :ref:`MISRA managers<misra_manager>`,
       which must reconfigure the tools accordingly.
 
-As described in :ref:`Repository MISRA Artefacts<misra_artefacts>`, each
+As described in :ref:`Repository MISRA Artefacts<misra_artifacts>`, each
 repository must provide a GEP in a CSV format, for which a baseline is provided
 in the :ref:`CI repository <ci>`.
 
@@ -198,7 +198,7 @@ A :term:`developer` should take the following steps when introducing a new
        :ref:`deviation permits<deviation_records>`;
 
     2. Create a new :ref:`deviation record<deviation_records>` in the
-       :ref:`repository's misra deviation's directory<misra_artefacts>` named
+       :ref:`repository's misra deviation's directory<misra_artifacts>` named
        with next available ID. If matching deviation permits are found and the
        rule is `advisory<misra_grp>`, this step can be skipped. If the rule is
        `required<misra_grp>`, however, the record should point to the
@@ -446,9 +446,9 @@ follow the normal :ref:`deviation procedure<deviation_procedure>`. If the
 guideline is decidable, the issue should be communicated to the :ref:`MISRA
 managers<misra_manager>` who shall forward it to the tool's providers.
 
-.. _misra_artefacts:
+.. _misra_artifacts:
 
-Repository MISRA Artefacts
+Repository MISRA Artifacts
 --------------------------
 
 Each repository subject to :term:`MISRA` compliance check shall have a

@@ -30,32 +30,33 @@ repositories.
 Doxygen Generic Guidelines
 --------------------------
 
-Although this tutorial is focused on defining guidelines to apply the doxygen
-tags to Bao's functions and data structures, there are some elemental rules
-that must be followed for all doxygen comments:
+While this tutorial primarily provides guidelines for applying Doxygen tags to
+code functions and data structures, there are some fundamental rules that
+**must** apply to all Doxygen comments:
 
-* Block comments shall **start** with ``/**`` (slash-asterisk-asterisk)
+* Block comments **must** start with ``/**`` (slash-asterisk-asterisk)
   in a single line.
-* Block comments shall **end** with ``*/`` (space-asterisk-slash) in a
+* Block comments **must** end with ``*/`` (space-asterisk-slash) in a
   single line.
-* Every other line inside the comment block shall start with ``*``
-  (space-asterisk).
-* Each different group tag (``@brief``, ``@param``, ...) shall be in at least
-  one line. In other words, it is not possible to have two tags on the same
-  line.
-* All doxygen comments must be indented to the same level as the item they are
-  describing.
+* Every other line inside the comment block **must** start with
+  ``<whitespace>*`` (space-asterisk).
+* Each different tag  (``@brief``, ``@param``, ...) **must** be in a
+  a separate line.
+* All doxygen comments **must** be indented to the same level as the item they
+  are describing.
+* All APIS **must** be commented with doxygen tags, except for private/static
+  functions, which is optional.
 
-On the beginning of every file there must be the mandatory license (SPDX
-license identifier) before the file Doxygen block comment.
-
-Example for the generic guidelines:
+As stated in the :ref:`licensing guidelines <licensing>`, every file must start
+with a header comment including an SPDX license identifier and copyright
+statement. All doxygen block comments, including the **file** brief, must be
+placed after this header.Example for the generic guidelines:
 
 .. code-block:: c
 
  /**
   *  @brief Brief description of the function, struct, enum,...
-  *  @param Paremeter_1 parameter_1 description
+  *  @param Parameter_1 parameter_1 description
   *  @param Parameter_2 parameter_2 description
   *  @return return description
   */

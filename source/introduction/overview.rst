@@ -1,2 +1,2 @@
-Overview
-========
+What is the Bao Project
+=======================

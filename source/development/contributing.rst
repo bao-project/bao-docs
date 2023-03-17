@@ -536,7 +536,7 @@ menu, the protection rules must be created with the following options:
 
 * Require conversation resolution before merging
 * Require linear history
-* Include administrators
+* Do not allow bypassing the above settings
 
 Other topic branches might also be subject to protection rules at the will of
 the repository's **maintainers**.

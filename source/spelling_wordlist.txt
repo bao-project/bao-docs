@@ -31,8 +31,6 @@ cppcheck
 jitter
 checkable
 fallthrough
-artefact
-artefacts
 requalification
 Requalification
 recategorized

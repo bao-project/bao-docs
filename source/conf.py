@@ -59,6 +59,14 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
 
+html_theme_options = {
+    'logo_only': True,
+    'style_external_links': True,
+    # Toc options
+    'collapse_navigation': False,
+}
+
+html_logo = "introduction/img/bao-logo-200x.png"
 
 # -- Options for spelling builder ----------------------------------------------
 spelling_lang='en_US'

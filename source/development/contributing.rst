@@ -192,8 +192,8 @@ The following are some tips all **reviewers** should take into account:
   desired functionality). Try to reason about corner cases.
 * New files contain the necessary :ref:`license and copyright
   information<licensing>`;
-* All the necessary :ref:`requirement and traceability
-  artifacts<requirement_framework>` or tags are correctly added or updated;
+* All the necessary requirement and traceability artifacts or tags are
+  correctly added or updated;
 
 Review the code as much as possible by opening discussions and adding comments
 inline in the ``Files Changed`` tab of the :term:`PR`, and opening a review.
@@ -254,7 +254,7 @@ commits in the history within the :term:`PR`:
   former.
 * adhere to the project's :ref:`coding guidelines<coding_guidelines>` for the
   targeted languages;
-* tag the necessary :ref:`requirements<requirement_framework>`;
+* tag the necessary requirements;
 * introduce code that is readable and sufficiently commented/documented;
 * pass all :ref:`base CI pipeline<ci>` checks, by running them locally;
 * make sure your code works: test your code in as many targets as possible
@@ -665,3 +665,5 @@ Final layout of the ``.gitmodules`` configuration file:
 
 .. Versioning
 .. ----------
+
+.. add ref to "requirements and traceability" mentions throughout the document

@@ -1,8 +1,8 @@
 Testing
 =======
 
-Introductory paragraph (testing Framework on bao projects -> unit testing)
-
+*Introductory paragraph* (testing Framework on bao projects -> unit testing)
+In order to tackle the challenge of testing new functionalities on the Bao hypervisor, we are actively working on the development of a comprehensive testing framework. The primary objective of this framework is to enable developers to conduct unit tests on various system components (such as the hypervisor, virtual machine (VM), and virtual machine monitor (VMM)), as well as assess interactions between different components/layers.
 
 Test Framework
 ---------------

@@ -9,9 +9,21 @@ Test Framework
 
 Overview
 ***********
-Detail the workflow (both for class and new bao). Use the images made by 
-Cristiano
 
+The test framework API is a Python tool that acts as the control center for the testing process. It performs the following tasks:
+
+1. **Calling the build system**: The API interacts with the build system to compile and build the different components required to perform tests. It triggers the build process, which may involve compiling source code, linking libraries, and generating the necessary artifacts for testing.
+
+2. **Generating the test setup**: Once the build process is complete, the API generates the necessary setup for running the tests. This includes setting up the test environment, configuring test data, and preparing any required dependencies.
+
+3. **Calling the runner**: After the test setup is prepared, the API invokes the test runner. The test runner is responsible for executing the test cases and reporting the results.
+
+4. **Logging the results**: As the tests are executed, the API captures and logs the test results. This typically includes information such as the test status (pass/fail) and any error messages.
+
+.. image:: source\development\img\framework-overview.png
+
+Overall, the test framework API serves as an intermediary between the build system, the test setup generation process, and the test runner. 
+   
 Concepts
 *********
 Test vs Suite 

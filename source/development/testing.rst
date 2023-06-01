@@ -26,11 +26,31 @@ Overall, the test framework API serves as an intermediary between the build syst
    
 Concepts
 *********
-Test vs Suite 
 
-Explain the configs (dts). What to change/add, if anything. 
+- Test vs Suite of tests
+	- **Test** - A test is an individual evaluation carried out to confirm the operation, performance, or behavior of a particular module. It consists of compiling and executing a set of predetermined conditions and assess the outcomes with what was anticipated. A test is usually created to confirm a particular feature of the component being evaluated.
 
-Nix recipes
+	- **Suite of tests** - A suite of tests, on the other hand, refers to a collection or group of individual tests that are organized and executed together. These tests may cover different functionalities or aspects of the module under test (MUT). A test suite allows for comprehensive testing by encompassing various scenarios, edge cases, and usage scenarios. It helps ensure that multiple aspects of the software are thoroughly examined and validated.
+
+- Config.dts
+	- **Purpose** - The configuration interface of the test framework consists of a .dts (Device Tree Source) file. The .dts file serves as a central configuration file for the framework, allowing users to define various parameters and settings related to the testing environment (e.g., target platform, logging level, tests selection, etc).
+	- **Configuration fields** - *ToDo*
+
+- Nix recipes
+	- **Firmware Build** - Nix provides a powerful and reproducible way to build firmware for various platforms. A Nix recipe for firmware building typically involves the following components:
+
+		- **Package Definitions**: The Nix recipe includes package definitions for the necessary tools and dependencies required for firmware building. This may include compilers, cross-compilers, build utilities, and specific libraries or firmware frameworks.
+		- **Build Instructions**: The Nix recipe specifies the build instructions for the firmware. It describes the steps to compile the source code, generate firmware images, and perform any required post-processing tasks. These instructions ensure a consistent and reproducible build process across different environments.
+		- **Configuration Options**: The Nix recipe may provide configuration options that allow users to customize the firmware build. This could include selecting specific features, enabling or disabling certain modules, or setting compile-time parameters. These options provide flexibility to tailor the firmware to specific requirements.
+		- **Version Control**: The Nix recipe can integrate with version control systems, such as Git, to ensure that the firmware source code is fetched from a specific branch, tag, or commit. This helps maintain reproducibility and allows for easy updates to newer versions of the firmware.
+
+ 	- **Guests Build** - Nix is also well-suited for building virtual machine (VM) guests, such as operating systems or software stacks. A Nix recipe for guest building typically includes the following elements:
+
+		- **Base Image Definition**: The Nix recipe specifies the base image for the guest. This can be an existing image provided by a distribution or a custom image prepared specifically for the guest build. The base image serves as the starting point for the guest build process.
+		- **Package Definitions**: Similar to firmware building, the Nix recipe includes package definitions for the necessary software and dependencies required by the guest. This may encompass the operating system kernel, userland utilities, libraries, and additional applications or services.
+		- **Configuration Customization**: The Nix recipe allows for customization of the guest's configuration. This includes options to specify network settings, filesystem layout, user accounts, startup services, and any other relevant guest-specific configurations. These customizations enable tailored guest builds according to specific requirements.
+		- **Provisioning and Post-Processing**: The Nix recipe can include steps for provisioning the guest image, such as installing additional software, configuring system services, or applying security hardening measures. It may also define any necessary post-processing steps, such as compressing the image or generating a bootable ISO file.
+		- **Version Control Integration**: Similar to firmware building, the Nix recipe for guest building can integrate with version control systems to ensure reproducibility and easy updates to newer versions of the guest software.
 
 
 Test Definition

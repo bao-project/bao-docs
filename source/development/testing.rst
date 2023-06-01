@@ -48,7 +48,7 @@ Concepts
 
 		- **Base Image Definition**: The Nix recipe specifies the base image for the guest. This can be an existing image provided by a distribution or a custom image prepared specifically for the guest build. The base image serves as the starting point for the guest build process.
 		- **Package Definitions**: Similar to firmware building, the Nix recipe includes package definitions for the necessary software and dependencies required by the guest. This may encompass the operating system kernel, userland utilities, libraries, and additional applications or services.
-		- **Configuration Customization**: The Nix recipe allows for customization of the guest's configuration. This includes options to specify network settings, filesystem layout, user accounts, startup services, and any other relevant guest-specific configurations. These customizations enable tailored guest builds according to specific requirements.
+		- **Configuration Customization**: The Nix recipe allows for customization of the guest's configuration. This includes options to specify network settings, filesystem layout, startup services, and any other relevant guest-specific configurations.
 		- **Provisioning and Post-Processing**: The Nix recipe can include steps for provisioning the guest image, such as installing additional software, configuring system services, or applying security hardening measures. It may also define any necessary post-processing steps, such as compressing the image or generating a bootable ISO file.
 		- **Version Control Integration**: Similar to firmware building, the Nix recipe for guest building can integrate with version control systems to ensure reproducibility and easy updates to newer versions of the guest software.
 
@@ -56,12 +56,23 @@ Concepts
 Test Definition
 ***************
 
+The C code macro BAO_TEST(TEST_NAME, SUITE_NAME) provides a template for defining tests within the test framework. With this macro, test cases can be written in a standardized and consistent manner, making them more readable, maintainable, and seamlessly integrated into the test framework.
+
 .. code-block:: c
 
-    BAO_TEST(TEST_NAME, SUITE_NAME)
+	BAO_TEST(TEST_NAME, SUITE_NAME)
+    {
+    // Test implementation code goes here
+    }
+
+The macro consists of three components:
+
+1. **BAO_TEST**: This is the name of the macro itself, serving as an identifier for the test definition.
+2. **TEST_NAME**: This placeholder represents the specific name of the test case being defined. It should be replaced with a descriptive and meaningful name that reflects the purpose and functionality of the test.
+3. **SUITE_NAME**: This placeholder represents the name of the test suite to which the test case belongs. Test suites group related test cases together, allowing for better organization based on functionality or the module/component being tested.
 
 
-Asserts.
+To facilitate test development, the framework already integrates the following implemented assertion functions: (list of asserts - *ToDo*)
 
 Directory Structure
 *******************

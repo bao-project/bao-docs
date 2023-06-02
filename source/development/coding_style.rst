@@ -19,8 +19,34 @@ The coding style and guidelines for C development are heavily influenced and
 constrained by the MISRA C:2012 guidelines, which should take precedence above
 all others in this document or elsewhere.
 
+All C projects should support either the GCC compiler, the Clang compiler or
+both. If one compiler is supported for given project, it must be so for all
+supported target architectures.
+
+For reach guideline we try to provide a set of compiler options which enforce
+the rule, a mapping to a MISRA C:2012 and tools available in the :ref:`CI
+infrastructure <ci>` that can check if this guideline is being adhered to.
+
 Compiler Configuration
 **********************
+
+- The C11 version shall be used.
+
+Compiler options: `-std=c11`.
+MISRA C:2012 : R1.1
+
+- No language extensions shall be allowed.
+
+Compiler options: `-pedantic -pedantic-errors`.
+MISRA C:2012 : R1.1
+
+- Treat all warnings as errors so no warnings can be ignored.
+
+Compiler options: `-Werrors`.
+
+- Enable all recommended warnings.
+
+Compiler options: `-Wall -Wextra`.
 
 Directory and file Structure
 ****************************

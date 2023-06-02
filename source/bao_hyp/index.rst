@@ -7,5 +7,6 @@ Bao Hypervisor
 
    overview
    getting_started
+   config
    user_manual/index
    internals/index

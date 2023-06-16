@@ -82,10 +82,54 @@ To facilitate test development, the framework already integrates the following i
 
 Directory Structure
 *******************
-Explain the directoy structure. Where the bao-tests repo should be, where the 
-tests should be.
+To effectively use the test framework, it is essential to adhere to the following directory structure:
 
-**SUGGESTION ON THE ORGANIZATION OF THE TESTS DIRECTORY**
+- **ci**: This directory contains files related to continuous integration (CI) processes. It automatically executes the test framework, employing a predefined set of tests whenever a pull request (PR) is submitted to the main branch of the MUT (Modified Unit Test).
+
+- **src**: This directory houses the source code files for the bao-hypervisor project.
+
+- **tests**: This directory holds test-related files for the project's testing activities.
+
+- **configs**: Within this subdirectory, you will find the configuration files (.dts configuration files) used for test setup and configuration.
+
+- **src**: This subdirectory encompasses the source code files (.c files) that implement the tests.
+
+- **bao-tests**: This repository contains the C infrastructure and internal workings of the "maestro," which orchestrates the entire flow of the test framework.
+
+- **software-stack (TBD)**: This is a nix-based repository designed to conveniently fetch and build all the necessary firmware and dependencies. It ensures the reproducibility of the firmware stack and seamlessly integrates with the CI process.
+
+The provided directory tree above represents the test framework in two distinct scenarios: running tests at the hypervisor level and running tests on the guests.
+
+.. code-block:: yaml
+
+	bao-hypervisor
+	├── ci
+	├── src
+	├── tests
+	│   ├── configs
+	│   │   ├── cfg1.dts
+	│   │   ├── cfg2.dts
+	│   ├── src
+	│   │   ├── src1.c
+	│   │   ├── src2.c
+	├── bao-tests
+	├── software-stack (TBD)
+
+
+.. code-block:: yaml
+
+	├── guest-directory
+	│   ├── ci
+	│   ├── src
+	│   ├── tests
+	│   │   ├── configs
+	│   │   │   ├──cfg1.dts
+	│   │   │   ├──cfg2.dts
+	│   │   ├── src
+	│   │   │   ├──src1.c
+	│   │   │   ├──src2.c
+	│   ├── bao-tests
+	│   ├── software-stack (TBD)
 
 
 How to use

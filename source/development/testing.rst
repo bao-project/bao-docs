@@ -71,8 +71,14 @@ The macro consists of three components:
 2. **TEST_NAME**: This placeholder represents the specific name of the test case being defined. It should be replaced with a descriptive and meaningful name that reflects the purpose and functionality of the test.
 3. **SUITE_NAME**: This placeholder represents the name of the test suite to which the test case belongs. Test suites group related test cases together, allowing for better organization based on functionality or the module/component being tested.
 
+To facilitate test development, the framework already integrates the following implemented assertion functions: 
 
-To facilitate test development, the framework already integrates the following implemented assertion functions: (list of asserts - *ToDo*)
+- `EXPECTED_EQUAL(x, y)` -> Checks if x is equal Y
+- `EXPECTED_NOT_EQUAL(x, y)` -> Checks if x is different from Y
+- `EXPECTED_TRUE(x)` -> Checks if x is true
+- `EXPECTED_FALSE(x)` -> Checks if x is false
+- `EXPECTED_PTR_NULL(x)` -> Checks if pointer x is NULL
+- `EXPECTED_PTR_NOT_NULL(x)` -> Checks if pointer x is not NULL
 
 Directory Structure
 *******************

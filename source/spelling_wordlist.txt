@@ -66,3 +66,7 @@ Submodules
 subdirectory
 scalability
 codebase
+config
+vCPU
+vCPUs
+yaml

@@ -67,3 +67,7 @@ subdirectory
 scalability
 codebase
 unix
+config
+vCPU
+vCPUs
+yaml

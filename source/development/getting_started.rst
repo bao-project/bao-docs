@@ -39,7 +39,7 @@ Platform description
 5. Memory Management
 ^^^^
 
-6. Architectural configurations
+6. Architecture-Specific configurations
 ^^^^
 
 Shared memory configuration

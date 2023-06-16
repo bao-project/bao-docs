@@ -20,7 +20,7 @@ The test framework API is a Python tool that acts as the control center for the 
 
 4. **Logging the results**: As the tests are executed, the API captures and logs the test results. This typically includes information such as the test status (pass/fail) and any error messages.
 
-.. image:: source\development\img\framework-overview.png
+.. figure:: img/framework-overview.png
 
 Overall, the test framework API serves as an intermediary between the build system, the test setup generation process, and the test runner. 
    

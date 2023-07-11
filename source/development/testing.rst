@@ -270,7 +270,29 @@ Lets assume you have a MUT with the following structure:
  /src
  README.md
 
-3. You need to write a `test configuration
+3. You need to add the testing framework source files and the test files to
+the source files that are going to be compiled. For makefile based projects you
+can follow the example below:
+
+.. code-block:: make
+
+  TESTF_TESTS_DIR:=$(cur_dir)/tests/src
+  TESTF_REPO_DIR:=$(cur_dir)/bao-tests
+  include $(TESTF_REPO_DIR)/src/bao-test.mk
+
+  SRC_DIRS+=$(TESTF_SRC_DIR) $(TESTF_TESTS_DIR)
+  C_SRC+=$(TESTF_SRCS)
+  INC_DIRS+=$(TESTF_INC_DIR)
+  CFLAGS+=$(TESTF_FLAGS)
+
+.. note::
+  Assign the variable ``TESTF_TESTS_DIR`` with the path to the test files
+  directory and ``TESTF_REPO_DIR`` to the path of the test framework
+  repository. Then, you can include the file ``bao-test.mk`` which provides
+  variables containing all the necessary files to be include to build system.
+
+
+4. You need to write a `test configuration
    file <#test-configuration-file>`__, e.g., ``name_x.dts``, for the setup
    you want to test (suites + platform + software stack), This file should be
    placed on your test config folder, in our example ``/tests/config``.
@@ -282,7 +304,7 @@ Lets assume you have a MUT with the following structure:
  - testes/suites
  - test configs
 
-4. Write some tests, and put them on your test folder, in our example
+5. Write some tests, and put them on your test folder, in our example
    ``/tests/src``.
 
 .. code-block:: bash
@@ -310,7 +332,7 @@ Lets assume you have a MUT with the following structure:
    are equal, you can use ``EXPECTED_EQUAL(x, y)``. There are more
    `asserts <#asserts>`__ to be used.
 
-5. Run the tests
+6. Run the tests
 
 Run the test-framework with: (**To be Implemented**)
 
@@ -324,7 +346,7 @@ Run the test-framework with docker with: (**To be Implemented**)
 
  make -C ci/docker test-framework name_x.dts
 
-6. To run the ci on the remote repository every time you push changes, i.e.,
+7. To run the ci on the remote repository every time you push changes, i.e.,
    perform a PR to the main branch, you need to add the following github action
    rule. (**To be Implemented**).
 

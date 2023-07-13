@@ -8,7 +8,7 @@ An overview of the configuration file options (structure overview)
 Guests Configuration
 --------------------
 
-Guest image
+Guest Image
 ***********
 
 Virtual Machine Configuration

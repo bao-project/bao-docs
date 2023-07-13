@@ -155,6 +155,10 @@ The macro consists of three components:
    allowing for better organization based on functionality or the
    module/component being tested.
 
+The implementation of tests must follow the
+`contributing guidelines <https://github.com/bao-project/bao-docs/blob/main/
+source/development/contributing.rst>`_
+
 
 Asserts
 ***********
@@ -397,12 +401,6 @@ tested. It contains the following fields:
         };
     };
 
-Test Implementation
--------------------
-Follow Contributing Guides and the testing guidelines:
--
--
--
 
 Appendix I
 ----------

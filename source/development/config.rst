@@ -1,8 +1,8 @@
 Bao Configuration File
 ======================
 
-Configuration File - Overview
------------------------------
+Overview
+--------
 An overview of the configuration file options (structure overview)
 
 Guests Configuration

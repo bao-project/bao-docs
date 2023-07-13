@@ -1,5 +1,5 @@
-Bao Config
-==========
+Bao Configuration File
+======================
 
 Configuration File - Overview
 -----------------------------

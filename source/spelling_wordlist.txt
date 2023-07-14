@@ -31,6 +31,8 @@ cppcheck
 jitter
 checkable
 fallthrough
+artefact
+artefacts
 requalification
 Requalification
 recategorized
@@ -65,4 +67,12 @@ submodules
 Submodules
 subdirectory
 scalability
-codebase
+qemu
+Aarch
+aarch
+virt
+config
+configs
+dts
+reproducibility
+bootable

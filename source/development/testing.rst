@@ -1,7 +1,6 @@
 Testing
 =======
 
-*Introductory paragraph* (testing Framework on bao projects -> unit testing)
 In order to tackle the challenge of testing new functionalities on the Bao
 hypervisor, we are actively working on the development of a comprehensive
 testing framework. The primary objective of this framework is to enable
@@ -25,7 +24,7 @@ The test framework API is a Python tool that acts as the control center for the
 1. **Calling the build system**: The API interacts with the build system to
 compile and build the different components required to perform tests. It
 triggers the build process, which may involve compiling source code, linking
-ibraries, and generating the necessary artifacts for testing.
+libraries, and generating the necessary artifacts for testing.
 
 2. **Generating the test setup**: Once the build process is complete, the API
 generates the necessary setup for running the tests. This includes setting up
@@ -113,10 +112,10 @@ Concepts
   - **Package Definitions**: Similar to firmware building, the Nix recipe
     includes package definitions for the necessary software and dependencies
     required by the guest. This may encompass the operating system kernel,
-    userland utilities, libraries, and additional applications or services.
+    user-land utilities, libraries, and additional applications or services.
   - **Configuration Customization**: The Nix recipe allows for customization
     of the guest's configuration. This includes options to specify network
-    settings, filesystem layout, startup services, and any other relevant
+    settings, file system layout, startup services, and any other relevant
     guest-specific configurations.
   - **Provisioning and Post-Processing**: The Nix recipe can include steps for
     provisioning the guest image, such as installing additional software,

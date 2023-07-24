@@ -6,7 +6,6 @@ Development
    :caption: Contents:
 
    coding_style
-   config
    code_documentation
    doc_guidelines
    testing

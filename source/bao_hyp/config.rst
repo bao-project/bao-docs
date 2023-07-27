@@ -37,7 +37,7 @@ configuration-independent fields, as shown below:
     ...
 
 Afterward, the configuration allows the definition of two distinct lists: (i) a
-list of shared memories (shmemlist) and (ii) a list of VMs (or guests) (vmlist).
+list of shared memories (``shmemlist``) and (ii) a list of VMs (or guests) (``vmlist``).
 While the list of shared memories is optional and may be omitted from the
 configuration, the list of VMs is mandatory and must include at least 1 VM. 
 Additionally, for each list, it is necessary to specify the list size using the

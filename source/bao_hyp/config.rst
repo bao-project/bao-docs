@@ -38,21 +38,21 @@ The configuration file follows a specific structure, as outlined below:
         }
     };
 
-The configuration is represented by a structure named ``config``, which must be
-named accordingly to ensure proper functionality.
-Before defining the ``config`` struct, it is necessary to declare the VM images.
-In this regard, the configuration file expects to receive a compiled image of
-each guest (``.bin`` file) which will further be assigned to each VM. For
-instance, the number of VM images declared can vary between 1 and the number of
-CPU cores available in the target platform (as Bao hypervisor follows a 1-1 CPU
-partitioning policy).
+Prior to defining the ``config`` struct, it is imperative to declare the VM
+images. The declaration of VM images utilizes the VM_IMAGE macro, requiring an
+identifier and the respective path to the image file. In this regard, the
+configuration file expects to receive a compiled image of each guest
+(``.bin`` file) that will be subsequently assigned to individual VMs using the
+``VM_IMAGE`` macro. For instance, the number of VM images declared may vary 
+between 1 and the count of CPU cores accessible in the target platform, given
+that the Bao hypervisor adheres to a 1-1 CPU partitioning policy.
 
 Afterward, the configuration allows the definition of two distinct lists: (i) a
-list of shared memories (``shmemlist``) and (ii) a list of VMs (or guests)
-(``vmlist``). While the list of shared memories is optional and may be omitted
-from the configuration, the list of VMs is mandatory and must include at least
-1 VM. Additionally, for each list, it is necessary to specify the list size
-using the parameters ``shmemlist_size`` and ``vmlist_size``.
+list of shared memory regions (``shmemlist``) and (ii) a list of VMs (or
+guests) (``vmlist``). While the list of shared memory regions is optional and
+may be omitted from the configuration, the list of VMs is mandatory and must
+include at least 1 VM. Additionally, for each list, it is necessary to specify
+the list size using the parameters ``shmemlist_size`` and ``vmlist_size``.
 
 
 Guests Configuration

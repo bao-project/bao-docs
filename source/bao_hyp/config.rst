@@ -17,7 +17,7 @@ The configuration file follows a specific structure, as outlined below:
 
     struct config config;
 
-The configuration is represented by a structure named config, which must be
+The configuration is represented by a structure named ``config``, which must be
 named accordingly to ensure proper functionality.
 Before defining the ``config`` struct, it is necessary to declare the VM images.
 In this regard, the configuration file expects to receive a compiled image of

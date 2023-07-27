@@ -26,7 +26,7 @@ the number of VM images declared can vary between 1 and the number of CPU cores
 available in the target platform (as Bao hypervisor follows a 1-1 CPU
 partitioning policy).
 
-Regarding the config struct, the configuration requires a macro to initialize 
+Regarding the ``config`` struct, the configuration requires a macro to initialize 
 configuration-independent fields, as shown below:
 
 .. code-block:: c

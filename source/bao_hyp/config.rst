@@ -4,8 +4,8 @@ Bao Configuration File
 Overview
 --------
 The Bao hypervisor's configuration is managed through a dedicated configuration
-file (denoted by the .c file). This section serves to provide an in-depth
-exploration of the various configuration options available.
+in the form of a C source file. This section provides an in-depth
+description of the various configuration options available.
 
 The configuration file follows a specific structure, as outlined below:
 
@@ -17,7 +17,7 @@ The configuration file follows a specific structure, as outlined below:
     VM_IMAGE(img1_name, "/path/to/vm1/binary.bin");
     VM_IMAGE(img2_name, "/path/to/vm2/binary.bin");
 
-    struct config config = { 
+    struct config config = {
 
         // Shared memories configuration
         .shmemlist_size = N,
@@ -43,7 +43,7 @@ images. The declaration of VM images utilizes the VM_IMAGE macro, requiring an
 identifier and the respective path to the image file. In this regard, the
 configuration file expects to receive a compiled image of each guest
 (``.bin`` file) that will be subsequently assigned to individual VMs using the
-``VM_IMAGE`` macro. For instance, the number of VM images declared may vary 
+``VM_IMAGE`` macro. For instance, the number of VM images declared may vary
 between 1 and the count of CPU cores accessible in the target platform, given
 that the Bao hypervisor adheres to a 1-1 CPU partitioning policy.
 
@@ -54,6 +54,14 @@ may be omitted from the configuration, the list of VMs is mandatory and must
 include at least 1 VM. Additionally, for each list, it is necessary to specify
 the list size using the parameters ``shmemlist_size`` and ``vmlist_size``.
 
+Config file name and location
+-----------------------------
+The configuration file with the ``.c`` extension can be assigned various names.
+As part of the Bao hypervisor's build system, it expects to find the
+configuration file in the ``configs`` folder. This means that users need to
+place their custom configuration files with the appropriate settings in the
+designated ``configs`` directory. The build system then relies on this file to
+extract and apply the desired configuration options for the hypervisor.
 
 Guests Configuration
 --------------------

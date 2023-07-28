@@ -131,8 +131,8 @@ development directly on it. Follow these steps:
       reviewer and never mark it as resolved yourself. The **reviewer**
       must be the one to close that conversation in case they agree with the
       changes;
-    * re-request a review from **reviewers'** after you've address all their
-      concerns and modification requests;
+    * re-request a review from **reviewers'** after you have addressed all
+      their concerns and modification requests;
     * if the **reviewers** are taking too long, try contacting the :term:`PR`
       assignee.
 

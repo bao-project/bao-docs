@@ -29,7 +29,7 @@ jobs:
     container: baoproject/bao:latest
     steps:
       - uses: actions/checkout@v2
-      - run: | 
+      - run: |
           git config --global --add safe.directory $(realpath .)
           make spelling
 
@@ -38,7 +38,7 @@ jobs:
     container: baoproject/bao:latest
     steps:
       - uses: actions/checkout@v2
-      - run: doc8 source/ --ignore D000
+      - run: make format
 
   build:
     runs-on: ubuntu-latest

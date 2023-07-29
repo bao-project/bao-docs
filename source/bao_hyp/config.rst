@@ -63,6 +63,13 @@ place their custom configuration files with the appropriate settings in the
 designated ``configs`` directory. The build system then relies on this file to
 extract and apply the desired configuration options for the hypervisor.
 
+.. warning::
+    Warning: Modifying the number of elements in the ``shmemlist`` or \
+    ``vmlist`` lists, which differs from the specified sizes \
+    (``shmemlist_size`` and ``vmlist_size``, respectively), may result in \
+    unpredictable behavior. Ensure that any changes made to the configuration \
+    are consistent with the designated sizes to avoid unexpected issues.
+
 Guests Configuration
 --------------------
 

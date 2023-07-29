@@ -185,6 +185,32 @@ configuration encompasses the definition of:
 #################
 .. _Memory Mapping:
 
+- **region_num** [mandatory] - defines the number of memory regions mapped to \
+  the VM. This structure contemplates the following parameters:
+
+.. code-block:: c
+
+    struct vm_mem_region {
+        paddr_t base;
+        size_t size;
+        bool place_phys;
+        paddr_t phys;
+    };
+
+where:
+
+- **base** [mandatory] - corresponds to the base virtual address of the \
+  memory region;
+- **size**  [mandatory] -  corresponds to the size of the memory region;
+- **place_phys** [optional] - the memory region is mapped into the virtual \
+  memory, and it's important to note that the virtual address (VA) might not \
+  necessarily be the same as the physical address (PA). When "place_phys" is
+  set to true, the virtual address corresponds to the physical address. \
+  If ``place_phys`` equals to true, it allows to specify the physical address \
+  of the memory region. By default, ``place_phys`` equals to false;
+- **phys** [mandatory if ``place_phys`` is true] - it corresponds to the \
+  physical address where the memory region should be mapped;
+
 3. Inter-Process Communication (IPC)
 ####################################
 .. _Inter-Process Communication (IPC):

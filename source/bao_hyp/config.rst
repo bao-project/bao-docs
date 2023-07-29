@@ -296,6 +296,41 @@ where:
 ########################################
 .. _Architectural-Specific Configurations:
 
+- **arch** [mandatory] - allows the definition of architecture dependent \
+  configurations and is configured through the following structure:
+
+.. code-block:: c
+
+    struct arch_vm_platform {
+
+        // Configuration of the Generic Interrupt Controller (GIC)
+        struct vgic_dscrp {
+            paddr_t gicd_addr;
+            paddr_t gicc_addr;
+            paddr_t gicr_addr;
+            size_t interrupt_num;
+        } gic;
+
+        // Configuration of the System Memory Management Unit (SMMU)
+        struct {
+            streamid_t global_mask;
+            size_t group_num;
+            struct smmu_group {
+                streamid_t mask;
+                streamid_t id;
+            } *groups;
+        } smmu;
+    };
+
+
+where:
+
+- **vgic_dscrp** [mandatory] - corresponds to the configuration of the \
+  Generic Interrupt Controller (GIC);
+- **vgic_dscrp** [optional] - corresponds to the configuration of the System \
+  Memory Management Unit (SMMU);
+
+
 CPU Affinity
 ************
 

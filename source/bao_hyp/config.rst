@@ -353,6 +353,16 @@ This functionality is achieved through the following configuration parameter:
 Coloring
 ********
 
+- **colors** [optional] - corresponds to a bitmap for the assigned cache \
+  colors of the VM. This value is truncated depending on the number of \
+  available colors calculated at run-time, i.e., its platform-dependent. By \
+  default, the coloring mechanism is not active. For instance, the following \
+  picture depicts a hypothetical setup with a 50/50 coloring scheme;
+
+.. figure:: img/llc-colors.svg
+    :align: center
+    :name: llc-colors-fig
+
 Shared Memory Configuration
 ---------------------------
 

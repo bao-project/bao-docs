@@ -334,6 +334,22 @@ where:
 CPU Affinity
 ************
 
+The configuration file of the Bao hypervisor also enables the definition of
+core affinity, which involves selecting the physical core where the guest
+should run.
+
+.. figure:: img/cpu-affinity.svg
+    :align: center
+    :name: cpu-affinity-fig
+
+This functionality is achieved through the following configuration parameter:
+
+- **cpu_affinity** [optional] - corresponds to a bitmap signaling the \
+  preferred physical CPUs assigned to the VM. If this value is mutually \
+  exclusive for all the VMs, the physical CPUs assigned to each VM follow the \
+  bitmap. Otherwise (in case of bit overlap or lack of affinity definition), \
+  the CPU assignment is defined by the hypervisor;
+
 Coloring
 ********
 

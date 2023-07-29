@@ -215,6 +215,38 @@ where:
 ####################################
 .. _Inter-Process Communication (IPC):
 
+- **ipc_num** [optional] - defines the number of IPCs assigned to the VM. By \
+  default, ``ipc_num`` equals to zero;
+- **ipcs** [mandatory if ``ipc_num`` > 0] - corresponds to the specification \
+  of the IPC and is configured through the following structure:
+
+.. code-block:: c
+
+    struct ipc {
+        paddr_t base;
+        size_t size;
+        size_t shmem_id;
+        size_t interrupt_num;
+        irqid_t *interrupts;
+    };
+
+
+where:
+
+- **base**  [mandatory] - corresponds to the virtual base address of the IPC \
+  memory region;
+- **size** [mandatory] - corresponds to the size of the IPC memory region;
+- **shmem_id** [mandatory] - corresponds to the ID of the shared memory \
+  associated with the IPC;
+- **interrupt_num** [mandatory] - defines the number of interrupts assigned \
+  to the IPC;
+- **interrupts** [mandatory if *interrupt_num* > 0] - defines a list of \
+  interrupt IDs assigned to the IPC - ``(irqid_t[]) {irq_1, ..., irq_n}``;
+
+.. warning::
+    Specifying a number of interrupts in the ``interrupts`` buffer that \
+    differs from the ``interrupt_num`` may result in unforeseen behavior.
+
 4. Devices
 ##########
 .. _Devices:

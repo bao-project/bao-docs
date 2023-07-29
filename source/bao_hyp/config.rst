@@ -158,23 +158,46 @@ use of two different macros:
 Virtual Machine Configuration
 *****************************
 
+The VM configuration enables users to define the characteristics of each the \
+virtualized platform. It encompasses critical details that define the VM's \
+run-time environment, performance, and overall capabilities. By customizing \
+this configuration, users can tailor the virtual platform to suit specific \
+workload requirements and application needs for their virtual machines. The \
+configuration encompasses the definition of:
+
+- **Number of virtual CPUs** - see details in `Number of vCPUs`_;
+- **Virtual memory regions** - see details in `Memory Mapping`_;`
+- **Inter-Process Comunication (IPC)** - see details in \
+  `Inter-Process Communication (IPC)`_;
+- **Devices** - see details in `Devices`_;
+- **Memory Management** - see details in `Memory Management`_;
+- **Architectural-Specific Configurations** - see details in \
+  `Architectural-Specific Configurations`_;
+
 1. Number of vCPUs
 ##################
+.. _Number of vCPUs:
+
 
 2. Memory Mapping
 #################
+.. _Memory Mapping:
 
 3. Inter-Process Communication (IPC)
 ####################################
+.. _Inter-Process Communication (IPC):
 
 4. Devices
 ##########
+.. _Devices:
 
 5. Memory Management
 ####################
+.. _Memory Management:
 
 6. Architectural-Specific Configurations
 ########################################
+.. _Architectural-Specific Configurations:
 
 CPU Affinity
 ************

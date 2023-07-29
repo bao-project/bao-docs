@@ -178,6 +178,8 @@ configuration encompasses the definition of:
 ##################
 .. _Number of vCPUs:
 
+- **cpu_num** [mandatory] - defines the number of CPUs assigned to the VM;
+
 
 2. Memory Mapping
 #################

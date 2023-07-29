@@ -529,6 +529,46 @@ However, this mechanism may not take effect if the physical mapping feature is e
 specific memory region. Cache coloring exclusively operates in virtual memory systems, i.e.,
 systems featuring Memory Management Units (MMUs) for address translation.
 
+Shared Memory Configuration
+---------------------------
+.. _Shared Memory Configuration:
+
+In Bao's configuration multiple (``shmem0``, ``shmem1``, ...) or no shared memory can be set. If
+at least one shared memory is defined, an  ID is assigned to which the shared memory is
+associated. Later, this ID can be associated with an IPC in the multi-guest configuration.
+
+.. figure:: img/shmem.svg
+    :align: center
+    :name: shmem-fig
+
+|
+
+The configuration of shared memories is done by populating a struct called
+``shmem``, as follows:
+
+.. code-block:: c
+
+    struct shmem {
+        size_t size;
+        bool place_phys;
+        union {
+            paddr_t base;
+            paddr_t phys;
+        };
+    };
+
+
+This struct contains the following parameters:
+
+- **size** [mandatory] - defines the total size of the shared memory. The size of the shared \
+  memory must always be multiples of 4Kb (0x1000);
+- **place_phys** [optional] - shared memory is mapped into the virtual memory and it's \
+  important to note that the virtual address (VA) might not necessarily be the same as the \
+  physical address (PA). When ``place_phys`` is set to true, the virtual address corresponds to \
+  the physical address. By default, ``place_phy`` equals to false;
+- **base / phys** [optional] - defines the physical address (base address) of the shared memory.
+
+
 Configuration File Location
 ---------------------------
 

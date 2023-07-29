@@ -72,3 +72,4 @@ vCPUs
 yaml
 bootloader
 inplace
+virtualized

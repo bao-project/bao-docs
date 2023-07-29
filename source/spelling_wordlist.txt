@@ -74,3 +74,4 @@ yaml
 bootloader
 inplace
 virtualized
+iommu

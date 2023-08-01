@@ -220,8 +220,8 @@ guests.
  │   ├── src
  │   │   ├── src1.c
  │   │   ├── src2.c
- ├── bao-tests
- ├── software-stack (TBD)
+ │   ├── bao-tests
+ │   ├── software-stack (TBD)
 
 
 .. code-block:: yaml
@@ -236,8 +236,8 @@ guests.
  │   │   ├── src
  │   │   │   ├──src1.c
  │   │   │   ├──src2.c
- │   ├── bao-tests
- │   ├── software-stack (TBD)
+ │   │   ├── bao-tests
+ │   │   ├── software-stack (TBD)
 
 
 How to use
@@ -280,7 +280,7 @@ can follow the example below:
 .. code-block:: make
 
   TESTF_TESTS_DIR:=$(cur_dir)/tests/src
-  TESTF_REPO_DIR:=$(cur_dir)/bao-tests
+  TESTF_REPO_DIR:=$(cur_dir)/tests/bao-tests
   include $(TESTF_REPO_DIR)/src/bao-test.mk
 
   SRC_DIRS+=$(TESTF_SRC_DIR) $(TESTF_TESTS_DIR)

@@ -1,3 +1,5 @@
+.. _bao_tests:
+
 Testing
 =======
 

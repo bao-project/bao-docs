@@ -57,3 +57,5 @@ Glossary
         resources and its assets. This can include individuals, other systems
         (e.g., through a remote connection), and specific system components
         such as VMs and VMMs.
+    MUT 
+        Module Under Test. More information :ref:`here <bao_tests>`.

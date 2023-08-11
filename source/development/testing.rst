@@ -10,14 +10,14 @@ developers to conduct unit tests on various system components (such as the
 hypervisor, virtual machine (VM), and virtual machine monitor (VMM)), as well
 as assess interactions between different components/layers.
 
-Test Framework 
+Test Framework
 --------------
 
 Overview
 --------
 
 The test framework API is a Python tool that acts as the control center for the
- testing process. It performs the following tasks:
+testing process. It performs the following tasks:
 
 1. **Calling the build system**: The API interacts with the build system to
 compile and build the different components required to perform tests. It
@@ -44,7 +44,7 @@ status (pass/fail) and any error messages.
     Bao test framework overview.
 
 Overall, the test framework API serves as an intermediary between the build
- system, the test setup generation process, and the test runner.
+system, the test setup generation process, and the test runner.
 
 Concepts
 --------

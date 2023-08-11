@@ -11,10 +11,6 @@ as assess interactions between different components/layers.
 Test Framework
 ---------------
 
-Nomenclature
-*************
-- **MUT**: Module Under Test;
-
 Overview
 ***********
 

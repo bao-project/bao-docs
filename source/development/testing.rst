@@ -10,11 +10,11 @@ developers to conduct unit tests on various system components (such as the
 hypervisor, virtual machine (VM), and virtual machine monitor (VMM)), as well
 as assess interactions between different components/layers.
 
-Test Framework
----------------
+Test Framework 
+--------------
 
 Overview
-***********
+--------
 
 The test framework API is a Python tool that acts as the control center for the
  testing process. It performs the following tasks:
@@ -47,7 +47,7 @@ Overall, the test framework API serves as an intermediary between the build
  system, the test setup generation process, and the test runner.
 
 Concepts
-*********
+--------
 
 - Test vs Suite of tests
 
@@ -127,7 +127,7 @@ Concepts
 
 
 Test Definition
-***************
+---------------
 
 The C code macro BAO_TEST(TEST_NAME, SUITE_NAME) provides a template for
  defining tests within the test framework. With this macro, test cases can be
@@ -159,7 +159,7 @@ source/development/contributing.rst>`_
 
 
 Asserts
-***********
+-------
 
 To facilitate test development, the framework already integrates the following
  implemented assertion functions:
@@ -172,7 +172,7 @@ To facilitate test development, the framework already integrates the following
 - ``EXPECTED_PTR_NOT_NULL(x)`` -> Checks if pointer x is not ``NULL``;
 
 Directory Structure
-*******************
+-------------------
 To effectively use the test framework, it is essential to adhere to the
 following directory structure:
 
@@ -239,7 +239,7 @@ guests.
 
 
 How to use
-***********
+----------
 
 Lets assume you have a MUT with the following structure:
 
@@ -370,7 +370,7 @@ Run the test-framework with docker with: (**To be Implemented**)
 
 
 Test Configuration File
-***********************
+-----------------------
 The test configuration file is a ``.dts`` file that describes the setup to be
 tested. It contains the following fields:
 

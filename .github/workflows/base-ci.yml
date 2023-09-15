@@ -33,12 +33,15 @@ jobs:
           git config --global --add safe.directory $(realpath .)
           make spelling
 
-  format-check:
+  docformat:
     runs-on: ubuntu-latest
     container: baoproject/bao:latest
     steps:
       - uses: actions/checkout@v2
-      - run: make format
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - run: make rst-format
 
   build:
     runs-on: ubuntu-latest

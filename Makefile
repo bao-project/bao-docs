@@ -1,6 +1,6 @@
 # Minimal makefile for Sphinx documentation
 #
-
+root_dir:=$(realpath .)
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXOPTS    ?= -W -a
@@ -12,16 +12,17 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help format Makefile ci
+.PHONY: help
 
-# doc8 format checker
-# Checks the format of the reST sources.
-format:
-	@doc8 source/ --ignore D000
+# Instantiate CI rules
+include ci/ci.mk
+
+$(call ci, rstformat, $(SOURCEDIR))
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
+%:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-ci: format html spelling
+ci: rst-format html spelling
+.PHONY: ci

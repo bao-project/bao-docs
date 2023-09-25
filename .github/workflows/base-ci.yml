@@ -29,6 +29,9 @@ jobs:
     container: baoproject/bao:latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
       - run: |
           git config --global --add safe.directory $(realpath .)
           make spelling
@@ -48,4 +51,7 @@ jobs:
     container: baoproject/bao:latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
       - run: make html

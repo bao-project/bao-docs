@@ -2,33 +2,33 @@ Testing
 =======
 
 
-Test framework overview
+Test Framework Overview
 -----------------------
 
-Practical guide
+Practical Guide
 ---------------
 
-Directory structure
+Directory Structure
 *******************
 
-Test Configuration file
+Test Configuration File
 ***********************
 
-Tests definition
+Tests Definition
 ****************
 
-How to use
+How to Use
 **********
 
 
-For advanced Users
+For Advanced Users
 ------------------
 
 
-Extending framework tests
+Extending Framework Tests
 -------------------------
 
-Contribute to tests repository
+Contribute to Tests Repository
 ******************************
 
 

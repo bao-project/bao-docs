@@ -458,7 +458,7 @@ To run the `doc8 <https://github.com/PyCQA/doc8>`_ format checker:
 
 .. code-block:: shell
 
-    make format
+    make rst-format
 
 **Spelling Dictionaries**
 

@@ -91,7 +91,7 @@ make spelling
 To check for format issues, you need to run the following command:
 
 ```bash
-make format
+make rst-format
 ```
 
 After correcting all outputted errors, you can build the documentation and

@@ -4,19 +4,17 @@ Licensing
 =========
 
 Our software is provided under the `Apache 2.0 license
-<https://www.apache.org/licenses/LICENSE-2.0>`_, a permissive open source
-license. As a developer, all you need to know regarding your rights and
-obligations are described in this license. Before contributing, please read the
-license to fully understand all the terms.
+<https://www.apache.org/licenses/LICENSE-2.0>`_, a permissive open source license. As a developer,
+all you need to know regarding your rights and obligations are described in this license. Before
+contributing, please read the license to fully understand all the terms.
 
 Apache 2.0 Summary
 ------------------
 
-With Apache 2.0 license, a developer can do what they like with the software;
-however, the required notices must be included in the code. In the following
-list we describe succinctly some of the modalities regarding the license.
-Beware that this is only a short summary of the license. You should read the
-full text to fully capture it.
+With Apache 2.0 license, a developer can do what they like with the software; however, the required
+notices must be included in the code. In the following list we describe succinctly some of the
+modalities regarding the license. Beware that this is only a short summary of the license. You
+should read the full text to fully capture it.
 
 With Apache 2.0. a developer **can**...
 
@@ -27,14 +25,13 @@ With Apache 2.0. a developer **can**...
 
 With Apache 2.0. a developer **can't**...
 
-* Hold the software owners liable for eventual charges derived from any
-  damages
+* Hold the software owners liable for eventual charges derived from any damages
 * Use any contributors' names, trademarks, or logos
 
 With Apaches 2.0 a developer **must**...
 
-* Include a copy of the license, copyright, and any NOTICE file notice with the
-  software to be distributed
+* Include a copy of the license, copyright, and any NOTICE file notice with the software to be
+  distributed
 * Indicate that changes were made to the code
 
 
@@ -42,8 +39,8 @@ With Apaches 2.0 a developer **must**...
 License and Copyright Notice
 ----------------------------
 
-Any file contributed to this project must start with an header comment with the
-following information:
+Any file contributed to this project must start with an header comment with the following
+information:
 
 * a copyright notice similar to the following:
 
@@ -57,9 +54,9 @@ following information:
 
     SPDX-License-Identifier: Apache-2.0
 
-In the end, this header should be added as a comment on the top of each
-individual file, according to the programming language in which the file is
-written. In the C language, the header would look like the example below.
+In the end, this header should be added as a comment on the top of each individual file, according
+to the programming language in which the file is written. In the C language, the header would look
+like the example below.
 
 .. code-block:: c
 
@@ -73,50 +70,42 @@ written. In the C language, the header would look like the example below.
 Developer Certification of Origin (DCO)
 ---------------------------------------
 
-To guarantee authors have all the necessary rights/permissions over the
-contributed artifacts and therefore do not incur in any license or legal
-violations, we require that every commit author adheres to a DCO. The
-contributors' agreement to the DCO must be attested to in every commit message
-by simply appending a ``Signed-off-by`` statement for each author.
+To guarantee authors have all the necessary rights/permissions over the contributed artifacts and
+therefore do not incur in any license or legal violations, we require that every commit author
+adheres to a DCO. The contributors' agreement to the DCO must be attested to in every commit
+message by simply appending a ``Signed-off-by`` statement for each author.
 
 .. code-block:: none
 
-    Developer Certificate of Origin
-    Version 1.1
+    Developer Certificate of Origin Version 1.1
 
     Copyright (C) 2004, 2006 The Linux Foundation and its contributors.
 
-    Everyone is permitted to copy and distribute verbatim copies of this
-    license document, but changing it is not allowed.
+    Everyone is permitted to copy and distribute verbatim copies of this license document, but
+    changing it is not allowed.
 
 
     Developer's Certificate of Origin 1.1
 
     By making a contribution to this project, I certify that:
 
-    (a) The contribution was created in whole or in part by me and I
-        have the right to submit it under the open source license
+    (a) The contribution was created in whole or in part by me and I have the right to submit it
+        under the open source license indicated in the file; or
+
+    (b) The contribution is based upon previous work that, to the best of my knowledge, is covered
+        under an appropriate open source license and I have the right under that license to submit
+        that work with modifications, whether created in whole or in part by me, under the same
+        open source license (unless I am permitted to submit under a different license), as
         indicated in the file; or
 
-    (b) The contribution is based upon previous work that, to the best
-        of my knowledge, is covered under an appropriate open source
-        license and I have the right under that license to submit that
-        work with modifications, whether created in whole or in part
-        by me, under the same open source license (unless I am
-        permitted to submit under a different license), as indicated
-        in the file; or
+    (c) The contribution was provided directly to me by some other person who certified (a), (b) or
+        (c) and I have not modified it.
 
-    (c) The contribution was provided directly to me by some other
-        person who certified (a), (b) or (c) and I have not modified
-        it.
+    (d) I understand and agree that this project and the contribution are public and that a record
+        of the contribution (including all personal information I submit with it, including my
+        sign-off) is maintained indefinitely and may be redistributed consistent with this project
+        or the open source license(s) involved.
 
-    (d) I understand and agree that this project and the contribution
-        are public and that a record of the contribution (including all
-        personal information I submit with it, including my sign-off) is
-        maintained indefinitely and may be redistributed consistent with
-        this project or the open source license(s) involved.
-
-The process to sign-off the commit message is described step-by-step in the
-:ref:`commit sign-off<commit_signoff>` section of the :ref:`contributing`
-guides. Please consult the full guide if you are planning to contribute to the
-project.
+The process to sign-off the commit message is described step-by-step in the :ref:`commit
+sign-off<commit_signoff>` section of the :ref:`contributing` guides. Please consult the full guide
+if you are planning to contribute to the project.

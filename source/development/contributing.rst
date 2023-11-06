@@ -123,32 +123,6 @@ over the original repository, you carry out the development directly on it. Foll
       modification requests;
     * if the **reviewers** are taking too long, try contacting the :term:`PR` assignee.
 
-.. _split_prs:
-
-Splitting Large PRs
-###################
-
-Code reviews are typically a difficult and time-consuming process. To facilitate the reviewer's
-work, contributors should try to split their PRs into smaller ones if they feel that the PR
-introduces a large set of modifications. Nevertheless, the assignee of the PR is the ultimate
-responsible for understanding if the PR is too large and asking the contributor to split the
-monolithic PR into smaller ones.
-
-To split your large PR, a contributor should follow this process:
-
-* create a topic branch from the ``main`` branch and called it ``wip/<feat_name>`` (where
-  ``<feat_name>`` is a short description of the feature, subsystem, or functionality being
-  developed);
-* this ``wip/<feat_name>`` should be the base branch of the overall feature to be submitted. For
-  example, it can a skeleton PR that only contains the infrastructure of the new functionality;
-* submit this base branch as a draft PR and mention on the PR description that it is the base
-  branch for a big feature that will be submitted in multiple PRs;
-* continue to introduce the remaining components of the feature one PR at a time, ensuring that
-  each PR is as self-contained as possible.
-* when each sub-feature PR is accepted and merged into the ``wip/<feat_name>`` branch and the
-  feature is complete, the assignee is responsible to merge the ``wip/<feat_name>`` branch into
-  ``main``. Please poke the assignee if they are taking too long to do so.
-
 Review Assignment
 *****************
 

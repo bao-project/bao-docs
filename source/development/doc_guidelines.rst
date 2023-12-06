@@ -460,6 +460,16 @@ To run the `doc8 <https://github.com/PyCQA/doc8>`_ format checker:
 
     make rst-format
 
+Besides checking for invalid reST format styles (D000 rule), the ``rst-format`` also checks
+for:
+
+.. note::
+    - lines longer than 99 characters - D001
+    - no trailing whitespace - D002
+    - no tabulation for indentation - D003
+    - no carriage returns (use unix newlines) - D004
+    - no newline at end of file - D005
+
 **Spelling Dictionaries**
 
 The spell checker uses standard enchant dictionaries to validate words. However, some specific

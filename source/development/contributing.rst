@@ -119,6 +119,35 @@ over the original repository, you carry out the development directly on it. Foll
       modification requests;
     * if the **reviewers** are taking too long, try contacting the :term:`PR` assignee.
 
+.. _chain_prs:
+
+Chain of PRs
+############
+
+A chain of PRs is a sequence of PRs that are dependent on each other. For example, a PR that
+introduces a new subsystem of a feature inherently depends on the PR that introduces the feature
+itself. Therefore, the PR that introduces the subsystem must be merged after. In case this happens,
+a contributor must chain the PRs, avoiding the merge of PRs that are dependent on others in the
+wrong order. To do so, the contributor must:
+
+* if you are the first to introduce the the chain, follow the typical PR submission process and
+  introduce the first PR of the chain. The contributor should mention on the PR description that it
+  is the first PR of a chain of PRs or, in the case you are following up another PR, mention in the
+  PR description that dependency;
+* continue to introduce the remaining PRs of the chain one PR at a time, as pieces of a one-row
+  puzzle, meaning that each PR should be dependent on the previous one. Therefore, when submitting
+  the PR, make sure that the target branch corresponds to the previous PR of the chain;
+* as each PR is merged, github will automatically update the target branch of the next PR in the
+  chain. For example, in the below diagram, if ``wip/base_feat`` is merged, github automatically
+  changes the target branch of ``wip/sub_feat1`` to ``main``;
+* the contributor should mention on the PR description that it is part of a chain of PRs. Tag that
+  PR dependency using a phrase such as "Depends on #<PR-number>";
+* this process should not be used to create PRs that are dependent on two or more PRs.
+
+The below diagram provides a visual representation of the chain of PRs:
+
+  [main] <- [wip/base_feat] <- [wip/sub_feat1] <- [wip/sub_feat2]
+
 Review Assignment
 *****************
 

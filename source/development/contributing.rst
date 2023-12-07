@@ -104,7 +104,11 @@ over the original repository, you carry out the development directly on it. Foll
    <https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History>`_, by rebasing it on ``main``;
 4. `Create a PR <https://docs.github.com/en/pull-requests/
    collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-
-   requests/creating-a-pull-request>`_ targeting the original repository's ``main`` branch;
+   requests/creating-a-pull-request>`_ targeting the original repository's ``main`` branch. In case
+   the PR introduces a large set of modifications, to facilitate the review process, it is
+   recommended to split it into multiple smaller PRs (i.e., :ref:`splitting large PRs
+   <split_prs>`). Ultimately, the assignee will ask you to split the PR if they feel it is too
+   large;
 5. Patiently wait for reviews and be engaged when they arrive:
 
     * participate in the discussion with **reviewers**;
@@ -118,6 +122,33 @@ over the original repository, you carry out the development directly on it. Foll
     * re-request a review from **reviewers'** after you have addressed all their concerns and
       modification requests;
     * if the **reviewers** are taking too long, try contacting the :term:`PR` assignee.
+
+.. _split_prs:
+
+Splitting Large PRs
+###################
+
+Code reviews are typically a difficult and time-consuming process. To facilitate the reviewer's
+work, contributors should try to split their PRs into smaller ones if they feel that the PR
+introduces a large set of modifications. Nevertheless, the PR assignee decides if the PR is too
+large and may request splitting it.
+
+To split your large PR, a contributor should follow this process:
+
+* create a topic branch from the ``main`` branch and call it ``wip/<feat_name>``. The branch should
+  be protected (:ref:`branch protection rules<branch_protection>`). The ``<feat_name>`` should be a
+  short description of the feature, subsystem, or functionality being developed. External
+  contributors should ask maintainers to create this branch for them, whom will become responsible
+  for managing the ``wip`` branch and synchronizing with the external contributor;
+* this ``wip/<feat_name>`` should be the base branch of the overall feature to be submitted. For
+  example, it can be a skeleton PR that only contains the infrastructure of the new functionality;
+* submit this base branch as a draft PR and mention on the PR description that it is the base
+  branch for a big feature that will be submitted in multiple PRs;
+* continue to introduce the remaining components of the feature one PR at a time, ensuring that
+  each PR is as self-contained as possible.
+* when each sub-feature PR is accepted and merged into the ``wip/<feat_name>`` branch and the
+  feature is complete, the assignee is responsible to merge the ``wip/<feat_name>`` branch into
+  ``main``.
 
 .. _chain_prs:
 
@@ -493,10 +524,10 @@ file.
 Branch Protection
 *****************
 
-All repositories' ``main`` branch must be configured with a set of protection rules that aim at
-ensuring some of the rules defined in :ref:`contribution workflow<contribution_workflow>`. In the
-repository's ``Settings -> Branches`` menu, the protection rules must be created with the following
-options:
+All repositories should have protection rules configured for both the ``main`` and ``wip/``
+branches. These rules are designed to enforce the guidelines outlined in the :ref:`contribution
+workflow<contribution_workflow>`. In the repository's ``Settings -> Branches`` menu, the protection
+rules must be created with the following options:
 
 * Require a pull request before merging:
 

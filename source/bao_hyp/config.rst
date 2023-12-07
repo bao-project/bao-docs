@@ -108,6 +108,52 @@ For each VM, the following parameters must be specified:
 
 Guest Image
 ***********
+.. _Guest Image:
+
+The guest ``image`` comprises a structure that describes the image \
+configuration running on the guest side. It encompasses the following options:
+
+- **image** [mandatory] - definition of the ``image`` to run on a given VM.
+  The ``image`` corresponds to the following structure:
+
+.. code-block:: c
+
+    struct image {
+            vaddr_t base_addr;
+            paddr_t load_addr;
+            size_t size;
+            bool separately_loaded;
+            bool inplace;
+    };
+
+where:
+
+- **base_addr** [mandatory] - corresponds to the ``image`` load address in \
+  the VM's address space;
+- **load_addr** [mandatory] - corresponds to the ``image`` load address in \
+  the hypervisor address space. This value can be defined using the macro \
+  VM_IMAGE_OFFSET(img_name);
+- **size** [mandatory] - corresponds to the image size. This value can be \
+  defined using the macro VM_IMAGE_SIZE(img_name);
+- **separately_loaded** [optional] - informs the hypervisor if the VM image is
+  to be loaded separately by a bootloader; By default, separately_loaded is \
+  set as false;
+- **inplace** [optional]- use the image inplace and don’t copy the image. By \
+  default, inplace is set as false;
+
+.. figure:: img/vm-image.svg
+    :align: center
+    :name: vm-image-fig
+
+To ease the process of configuring the image running on each VM, the configuration of Bao allows the
+use of two different macros:
+
+1. **VM_IMAGE_BUILTIN** - This macro simplifies image configuration by requiring only the
+   ``img_name`` and the image ``base_addr``. This macro specifies both the base address and image
+   size.
+
+2. **VM_IMAGE_LOADED** - This macro requires additional configurations. It requires the definition
+   of image ``base_addr``, the image ``load_addr``, and the image ``size``.
 
 Virtual Machine Configuration
 *****************************

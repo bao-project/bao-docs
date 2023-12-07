@@ -68,6 +68,44 @@ relative to the config source file.
 Guests Configuration
 --------------------
 
+Within this configuration file, it is possible to define various aspects of
+your virtual environment, including hardware resources, devices, and storage
+options. One of the most important features of the configuration file is the
+ability to define VMs, or guests (VM 1, VM 2, ... VM N). This allows to create
+and manage multiple VMs, each with its own operating system and hardware
+resources.
+
+.. figure:: img/guest-config.svg
+    :align: center
+    :name: guest-config-fig
+
+
+The configuration of different guests is done by populating a struct called
+*vmconfig*, as follows:
+
+.. code-block:: c
+
+    struct vm_config {
+        struct image;
+        vaddr_t entry;
+        cpumap_t cpu_affinity;
+        colormap_t colors;
+        struct vm_platform platform;
+    };
+
+For each VM, the following parameters must be specified:
+
+- **image** [mandatory] - corresponds to the guest image (see details in \
+  `Guest Image`_)
+- **entry** [mandatory] - defines the entry point address in VM's address \
+  space;
+- **platform description** [mandatory] - corresponds to the guest platform \
+  (see details in `Virtual Machine Configuration`_);
+- **cpu_affinity** [optional] - corresponds to the selection of physical CPUs \
+  assigned to the virtual platform (see details in `CPU Affinity`_);
+- **colors** [optional] - enables the cache coloring feature (see details in \
+  `Coloring`_).
+
 Guest Image
 ***********
 

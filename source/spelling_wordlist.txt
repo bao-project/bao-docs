@@ -75,3 +75,6 @@ bootloader
 inplace
 virtualized
 iommu
+MPU
+aarch64
+aarch

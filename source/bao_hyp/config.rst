@@ -286,6 +286,12 @@ where:
 ####################
 .. _Memory Management:
 
+ **mmu** [optional] - In MPU-based platforms which might also support virtual \
+   memory (i.e. aarch64 cortex-r) the hypervisor sets up the VM using an MPU \
+   by default. If the user wants this VM to use the MMU they must set the \
+   config ``mmu`` parameter to true;
+
+
 6. Architectural-Specific Configurations
 ########################################
 .. _Architectural-Specific Configurations:

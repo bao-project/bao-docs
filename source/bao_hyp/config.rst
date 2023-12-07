@@ -68,11 +68,10 @@ relative to the config source file.
 Guests Configuration
 --------------------
 
-Within this configuration file, it is possible to define various aspects of
-your virtual environment, including hardware resources, devices, and storage
-options. One of the most important features of the configuration file is the
-ability to define VMs, or guests (VM 1, VM 2, ... VM N). This allows to create
-and manage multiple VMs, each with its own operating system and hardware
+Within this configuration file, it is possible to define various aspects of your virtual
+environment, including hardware resources, devices, and storage options. One of the most important
+features of the configuration file is the ability to define VMs, or guests (VM 1, VM 2, ... VM N).
+This allows to create and manage multiple VMs, each with its own operating system and hardware
 resources.
 
 .. figure:: img/guest-config.svg
@@ -80,8 +79,7 @@ resources.
     :name: guest-config-fig
 
 
-The configuration of different guests is done by populating a struct called
-*vmconfig*, as follows:
+The configuration of different guests is done by populating a struct called *vmconfig*, as follows:
 
 .. code-block:: c
 
@@ -95,26 +93,23 @@ The configuration of different guests is done by populating a struct called
 
 For each VM, the following parameters must be specified:
 
-- **image** [mandatory] - corresponds to the guest image (see details in \
-  `Guest Image`_)
-- **entry** [mandatory] - defines the entry point address in VM's address \
-  space;
-- **platform description** [mandatory] - corresponds to the guest platform \
-  (see details in `Virtual Machine Configuration`_);
-- **cpu_affinity** [optional] - corresponds to the selection of physical CPUs \
-  assigned to the virtual platform (see details in `CPU Affinity`_);
-- **colors** [optional] - enables the cache coloring feature (see details in \
-  `Coloring`_).
+- **image** [mandatory] - corresponds to the guest image (see details in `Guest Image`_)
+- **entry** [mandatory] - defines the entry point address in VM's address space;
+- **platform description** [mandatory] - corresponds to the guest platform (see details in `Virtual
+  Machine Configuration`_);
+- **cpu_affinity** [optional] - corresponds to the selection of physical CPUs assigned to the
+  virtual platform (see details in `CPU Affinity`_);
+- **colors** [optional] - enables the cache coloring feature (see details in `Coloring`_).
 
 Guest Image
 ***********
 .. _Guest Image:
 
-The guest ``image`` comprises a structure that describes the image \
-configuration running on the guest side. It encompasses the following options:
+The guest ``image`` comprises a structure that describes the image configuration running on the
+guest side. It encompasses the following options:
 
-- **image** [mandatory] - definition of the ``image`` to run on a given VM.
-  The ``image`` corresponds to the following structure:
+- **image** [mandatory] - definition of the ``image`` to run on a given VM. The ``image``
+  corresponds to the following structure:
 
 .. code-block:: c
 
@@ -128,25 +123,22 @@ configuration running on the guest side. It encompasses the following options:
 
 where:
 
-- **base_addr** [mandatory] - corresponds to the ``image`` load address in \
-  the VM's address space;
-- **load_addr** [mandatory] - corresponds to the ``image`` load address in \
-  the hypervisor address space. This value can be defined using the macro \
-  VM_IMAGE_OFFSET(img_name);
-- **size** [mandatory] - corresponds to the image size. This value can be \
-  defined using the macro VM_IMAGE_SIZE(img_name);
-- **separately_loaded** [optional] - informs the hypervisor if the VM image is
-  to be loaded separately by a bootloader; By default, separately_loaded is \
+- **base_addr** [mandatory] - corresponds to the ``image`` load address in the VM's address space;
+- **load_addr** [mandatory] - corresponds to the ``image`` load address in the hypervisor address
+  space. This value can be defined using the macro VM_IMAGE_OFFSET(img_name);
+- **size** [mandatory] - corresponds to the image size. This value can be defined using the macro
+  VM_IMAGE_SIZE(img_name);
+- **separately_loaded** [optional] - informs the hypervisor if the VM image is to be loaded
+  separately by a bootloader; By default, separately_loaded is set as false;
+- **inplace** [optional]- use the image inplace and don’t copy the image. By default, inplace is
   set as false;
-- **inplace** [optional]- use the image inplace and don’t copy the image. By \
-  default, inplace is set as false;
 
 .. figure:: img/vm-image.svg
     :align: center
     :name: vm-image-fig
 
-To ease the process of configuring the image running on each VM, the configuration of Bao allows the
-use of two different macros:
+To ease the process of configuring the image running on each VM, the configuration of Bao allows
+the use of two different macros:
 
 1. **VM_IMAGE_BUILTIN** - This macro simplifies image configuration by requiring only the
    ``img_name`` and the image ``base_addr``. This macro specifies both the base address and image
@@ -158,21 +150,19 @@ use of two different macros:
 Virtual Machine Configuration
 *****************************
 
-The VM configuration enables users to define the characteristics of each the \
-virtualized platform. It encompasses critical details that define the VM's \
-run-time environment, performance, and overall capabilities. By customizing \
-this configuration, users can tailor the virtual platform to suit specific \
-workload requirements and application needs for their virtual machines. The \
-configuration encompasses the definition of:
+The VM configuration enables users to define the characteristics of each the virtualized platform.
+It encompasses critical details that define the VM's run-time environment, performance, and overall
+capabilities. By customizing this configuration, users can tailor the virtual platform to suit
+specific workload requirements and application needs for their virtual machines. The configuration
+encompasses the definition of:
 
 - **Number of virtual CPUs** - see details in `Number of vCPUs`_;
 - **Virtual memory regions** - see details in `Memory Mapping`_;`
-- **Inter-Process Comunication (IPC)** - see details in \
-  `Inter-Process Communication (IPC)`_;
+- **Inter-Process Comunication (IPC)** - see details in `Inter-Process Communication (IPC)`_;
 - **Devices** - see details in `Devices`_;
 - **Memory Management** - see details in `Memory Management`_;
-- **Architectural-Specific Configurations** - see details in \
-  `Architectural-Specific Configurations`_;
+- **Architectural-Specific Configurations** - see details in `Architectural-Specific
+  Configurations`_;
 
 1. Number of vCPUs
 ##################
@@ -185,8 +175,8 @@ configuration encompasses the definition of:
 #################
 .. _Memory Mapping:
 
-- **region_num** [mandatory] - defines the number of memory regions mapped to \
-  the VM. This structure contemplates the following parameters:
+- **region_num** [mandatory] - defines the number of memory regions mapped to the VM. This
+  structure contemplates the following parameters:
 
 .. code-block:: c
 
@@ -199,26 +189,24 @@ configuration encompasses the definition of:
 
 where:
 
-- **base** [mandatory] - corresponds to the base virtual address of the \
-  memory region;
+- **base** [mandatory] - corresponds to the base virtual address of the memory region;
 - **size**  [mandatory] -  corresponds to the size of the memory region;
-- **place_phys** [optional] - the memory region is mapped into the virtual \
-  memory, and it's important to note that the virtual address (VA) might not \
-  necessarily be the same as the physical address (PA). When "place_phys" is
-  set to true, the virtual address corresponds to the physical address. \
-  If ``place_phys`` equals to true, it allows to specify the physical address \
-  of the memory region. By default, ``place_phys`` equals to false;
-- **phys** [mandatory if ``place_phys`` is true] - it corresponds to the \
-  physical address where the memory region should be mapped;
+- **place_phys** [optional] - the memory region is mapped into the virtual memory, and it's
+  important to note that the virtual address (VA) might not necessarily be the same as the physical
+  address (PA). When "place_phys" is set to true, the virtual address corresponds to the physical
+  address. If ``place_phys`` equals to true, it allows to specify the physical address of the
+  memory region. By default, ``place_phys`` equals to false;
+- **phys** [mandatory if ``place_phys`` is true] - it corresponds to the physical address where the
+  memory region should be mapped;
 
 3. Inter-Process Communication (IPC)
 ####################################
 .. _Inter-Process Communication (IPC):
 
-- **ipc_num** [optional] - defines the number of IPCs assigned to the VM. By \
-  default, ``ipc_num`` equals to zero;
-- **ipcs** [mandatory if ``ipc_num`` > 0] - corresponds to the specification \
-  of the IPC and is configured through the following structure:
+- **ipc_num** [optional] - defines the number of IPCs assigned to the VM. By default, ``ipc_num``
+  equals to zero;
+- **ipcs** [mandatory if ``ipc_num`` > 0] - corresponds to the specification of the IPC and is
+  configured through the following structure:
 
 .. code-block:: c
 
@@ -233,28 +221,24 @@ where:
 
 where:
 
-- **base**  [mandatory] - corresponds to the virtual base address of the IPC \
-  memory region;
+- **base**  [mandatory] - corresponds to the virtual base address of the IPC memory region;
 - **size** [mandatory] - corresponds to the size of the IPC memory region;
-- **shmem_id** [mandatory] - corresponds to the ID of the shared memory \
-  associated with the IPC;
-- **interrupt_num** [mandatory] - defines the number of interrupts assigned \
-  to the IPC;
-- **interrupts** [mandatory if *interrupt_num* > 0] - defines a list of \
-  interrupt IDs assigned to the IPC - ``(irqid_t[]) {irq_1, ..., irq_n}``;
+- **shmem_id** [mandatory] - corresponds to the ID of the shared memory associated with the IPC;
+- **interrupt_num** [mandatory] - defines the number of interrupts assigned to the IPC;
+- **interrupts** [mandatory if *interrupt_num* > 0] - defines a list of interrupt IDs assigned to
+  the IPC - ``(irqid_t[]) {irq_1, ..., irq_n}``;
 
 .. warning::
-    Specifying a number of interrupts in the ``interrupts`` buffer that \
-    differs from the ``interrupt_num`` may result in unforeseen behavior.
+  Specifying a number of interrupts in the ``interrupts`` buffer that differs from the
+  ``interrupt_num`` may result in unforeseen behavior.
 
 4. Devices
 ##########
 .. _Devices:
 
-- **dev_num** [mandatory] - corresponds to the number of devices assigned to \
-  the VM;
-- **devs** [mandatory if *dev_num* > 0] - corresponds to the specification of \
-  the VM's devices and is configured through the following structure:
+- **dev_num** [mandatory] - corresponds to the number of devices assigned to the VM;
+- **devs** [mandatory if *dev_num* > 0] - corresponds to the specification of the VM's devices and
+  is configured through the following structure:
 
 .. code-block:: c
 
@@ -272,32 +256,30 @@ where:
 - **pa** [mandatory] - corresponds to the base physical address of the device;
 - **va** [mandatory] - corresponds to the base virtual address of the device;
 - **size** [mandatory] - corresponds to the size of the device memory region;
-- **interrupt_num** [optional] - corresponds to the number of interrupts \
-  generated by the device to the VM. By default, ``interrupt_num`` equals to 0;
-- **interrupts** [mandatory if *interrupt_num*>0] - defines a list of \
-  interrupt IDs generated by the device - ``(irqid_t[]) {irq_1, ..., irq_n};``
+- **interrupt_num** [optional] - corresponds to the number of interrupts generated by the device to
+  the VM. By default, ``interrupt_num`` equals to 0;
+- **interrupts** [mandatory if *interrupt_num*>0] - defines a list of interrupt IDs generated by
+  the device - ``(irqid_t[]) {irq_1, ..., irq_n};``
 - **id** [optional] - corresponds to the bus master id for iommu effects:
 
 .. warning::
-    Specifying a number of interrupts in the ``interrupts`` buffer that \
-    differs from the ``interrupt_num`` may result in unforeseen behavior.
+  Specifying a number of interrupts in the ``interrupts`` buffer that differs from the
+  ``interrupt_num`` may result in unforeseen behavior.
 
 5. Memory Management
 ####################
 .. _Memory Management:
 
- **mmu** [optional] - In MPU-based platforms which might also support virtual \
-   memory (i.e. aarch64 cortex-r) the hypervisor sets up the VM using an MPU \
-   by default. If the user wants this VM to use the MMU they must set the \
-   config ``mmu`` parameter to true;
-
+ **mmu** [optional] - In MPU-based platforms which might also support virtual memory (i.e. aarch64
+ cortex-r) the hypervisor sets up the VM using an MPU by default. If the user wants this VM to use
+ the MMU they must set the config ``mmu`` parameter to true;
 
 6. Architectural-Specific Configurations
 ########################################
 .. _Architectural-Specific Configurations:
 
-- **arch** [mandatory] - allows the definition of architecture dependent \
-  configurations and is configured through the following structure:
+- **arch** [mandatory] - allows the definition of architecture dependent configurations and is
+  configured through the following structure:
 
 .. code-block:: c
 
@@ -325,18 +307,17 @@ where:
 
 where:
 
-- **vgic_dscrp** [mandatory] - corresponds to the configuration of the \
-  Generic Interrupt Controller (GIC);
-- **vgic_dscrp** [optional] - corresponds to the configuration of the System \
-  Memory Management Unit (SMMU);
+- **vgic_dscrp** [mandatory] - corresponds to the configuration of the Generic Interrupt Controller
+  (GIC);
+- **vgic_dscrp** [optional] - corresponds to the configuration of the System Memory Management Unit
+  (SMMU);
 
 
 CPU Affinity
 ************
 
-The configuration file of the Bao hypervisor also enables the definition of
-core affinity, which involves selecting the physical core where the guest
-should run.
+The configuration file of the Bao hypervisor also enables the definition of core affinity, which
+involves selecting the physical core where the guest should run.
 
 .. figure:: img/cpu-affinity.svg
     :align: center
@@ -344,19 +325,17 @@ should run.
 
 This functionality is achieved through the following configuration parameter:
 
-- **cpu_affinity** [optional] - corresponds to a bitmap signaling the \
-  preferred physical CPUs assigned to the VM. If this value is mutually \
-  exclusive for all the VMs, the physical CPUs assigned to each VM follow the \
-  bitmap. Otherwise (in case of bit overlap or lack of affinity definition), \
-  the CPU assignment is defined by the hypervisor;
+- **cpu_affinity** [optional] - corresponds to a bitmap signaling the preferred physical CPUs
+  assigned to the VM. If this value is mutually exclusive for all the VMs, the physical CPUs
+  assigned to each VM follow the bitmap. Otherwise (in case of bit overlap or lack of affinity
+  definition), the CPU assignment is defined by the hypervisor;
 
 Coloring
 ********
 
-- **colors** [optional] - corresponds to a bitmap for the assigned cache \
-  colors of the VM. This value is truncated depending on the number of \
-  available colors calculated at run-time, i.e., its platform-dependent. By \
-  default, the coloring mechanism is not active. For instance, the following \
+- **colors** [optional] - corresponds to a bitmap for the assigned cache colors of the VM. This
+  value is truncated depending on the number of available colors calculated at run-time, i.e., its
+  platform-dependent. By default, the coloring mechanism is not active. For instance, the following
   picture depicts a hypothetical setup with a 50/50 coloring scheme;
 
 .. figure:: img/llc-colors.svg

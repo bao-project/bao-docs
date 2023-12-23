@@ -65,7 +65,7 @@ describe the image running on the VM (see `Guest Image`_);
 2. A C string with the guest image's binary file path. It can be either an absolute path or a path
 relative to the config source file.
 
-Guests Configuration
+VM Configuration
 --------------------
 
 Within this configuration file, it is possible to define various aspects of your virtual

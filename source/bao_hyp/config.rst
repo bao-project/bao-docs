@@ -78,7 +78,8 @@ communication channels between two or more VMs, which may utilize shared memory 
     :name: guest-config-fig
 
 
-The configuration of different guests is done by populating a struct called *vmconfig*, as follows:
+Each entry in the ``vmlist`` mentioned earlier is a ``vm_config`` struct, defining the
+configuration for different guests by populating the following struct called *vmconfig*:
 
 .. code-block:: c
 
@@ -90,7 +91,9 @@ The configuration of different guests is done by populating a struct called *vmc
         struct vm_platform platform;
     };
 
-For each VM, the following parameters must be specified:
+Each entry in this list represents a unique VM configuration, defining its image, memory address,
+CPU affinity, color mapping, and platform details. For each VM, the following parameters must be
+specified:
 
 - **image** [mandatory] - corresponds to the guest image (see details in `Guest Image`_)
 - **entry** [mandatory] - defines the entry point address in VM's address space;

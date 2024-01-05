@@ -177,8 +177,8 @@ By customizing this configuration, users can tailor the virtual platform to suit
 requirements and application needs for their virtual machines. The configuration encompasses the
 definition of:
     
-- **Number of virtual CPUs** - see details in `Number of vCPUs`_;
-- **Virtual memory regions** - see details in `Memory Mapping`_;`
+- **Number of CPUs** - see details in `Number of vCPUs`_;
+- **Memory regions** - see details in `Memory Mapping`_;`
 - **Inter-Process Comunication (IPC)** - see details in `Inter-Process Communication (IPC)`_;
 - **Devices** - see details in `Devices`_;
 - **Memory Management** - see details in `Memory Management`_;

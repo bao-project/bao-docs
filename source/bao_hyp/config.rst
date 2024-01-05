@@ -154,10 +154,27 @@ Virtual Machine Configuration
 
 The VM configuration enables users to define the characteristics of each virtualized platform. It
 encompasses critical details that define the VM's run-time environment, performance, and overall
-capabilities. By customizing this configuration, users can tailor the virtual platform to suit
-specific workload requirements and application needs for their virtual machines. The configuration
-encompasses the definition of:
+capabilities. The virtual machine configuration is performed by populating the structure `struct
+vm_platform`, outlined below:
 
+.. code-block:: c
+
+    struct vm_platform {
+        size_t cpu_num;
+        size_t region_num;
+        struct vm_mem_region* regions;
+        size_t ipc_num;
+        struct ipc* ipcs;
+        size_t dev_num;
+        struct vm_dev_region* devs;
+        bool mmu;
+        struct arch_vm_platform arch;
+    }
+
+By customizing this configuration, users can tailor the virtual platform to suit specific workload
+requirements and application needs for their virtual machines. The configuration encompasses the
+definition of:
+    
 - **Number of virtual CPUs** - see details in `Number of vCPUs`_;
 - **Virtual memory regions** - see details in `Memory Mapping`_;`
 - **Inter-Process Comunication (IPC)** - see details in `Inter-Process Communication (IPC)`_;

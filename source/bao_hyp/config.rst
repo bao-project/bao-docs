@@ -252,6 +252,8 @@ where:
 .. note::
   In MPU systems, place_phys and phys are ignored.
 
+The usage of `place_phys` and `phys` allows users to manually allocate memory and obtain physical
+mappings. This feature provides a means to define the physical memory region explicitly.
 
 3. Inter-Process Communication (IPC)
 ####################################

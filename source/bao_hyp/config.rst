@@ -191,6 +191,10 @@ definition of:
 
 - **cpu_num** [mandatory] - defines the number of CPUs assigned to the VM;
 
+.. warning::
+  Ensure that the cumulative count of CPUs allocated across all VMs listed in the `vmlist` does not
+  exceed the total number of available CPUs on the platform. Failing to adhere to this requirement
+  might result in the guest failing to boot without any warning.
 
 2. Memory Mapping
 #################

@@ -178,7 +178,7 @@ requirements and application needs for their virtual machines. The configuration
 definition of:
     
 - **Number of CPUs** - see details in `Number of vCPUs`_;
-- **Memory regions** - see details in `Memory Mapping`_;`
+- **Memory regions** - see details in `Memory Regions`_;`
 - **Inter-Process Comunication (IPC)** - see details in `Inter-Process Communication (IPC)`_;
 - **Devices** - see details in `Devices`_;
 - **Memory Management** - see details in `Memory Management`_;
@@ -196,9 +196,9 @@ definition of:
   exceed the total number of available CPUs on the platform. Failing to adhere to this requirement
   might result in the guest failing to boot without any warning.
 
-2. Memory Mapping
+2. Memory Regions
 #################
-.. _Memory Mapping:
+.. _Memory Regions:
 
 - **region_num** [mandatory] - defines the number of memory regions mapped to the VM. This
   structure contemplates the following parameters:

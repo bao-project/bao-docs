@@ -128,8 +128,8 @@ where:
 - **base_addr** [mandatory] - corresponds to the ``image`` load address in the VM's address space;
 - **load_addr** [mandatory] - corresponds to the ``image`` load address in the hypervisor address
   space. This value can be defined using the macro VM_IMAGE_OFFSET(img_name);
-- **size** [mandatory] - corresponds to the image size. This value can be defined using the macro
-  VM_IMAGE_SIZE(img_name);
+- **size** [mandatory] - corresponds to the image size. For builtin images declared using
+  `VM_IMAGE`, this value can be defined using the macro VM_IMAGE_SIZE(img_name);
 - **separately_loaded** [optional] - informs the hypervisor if the VM image is to be loaded
   separately by a bootloader; By default, separately_loaded is set as false;
 - **inplace** [optional]- use the image inplace and don’t copy the image. By default, inplace is

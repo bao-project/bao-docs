@@ -200,8 +200,10 @@ definition of:
 #################
 .. _Memory Regions:
 
-- **region_num** [mandatory] - defines the number of memory regions mapped to the VM. This
-  structure contemplates the following parameters:
+- **region_num** [mandatory] - defines the number of memory regions in the VM, specifically, the
+  number of `vm_mem_region` entries in the `vm_platform`'s `regions` list.
+
+The `vm_mem_region` structure contemplates the following parameters:
 
 .. code-block:: c
 

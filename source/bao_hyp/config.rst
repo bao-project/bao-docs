@@ -152,8 +152,8 @@ the use of two different macros:
 Virtual Machine Configuration
 *****************************
 
-The VM configuration enables users to define the characteristics of each the virtualized platform.
-It encompasses critical details that define the VM's run-time environment, performance, and overall
+The VM configuration enables users to define the characteristics of each virtualized platform. It
+encompasses critical details that define the VM's run-time environment, performance, and overall
 capabilities. By customizing this configuration, users can tailor the virtual platform to suit
 specific workload requirements and application needs for their virtual machines. The configuration
 encompasses the definition of:

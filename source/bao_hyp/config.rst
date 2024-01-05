@@ -68,11 +68,10 @@ relative to the config source file.
 VM Configuration
 --------------------
 
-Within this configuration file, it is possible to define various aspects of your virtual
-environment, including hardware resources, devices, and storage options. One of the most important
-features of the configuration file is the ability to define VMs, or guests (VM 1, VM 2, ... VM N).
-This allows to create and manage multiple VMs, each with its own operating system and hardware
-resources.
+Bao's configuration file allows you to partition the platforms' hardware resources, such as CPU
+cores, memory, or devices, by assigning them one or more VMs. It also allows you to configure the
+guest image to run on that VM. In Bao, resources are exclusively assigned to each VM, including
+communication channels between two or more VMs, which may utilize shared memory or dedicated links.
 
 .. figure:: img/guest-config.svg
     :align: center

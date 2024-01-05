@@ -226,13 +226,32 @@ where:
 
 - **base** [mandatory] - corresponds to the base virtual address of the memory region;
 - **size**  [mandatory] -  corresponds to the size of the memory region;
+
+.. note::
+  It is mandatory for `base` and `size` to align with the smallest page size of the architecture.
+  For MMU systems, this typically aligns to 4K, while for MPU systems, it aligns to 64 bytes.
+
 - **place_phys** [optional] - the memory region is mapped into the virtual memory, and it's
   important to note that the virtual address (VA) might not necessarily be the same as the physical
   address (PA). When "place_phys" is set to true, the virtual address corresponds to the physical
   address. If ``place_phys`` equals to true, it allows to specify the physical address of the
   memory region. By default, ``place_phys`` equals to false;
+
+.. note::
+  In MPU systems, place_phys and phys are ignored.
+
 - **phys** [mandatory if ``place_phys`` is true] - it corresponds to the physical address where the
   memory region should be mapped;
+
+.. note::
+  For enhanced performance, especially in MMU-based targets, it's recommended to align `base` and
+  `size` to the architecture's huge pages (e.g., 2 MiB for Arm and RISC-V). Similarly, if
+  `place_phys` is enabled, aligning `phys` to the architecture's huge pages can also improve
+  performance.
+
+.. note::
+  In MPU systems, place_phys and phys are ignored.
+
 
 3. Inter-Process Communication (IPC)
 ####################################

@@ -95,13 +95,15 @@ Each entry in this list represents a unique VM configuration, defining its image
 CPU affinity, color mapping, and platform details. For each VM, the following parameters must be
 specified:
 
-- **image** [mandatory] - corresponds to the guest image (see details in `Guest Image`_)
-- **entry** [mandatory] - defines the entry point address in VM's address space;
-- **platform description** [mandatory] - corresponds to the guest platform (see details in `Virtual
-  Machine Configuration`_);
-- **cpu_affinity** [optional] - corresponds to the selection of physical CPUs assigned to the
-  virtual platform (see details in `CPU Affinity`_);
-- **colors** [optional] - enables the cache coloring feature (see details in `Coloring`_).
+- **image** [mandatory] - a structure containing information about guest image loading (see details
+  in `Guest Image`_)  
+- **entry** [mandatory] - defines the entry point address in VM's address space;  
+- **platform description** [mandatory] - a description of the VM platform, defining its resource
+  assignments and requirements (see details in `Virtual Machine Configuration`_);  
+- **cpu_affinity** [optional] - defines the affinity of the VM's vCPUs to the physical CPUs
+  assigned to the virtual platform (see details in `CPU Affinity`_);  
+- **colors** [optional] - assignment of shared LLC cache colors (or partitions) to this VM (see
+  details in `Coloring`_).  
 
 Guest Image
 ***********

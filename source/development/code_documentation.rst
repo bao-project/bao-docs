@@ -238,10 +238,11 @@ Examples:
    * @brief This structure represents a memory region
    */
   struct memory_protection {
-    bool assigned;         /**< Memory region assign flag */ vaddr_t base_addr;     /**< Region
-    base address */ size_t size;           /**< This member contains the region size */ cpumap_t
-    shared_cpus;  /**< Bitmap used when sharing region w/other cores */ mem_flags_t mem_flags; /**<
-    Region memory attributes */
+    bool assigned;         /**< Memory region assign flag */ 
+    vaddr_t base_addr;     /**< Region base address */ 
+    size_t size;           /**< This member contains the region size */ 
+    cpumap_t shared_cpus;  /**< Bitmap used when sharing region w/other cores */
+    mem_flags_t mem_flags; /**< Region memory attributes */
   };
 
 .. code-block:: c
@@ -251,9 +252,10 @@ Examples:
    * @brief PSCI wakeup reason for CPUs.
    */
   enum wakeup_reason {
-    PSCI_WAKEUP_CPU_OFF,    /**< Wakeup reason CPU off */ PSCI_WAKEUP_POWERDOWN,  /**< Wakeup
-    reason CPU powerdown */ PSCI_WAKEUP_IDLE,       /**< Wakeup reason CPU idle */ PSCI_WAKEUP_NUM
-    /**< Wakeup reason number of variants */
+    PSCI_WAKEUP_CPU_OFF,    /**< Wakeup reason CPU off */ 
+    PSCI_WAKEUP_POWERDOWN,  /**< Wakeup reason CPU powerdown */ 
+    PSCI_WAKEUP_IDLE,       /**< Wakeup reason CPU idle */ 
+    PSCI_WAKEUP_NUM         /**< Wakeup reason number of variants */
   };
 
 .. _files:
@@ -321,15 +323,21 @@ Template:
 
 .. code-block:: c
 
-  /** * @def MACRO(arg1, arg2) * @brief description of the macro. */ #define MACRO(arg1, arg2)
-  ((arg1) + (arg2))
+  /**
+  * @def MACRO(arg1, arg2)
+  * @brief description of the macro.
+  */
+  #define MACRO(arg1, arg2)  ((arg1) + (arg2))
 
 Example:
 
 .. code-block:: c
 
-  /** * @def BIT(x) * @brief Returns a bit mask with the bit at position x set. */ #define BIT(x)
-  (1UL << (x))
+  /**
+  * @def BIT(x)
+  * @brief Returns a bit mask with the bit at position x set.
+  */
+  #define BIT(x)  (1UL << (x))
 
 .. _variables:
 

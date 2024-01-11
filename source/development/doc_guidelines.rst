@@ -228,8 +228,10 @@ the code-block syntax. You also need to indent the code segment.
 
     .. code-block:: c
 
-        uint64_t smc_fid = cpu.vcpu->regs->x[0]; uint64_t x1 = cpu.vcpu->regs->x[1]; uint64_t x2 =
-        cpu.vcpu->regs->x[2]; uint64_t x3 = cpu.vcpu->regs->x[3];
+        uint64_t smc_fid = cpu.vcpu->regs->x[0];
+        uint64_t x1 = cpu.vcpu->regs->x[1];
+        uint64_t x2 = cpu.vcpu->regs->x[2];
+        uint64_t x3 = cpu.vcpu->regs->x[3];
 
 .. code-block:: rest
 
@@ -241,8 +243,10 @@ Rendered, the code blocks look like this:
 
 .. code-block:: c
 
-    uint64_t smc_fid = cpu.vcpu->regs->x[0]; uint64_t x1 = cpu.vcpu->regs->x[1]; uint64_t x2 =
-    cpu.vcpu->regs->x[2]; uint64_t x3 = cpu.vcpu->regs->x[3];
+    uint64_t smc_fid = cpu.vcpu->regs->x[0];
+    uint64_t x1 = cpu.vcpu->regs->x[1];
+    uint64_t x2 = cpu.vcpu->regs->x[2];
+    uint64_t x3 = cpu.vcpu->regs->x[3];
 
 .. code-block:: shell
 

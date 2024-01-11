@@ -238,9 +238,9 @@ Examples:
    * @brief This structure represents a memory region
    */
   struct memory_protection {
-    bool assigned;         /**< Memory region assign flag */ 
-    vaddr_t base_addr;     /**< Region base address */ 
-    size_t size;           /**< This member contains the region size */ 
+    bool assigned;         /**< Memory region assign flag */
+    vaddr_t base_addr;     /**< Region base address */
+    size_t size;           /**< This member contains the region size */
     cpumap_t shared_cpus;  /**< Bitmap used when sharing region w/other cores */
     mem_flags_t mem_flags; /**< Region memory attributes */
   };
@@ -252,9 +252,9 @@ Examples:
    * @brief PSCI wakeup reason for CPUs.
    */
   enum wakeup_reason {
-    PSCI_WAKEUP_CPU_OFF,    /**< Wakeup reason CPU off */ 
-    PSCI_WAKEUP_POWERDOWN,  /**< Wakeup reason CPU powerdown */ 
-    PSCI_WAKEUP_IDLE,       /**< Wakeup reason CPU idle */ 
+    PSCI_WAKEUP_CPU_OFF,    /**< Wakeup reason CPU off */
+    PSCI_WAKEUP_POWERDOWN,  /**< Wakeup reason CPU powerdown */
+    PSCI_WAKEUP_IDLE,       /**< Wakeup reason CPU idle */
     PSCI_WAKEUP_NUM         /**< Wakeup reason number of variants */
   };
 

@@ -70,7 +70,7 @@ format checker [doc8](https://github.com/PyCQA/doc8)).
 
 ```bash
 sudo apt-get install enchant
-pip install sphinx sphinxcontrib-spelling sphinx-tabs pyenchant doc8
+pip install sphinx sphinxcontrib-spelling sphinx-tabs pyenchant doc8 sphinx-rtd-theme
 ```
 
 ### Building and Checking

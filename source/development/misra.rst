@@ -279,31 +279,37 @@ following the format:
 
     ---
 
-    # The tag should always be the same name of the file, start with MDR followed # by the record
-    ID. tag: MDR1
+    # The tag should always be the same name of the file, start with MDR followed
+    # by the record ID.
+    tag: MDR1
 
-    # Optionally, list a deviation permits used as a base for the deviation. permits:
+    # Optionally, list a deviation permits used as a base for the deviation.
+    permits:
       - "MDP1"
       - "MPD2"
 
-    # List the guidelines that are being violated. guidelines:
+    # List the guidelines that are being violated.
+    guidelines:
       - "R2.5"
       - "D4.4"
 
-    # Summarize the violation and its context. Optional if a permit is selected. use_case: >
+    # Summarize the violation and its context. Optional if a permit is selected.
+    use_case: >
         This describes the records use case.
 
-    # List one or more of the allowed justification items. Optional if a permit is # selected.
+    # List one or more of the allowed justification items. Optional if a permit is selected.
     reasons:
       - Code quality (usability).
       - ....
 
-    # Detail the use cases and reasons listed above. description: >
+    # Detail the use cases and reasons listed above.
+    description: >
         Provide a detailed description of the record.
 
-    # Assess how the risks described in the guideline's rationale affect this violation # and
-    describe how they are managed or mitigated in this violation. In case a # permit is selected,
-    detail point by point how the deviation fulfils the # permit's requirements. risk: >
+    # Assess how the risks described in the guideline's rationale affect this violation and
+    # describe how they are managed or mitigated in this violation. In case a permit is selected,
+    # detail point by point how the deviation fulfills the permit's requirements.
+    risk: >
         The violation is safe because... It fulfilled the permits requirements since...
 
 Deviation permits main purpose is to speed-up and reduce the effort of the deviation procedure, by
@@ -318,28 +324,31 @@ this ``yaml`` template:
 
     # MISRA deviation permit template ---
 
-    # The tag should always be the same name of the file, start with MDP followed # by the permit
-    ID. tag: MDP1
+    # The tag should always be the same name of the file, start with MDP followed by the permit ID.
+    tag: MDP1
 
     # List the guidelines that are being violated guidelines:
       - "R2.5"
       - "R11.4"
 
-    # Summarize the use case(s) under which the permit may be used to support # a violation.
+    # Summarize the use case(s) under which the permit may be used to support a violation.
     use_case: >
         Describe the permit's use cases.
 
-    # List one or more of the allowed justification items. reasons:
+    # List one or more of the allowed justification items.
+    reasons:
       - Code quality (usability).
       - ....
 
-    # Detail the use cases and reasons listed above. background: >
-        Provide a detailed description of the guideline,
+    # Detail the use cases and reasons listed above.
+    background: >
+        Provide a detailed description of the guideline.
 
-    # Explicitly list the requirements a violation/deviation must fulfill to # properly assess and
-    manage all the possible risks raised by the violation # that are described in the guideline's
-    rationale. If multiple guidelines are # encompassed by the permit, specify which requirements
-    need to be meet when # violation each guideline. requirements:
+    # Explicitly list the requirements a violation/deviation must fulfill to properly assess and
+    # manage all the possible risks raised by the violation that are described in the guideline's
+    # rationale. If multiple guidelines are encompassed by the permit, specify which requirements
+    # need to be meet when violation each guideline.
+    requirements:
         - The deviation must...
         - ...
 

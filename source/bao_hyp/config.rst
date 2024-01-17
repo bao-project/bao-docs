@@ -150,9 +150,9 @@ If the ``separately_loaded`` parameter is configured as false, the hypervisor in
 setting as the offset of the built-in guest image within its own image, denoted as
 ``VM_IMAGE_OFFSET``. During run-time, the hypervisor adjusts this value to be subsequently
 interpreted as a physical address. This adjustment involves adding the address at which the
-hypervisor itself was loaded. However, if the ``separately_loaded`` parameter is configured as true,
-the guest image is not embedded in the hypervisor image; instead, it is loaded independently. For
-more details, refer to the figure below.
+hypervisor itself was loaded. However, if the ``separately_loaded`` parameter is configured as
+true, the guest image is not embedded in the hypervisor image; instead, it is loaded independently.
+For more details, refer to the figure below.
 
 .. figure:: img/guest-image.svg
     :align: center

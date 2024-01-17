@@ -154,6 +154,18 @@ Using these macros not only streamlines the configuration steps but also ensures
 correct syntax and parameters. Attempting to manually configure image details without utilizing
 these macros may result in errors or unintended behavior.
 
+The integration of the appropriate macro tailored to your specific use case, encompassing essential
+parameters such as img_name, base_addr, load_addr, and size. This practice not only fosters
+consistency but also enhances reliability in your VM setup. For instance:
+
+- **IMAGE_BUILTIN**: Simplifies system configuration by leveraging Bao's default knowledge of the
+  image location. No separate configuration or loading of guest images through a bootloader is
+  required, and adjustments to the size of guest images are unnecessary.
+
+- **IMAGE_LOADED**: Highly recommended, especially for MPU systems, where manual allocation of space
+  for the guest image can be challenging if embedded in Bao's binary. Without utilizing LOADED, Bao
+  may need to copy the image, potentially resulting in space wastage
+
 Moreover, if the ``separately_loaded`` parameter is configured as false, the hypervisor interprets
 this setting as the offset of the built-in guest image within its own image, denoted as
 ``VM_IMAGE_OFFSET``. During run-time, the hypervisor adjusts this value to be subsequently

@@ -378,7 +378,7 @@ where:
         } gic;
 
         // Configuration of the System Memory Management Unit (SMMU)
-        struct {
+        struct smmu_config{
             streamid_t global_mask;
             size_t group_num;
             struct smmu_group {

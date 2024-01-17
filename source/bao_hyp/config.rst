@@ -96,14 +96,14 @@ CPU affinity, color mapping, and platform details. For each VM, the following pa
 specified:
 
 - **image** [mandatory] - a structure containing information about guest image loading (see details
-  in `Guest Image`_)  
-- **entry** [mandatory] - defines the entry point address in VM's address space;  
+  in `Guest Image`_)
+- **entry** [mandatory] - defines the entry point address in VM's address space;
 - **platform description** [mandatory] - a description of the VM platform, defining its resource
-  assignments and requirements (see details in `Virtual Machine Configuration`_);  
+  assignments and requirements (see details in `Virtual Machine Configuration`_);
 - **cpu_affinity** [optional] - defines the affinity of the VM's vCPUs to the physical CPUs
-  assigned to the virtual platform (see details in `CPU Affinity`_);  
+  assigned to the virtual platform (see details in `CPU Affinity`_);
 - **colors** [optional] - assignment of shared LLC cache colors (or partitions) to this VM (see
-  details in `Coloring`_).  
+  details in `Coloring`_).
 
 Guest Image
 ***********

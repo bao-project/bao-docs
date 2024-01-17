@@ -184,7 +184,7 @@ vm_platform`, outlined below:
 By customizing this configuration, users can tailor the virtual platform to suit specific workload
 requirements and application needs for their virtual machines. The configuration encompasses the
 definition of:
-    
+
 - **Number of CPUs** - see details in `Number of vCPUs`_;
 - **Memory regions** - see details in `Memory Regions`_;`
 - **Inter-Process Comunication (IPC)** - see details in `Inter-Process Communication (IPC)`_;

@@ -393,8 +393,8 @@ where:
 
 - **vgic_dscrp** [mandatory] - corresponds to the configuration of the Generic Interrupt Controller
   (GIC);
-- **vgic_dscrp** [optional] - corresponds to the configuration of the System Memory Management Unit
-  (SMMU);
+- **smmu_config** [optional] - corresponds to the configuration of the System Memory Management
+  Unit (SMMU);
 
 
 CPU Affinity

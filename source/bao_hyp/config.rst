@@ -137,7 +137,11 @@ where:
 - **inplace** [optional]- use the image inplace and don’t copy the image. By default, inplace is
   set as false;
 
-To simplify the image configuration process for each VM, Bao allows the use of two macros:
+To ensure accurate and efficient configuration of VM images, it is strongly recommended to leverage
+the designated macros provided by Bao. These macros, namely ``VM_IMAGE_BUILTIN`` and
+``VM_IMAGE_LOADED``, are specifically designed to simplify the image configuration process and
+enhance compatibility with the hypervisor.
+
 
 1. **VM_IMAGE_BUILTIN** - This macro simplifies image configuration by requiring only the
    ``img_name`` and the image ``base_addr``. This macro specifies both the base address and image
@@ -146,8 +150,12 @@ To simplify the image configuration process for each VM, Bao allows the use of t
 2. **VM_IMAGE_LOADED** - This macro requires additional configurations. It requires the definition
    of image ``base_addr``, the image ``load_addr``, and the image ``size``.
 
-If the ``separately_loaded`` parameter is configured as false, the hypervisor interprets this
-setting as the offset of the built-in guest image within its own image, denoted as
+Using these macros not only streamlines the configuration steps but also ensures adherence to the
+correct syntax and parameters. Attempting to manually configure image details without utilizing
+these macros may result in errors or unintended behavior.
+
+Moreover, if the ``separately_loaded`` parameter is configured as false, the hypervisor interprets
+this setting as the offset of the built-in guest image within its own image, denoted as
 ``VM_IMAGE_OFFSET``. During run-time, the hypervisor adjusts this value to be subsequently
 interpreted as a physical address. This adjustment involves adding the address at which the
 hypervisor itself was loaded. However, if the ``separately_loaded`` parameter is configured as

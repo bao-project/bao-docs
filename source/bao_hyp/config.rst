@@ -417,6 +417,12 @@ This functionality is achieved through the following configuration parameter:
 Coloring
 ********
 
+Cache coloring is a technique used to partition shared Last Level Cache (LLC) sets among different
+guests (i.e., VMs). The main goal is to minimize cache conflicts and enhance overall system
+performance by carefully assigning specific colors, representing cache sets, to different entities.
+Bao supports cache coloring which can be configured using the``colors`` field within the
+``vm_config`` struct.
+
 - **colors** [optional] - corresponds to a bitmap for the assigned cache colors of the VM. This
   value is truncated depending on the number of available colors calculated at run-time, i.e., its
   platform-dependent. By default, the coloring mechanism is not active. For instance, the following
@@ -425,6 +431,11 @@ Coloring
 .. figure:: img/llc-colors.svg
     :align: center
     :name: llc-colors-fig
+
+It's important to note that cache coloring relies on the careful assignment of colors to each VM.
+However, this mechanism may not take effect if the physical mapping feature is enabled for a
+specific memory region. Cache coloring exclusively operates in virtual memory systems, i.e.,
+systems featuring Memory Management Units (MMUs) for address translation.
 
 Shared Memory Configuration
 ---------------------------

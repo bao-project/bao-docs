@@ -287,6 +287,19 @@ mappings. This feature provides a means to define the physical memory region exp
 ####################################
 .. _Inter-Process Communication (IPC):
 
+Inter-Process Communication (IPC) enables seamless communication between distinct processes in a
+computing system. This mechanism facilitates data exchange, synchronization, and coordination,
+fostering enhanced functionality and system efficiency.
+
+Bao provides support for IPC, allowing VMs to establish communication channels. The IPC
+configuration involves defining the number of IPCs using the ``ipc_num`` field within the
+``vm_config`` struct. The specifics of each IPC are then outlined through the ``ipcs`` structure,
+including fields such as ``base``, ``size``, ``shmem_id``, ``interrupt_num``, and ``interrupts``.
+
+.. figure:: img/ipc.svg
+    :align: center
+    :name: ipc-fig
+
 - **ipc_num** [optional] - defines the number of IPCs assigned to the VM. By default, ``ipc_num``
   equals to zero;
 - **ipcs** [mandatory if ``ipc_num`` > 0] - corresponds to the specification of the IPC and is

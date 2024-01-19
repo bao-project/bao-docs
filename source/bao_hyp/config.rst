@@ -307,6 +307,14 @@ where:
 
 - **base**  [mandatory] - corresponds to the virtual base address of the IPC memory region;
 - **size** [mandatory] - corresponds to the size of the IPC memory region;
+
+.. note::
+  The ``size`` field must be less than or equal to the size of the shared memory. Additionally, for
+  MPU systems, the ``base`` field is ignored, as the region address is the same as the shared
+  memory object address. Also, it is mandatory for both ``base`` and ``size`` to be aligned with
+  the architecture's smallest page size. For MMU systems, this corresponds to 4K in all
+  architectures, while for MPU systems, the alignment corresponds to 64 bytes.
+
 - **shmem_id** [mandatory] - corresponds to the ID of the shared memory associated with the IPC;
 - **interrupt_num** [mandatory] - defines the number of interrupts assigned to the IPC;
 - **interrupts** [mandatory if *interrupt_num* > 0] - defines a list of interrupt IDs assigned to

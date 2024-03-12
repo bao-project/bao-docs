@@ -69,7 +69,7 @@ VM Configuration
 --------------------
 
 Bao's configuration file allows you to partition the platforms' hardware resources, such as CPU
-cores, memory, or devices, by assigning them one or more VMs. It also allows you to configure the
+cores, memory, or devices, by assigning them to one or more VMs. It also allows you to configure the
 guest image to run on that VM. In Bao, resources are exclusively assigned to each VM, including
 communication channels between two or more VMs, which may utilize shared memory or dedicated links.
 
@@ -78,8 +78,8 @@ communication channels between two or more VMs, which may utilize shared memory 
     :name: guest-config-fig
 
 
-Each entry in the ``vmlist`` mentioned earlier is a ``vm_config`` struct, defining the
-configuration for different guests by populating the following struct called *vmconfig*:
+Each entry in the ``vmlist`` mentioned earlier is a ``vm_config`` struct, which defines the
+configuration of each individual guest:
 
 .. code-block:: c
 
@@ -95,14 +95,14 @@ Each entry in this list represents a unique VM configuration, defining its image
 CPU affinity, color mapping, and platform details. For each VM, the following parameters must be
 specified:
 
-- **image** [mandatory] - a structure containing information about guest image loading (see details
+- `image` [mandatory] - a structure containing information about guest image loading (see details
   in `Guest Image`_)
-- **entry** [mandatory] - defines the entry point address in VM's address space;
-- **platform description** [mandatory] - a description of the VM platform, defining its resource
+- `entry` [mandatory] - defines the entry point address in VM's address space;
+- `platform description` [mandatory] - a description of the VM platform, defining its resource
   assignments and requirements (see details in `Virtual Machine Configuration`_);
-- **cpu_affinity** [optional] - defines the affinity of the VM's vCPUs to the physical CPUs
+- `cpu_affinity` [optional] - defines the affinity of the VM's vCPUs to the physical CPUs
   assigned to the virtual platform (see details in `CPU Affinity`_);
-- **colors** [optional] - assignment of shared LLC cache colors (or partitions) to this VM (see
+- `colors` [optional] - assignment of shared LLC cache colors (or partitions) to this VM (see
   details in `Coloring`_).
 
 Guest Image

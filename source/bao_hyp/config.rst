@@ -209,7 +209,6 @@ definition of:
 - ``Memory regions`` - see details in `Memory Regions`_;`
 - ``Inter-Process Comunication (IPC)`` - see details in `Inter-Process Communication (IPC)`_;
 - ``Devices`` - see details in `Devices`_;
-- ``Memory Management`` - see details in `Memory Management`_;
 - ``Architectural-Specific Configurations`` - see details in `Architectural-Specific
   Configurations`_;
 
@@ -373,52 +372,110 @@ where:
   Specifying a number of interrupts in the ``interrupts`` buffer that differs from the
   ``interrupt_num`` may result in unforeseen behavior.
 
-5. Memory Management
-####################
-.. _Memory Management:
 
- ``mmu`` [optional] - In MPU-based platforms which might also support virtual memory (i.e. aarch64
- cortex-r) the hypervisor sets up the VM using an MPU by default. If the user wants this VM to use
- the MMU they must set the config ``mmu`` parameter to true;
-
-6. Architectural-Specific Configurations
+5. Architectural-Specific Configurations
 ########################################
 .. _Architectural-Specific Configurations:
 
 - ``arch`` [mandatory] - allows the definition of architecture dependent configurations and is
   configured through the following structure:
 
-.. code-block:: c
+.. tabs::
+  .. tab:: Arm
 
-    struct arch_vm_platform {
+    For the Arm architecure:
 
-        // Configuration of the Generic Interrupt Controller (GIC)
-        struct vgic_dscrp {
-            paddr_t gicd_addr;
-            paddr_t gicc_addr;
-            paddr_t gicr_addr;
-            size_t interrupt_num;
-        } gic;
+    .. code-block:: c
 
-        // Configuration of the System Memory Management Unit (SMMU)
-        struct smmu_config{
-            streamid_t global_mask;
-            size_t group_num;
-            struct smmu_group {
-                streamid_t mask;
-                streamid_t id;
-            } *groups;
-        } smmu;
-    };
+        struct arch_platform {
+            struct gic_dscrp {
+                paddr_t gicc_addr;
+                paddr_t gich_addr;
+                paddr_t gicv_addr;
+                paddr_t gicd_addr;
+                paddr_t gicr_addr;
+
+                irqid_t maintenance_id;
+            } gic;
+
+            struct smmu_dscrp {
+                paddr_t base;
+                streamid_t global_mask;
+            } smmu;
+
+            struct clusters {
+                size_t num;
+                size_t* core_num;
+            } clusters;
+        };
+
+    Where, for the GIC interrupt controller ``struct gic_dscrp`` description:
+
+    - ``gic.gicc_addr`` [mandatory for GICv2 platforms] - base address for the GIC's CPU Interface;
+    - ``gic.gich_addr`` [mandatory for GICv2 platforms] - base address for the GIC's Virtual
+      Interface Control Registers;
+    - ``gic.gicv_addr`` [mandatory for GICv2 platforms] - base address for the GIC's Virtual CPU
+      Interface;
+    - ``gic.gicd_addr`` [mandatory] - base address for the GIC's Distributor;
+    - ``gic.gicr_addr`` [mandatory for GICv3/4 platforms] - base address for the GIC's
+      Redistributor;
+    - ``gic.maintenance_id`` [mandatory] - The interrupt ID for the GIC's maintenance interrupt;
+
+    For the SMMU `struct smmu_dscrp`:
+
+    - ``smmu.base`` [mandatory] - is the base address for the SMMU;
+    - ``smmu.global_mask`` [optional; only valid for SMMUv2] - a mask to be applied to all SMMUv2's
+      Stream Match Registers;
 
 
-where:
+    Finally, when CPUs are organized in clusters, in the Arm architecture their IDs are assigned
+    using an hierarchical schema. To be able to calculate the linearized ID for each core, we
+    require the port to provide the number of CPUs of cluster in ascending order of AFF1.
 
-- ``vgic_dscrp`` [mandatory] - corresponds to the configuration of the Generic Interrupt Controller
-  (GIC);
-- ``smmu_config`` [optional] - corresponds to the configuration of the System Memory Management
-  Unit (SMMU);
+  .. tab:: RISC-V
 
+    For the RISC-V architecture:
+
+    .. code-block:: c
+
+        struct arch_platform {
+            union irqc_dscrp {
+
+                struct {
+                    paddr_t base;
+                } plic;
+
+                struct {
+                    struct {
+                        paddr_t base;
+                    } aplic;
+                } aia;
+
+            } irqc;
+
+            struct {
+                paddr_t base;      // Base address of the IOMMU mmapped IF
+                irqid_t fq_irq_id;
+            } iommu;
+
+            struct {
+                paddr_t base;
+            } aclint_sswi;
+        };
+
+    In case the available interrupt controller is the legacy PLIC:
+
+    - ``irqc.plic.base`` [mandatory if PLIC is available] - is the base address for the PLIC;
+
+    In case the available interrupt controller is an AIA contaning an APLIC:
+
+    - ``irqc.aia.aplic.base`` [mandatory if APLIC is available] - is the base address for the APLIC;
+
+    When an IOMMU is available:
+
+    - ``iommu.base`` [mandatory if IOMMU is available] - is the base address for the IOMMU;
+    - ``iommu.fq_irq_id`` [mandatory if IOMMU is available] - the Fault Queue interrupt ID (the
+      current implementatio assumes this is a wired interrupt);
 
 CPU Affinity
 ************

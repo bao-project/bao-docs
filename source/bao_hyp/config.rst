@@ -154,9 +154,9 @@ Using these macros not only streamlines the configuration steps but also ensures
 correct syntax and parameters. Attempting to manually configure image details without utilizing
 these macros may result in errors or unintended behavior.
 
-The integration of the appropriate macro tailored to your specific use case, encompassing essential
-parameters such as img_name, base_addr, load_addr, and size. This practice not only fosters
-consistency but also enhances reliability in your VM setup. For instance:
+The integration of the appropriate macro, tailored to your specific use case, is crucial for
+ensuring consistency and reliability in your VM setup. This macro should encompass essential
+parameters such as img_name, base_addr, load_addr, and size. For instance:
 
 - **IMAGE_BUILTIN**: Simplifies system configuration by leveraging Bao's default knowledge of the
   image location. No separate configuration or loading of guest images through a bootloader is
@@ -176,6 +176,7 @@ For more details, refer to the figure below.
 
 .. figure:: img/guest-image.svg
     :align: center
+    :width: 100%
     :name: vm-image-fig
 
 

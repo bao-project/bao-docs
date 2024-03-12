@@ -69,8 +69,8 @@ VM Configuration
 --------------------
 
 Bao's configuration file allows you to partition the platforms' hardware resources, such as CPU
-cores, memory, or devices, by assigning them to one or more VMs. It also allows you to configure the
-guest image to run on that VM. In Bao, resources are exclusively assigned to each VM, including
+cores, memory, or devices, by assigning them to one or more VMs. It also allows you to configure
+the guest image to run on that VM. In Bao, resources are exclusively assigned to each VM, including
 communication channels between two or more VMs, which may utilize shared memory or dedicated links.
 
 .. figure:: img/guest-config.svg
@@ -156,15 +156,15 @@ these macros may result in errors or unintended behavior.
 
 The integration of the appropriate macro, tailored to your specific use case, is crucial for
 ensuring consistency and reliability in your VM setup. This macro should encompass essential
-parameters such as img_name, base_addr, load_addr, and size. For instance:
+parameters such as ``img_name``, ``base_addr``, ``load_addr``, and size. For instance:
 
 - ``IMAGE_BUILTIN``: Simplifies system configuration by leveraging Bao's default knowledge of the
   image location. No separate configuration or loading of guest images through a bootloader is
   required, and adjustments to the size of guest images are unnecessary.
 
-- ``IMAGE_LOADED``: Highly recommended, especially for MPU systems, where manual allocation of space
-  for the guest image can be challenging if embedded in Bao's binary. Without utilizing LOADED, Bao
-  may need to copy the image, potentially resulting in space wastage
+- ``IMAGE_LOADED``: Highly recommended, especially for MPU systems, where manual allocation of
+  space for the guest image can be challenging if embedded in Bao's binary. Without utilizing
+  LOADED, Bao may need to copy the image, potentially resulting in space wastage.
 
 Moreover, if the ``separately_loaded`` parameter is configured as false, the hypervisor interprets
 this setting as the offset of the built-in guest image within its own image, denoted as
@@ -274,8 +274,8 @@ where:
       improve performance.
     - In MPU systems, place_phys and phys are ignored.
 
-The usage of ``place_phys`` and ``phys`` allows users to manually allocate memory and obtain physical
-mappings. This feature provides a means to define the physical memory region explicitly.
+The usage of ``place_phys`` and ``phys`` allows users to manually allocate memory and obtain
+physical mappings. This feature provides a means to define the physical memory region explicitly.
 
 3. Inter-Process Communication (IPC)
 ####################################
@@ -290,7 +290,7 @@ fostering enhanced functionality and system efficiency.
     :width: 100%
     :name: ipc-fig
 
-  
+
 Bao provides support for IPC, allowing VMs to establish communication channels. The IPC
 configuration involves defining the number of IPCs using the ``ipc_num`` field within the
 ``vm_config`` struct. The specifics of each IPC are then outlined through the ``ipcs`` structure,
@@ -383,7 +383,7 @@ where:
 .. tabs::
   .. tab:: Arm
 
-    For the Arm architecure:
+    For the Arm architecture:
 
     .. code-block:: c
 
@@ -467,7 +467,7 @@ where:
 
     - ``irqc.plic.base`` [mandatory if PLIC is available] - is the base address for the PLIC;
 
-    In case the available interrupt controller is an AIA contaning an APLIC:
+    In case the available interrupt controller is an AIA containing an APLIC:
 
     - ``irqc.aia.aplic.base`` [mandatory if APLIC is available] - is the base address for the APLIC;
 
@@ -475,7 +475,7 @@ where:
 
     - ``iommu.base`` [mandatory if IOMMU is available] - is the base address for the IOMMU;
     - ``iommu.fq_irq_id`` [mandatory if IOMMU is available] - the Fault Queue interrupt ID (the
-      current implementatio assumes this is a wired interrupt);
+      current implementation assumes this is a wired interrupt);
 
 CPU Affinity
 ************

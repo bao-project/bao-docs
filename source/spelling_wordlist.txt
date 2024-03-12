@@ -67,3 +67,5 @@ subdirectory
 scalability
 codebase
 unix
+baremetal
+freeRTOS

@@ -71,3 +71,13 @@ config
 vCPU
 vCPUs
 yaml
+bootloader
+inplace
+virtualized
+iommu
+MiB
+MMU
+MPU
+aarch64
+aarch
+linearized

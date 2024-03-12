@@ -5,12 +5,13 @@ of Bao Project components. It encompasses three core components: (i) a C library
 real-time test handling, (ii) a build system based on Nix, and (iii) a Python Tool for
 comprehensive test management.
 
-1. **C Library** - This library that streamlines testing by providing macros, pre-processed logging
-   prompts, and an entry-point-based system, aiming to facilitating the integration of developer
-   tests in the software stack, such as the hypervisor or guest components.
+1. **C Library** - This library provides a framework for writing tests. It defines (i) a run-time
+   that automates the invocation of function unit tests and (ii) an API that mainly provides a way
+   of outputting test results in a standard format that can be parsed by the Python Tool (see
+   below).
 
 2. **Nix Build System** - The Nix Build System introduces an abstraction layer for system builds,
-   facilitating a modular construction of the software stack for comprehensive testing. It
+   facilitating a modular construction of the target software stack used for testing. It
    encompasses a series of nix recipes that allow the compilation and build of three distinct
    layers: (i) the hypervisor, (ii) multiple guests (e.g., baremetal, freeRTOS, etc.), and (iii)
    the firmware.

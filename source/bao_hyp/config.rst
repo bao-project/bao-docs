@@ -101,7 +101,8 @@ specified:
 - ``platform description`` [mandatory] - a description of the VM platform, defining its resource
   assignments and requirements (see details in `Virtual Machine Configuration`_);
 - ``cpu_affinity`` [optional] - defines the affinity of the VM's vCPUs to the physical CPUs
-  assigned to the virtual platform (see details in `CPU Affinity`_);
+  assigned to the virtual platform. The affinity will be followed as best as possible, but it is
+  not guaranteed (see details in `CPU Affinity`_).;
 - ``colors`` [optional] - assignment of shared LLC cache colors (or partitions) to this VM (see
   details in `Coloring`_).
 

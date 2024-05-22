@@ -77,6 +77,7 @@ communication channels between two or more VMs, which may utilize shared memory 
     :align: center
     :name: guest-config-fig
 
+|
 
 Each entry in the ``vmlist`` mentioned earlier is a ``vm_config`` struct, which defines the
 configuration of each individual guest:
@@ -180,6 +181,7 @@ For more details, refer to the figure below.
     :width: 100%
     :name: vm-image-fig
 
+|
 
 Virtual Machine Configuration
 *****************************
@@ -291,6 +293,7 @@ fostering enhanced functionality and system efficiency.
     :width: 100%
     :name: ipc-fig
 
+|
 
 Bao provides support for IPC, allowing VMs to establish communication channels. The IPC
 configuration involves defining the number of IPCs using the ``ipc_num`` field within the
@@ -489,6 +492,7 @@ involves selecting the physical core where the guest should run.
     :width: 100%
     :name: cpu-affinity-fig
 
+|
 
 This functionality is achieved through the following configuration parameter:
 
@@ -516,6 +520,7 @@ Bao supports cache coloring which can be configured using the ``colors`` field w
     :width: 100%
     :name: llc-colors-fig
 
+|
 
 It's important to note that cache coloring relies on the careful assignment of colors to each VM.
 However, this mechanism may not take effect if the physical mapping feature is enabled for a

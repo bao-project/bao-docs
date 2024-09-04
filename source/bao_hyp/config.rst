@@ -216,7 +216,7 @@ definition of:
 
 - ``Number of CPUs`` - see details in `Number of vCPUs`_;
 - ``Memory regions`` - see details in `Memory Regions`_;`
-- ``Inter-Process Comunication (IPC)`` - see details in `Inter-Process Communication (IPC)`_;
+- ``Inter-Partition Comunication (IPC)`` - see details in `Inter-Partition Communication (IPC)`_;
 - ``Devices`` - see details in `Devices`_;
 - ``Architectural-Specific Configurations`` - see details in `Architectural-Specific
   Configurations`_;
@@ -281,11 +281,11 @@ where:
 The usage of ``place_phys`` and ``phys`` allows users to manually allocate memory and obtain
 physical mappings. This feature provides a means to define the physical memory region explicitly.
 
-3. Inter-Process Communication (IPC)
-####################################
-.. _Inter-Process Communication (IPC):
+3. Inter-Partition Communication (IPC)
+######################################
+.. _Inter-Partition Communication (IPC):
 
-Inter-Process Communication (IPC) enables seamless communication between distinct processes in a
+Inter-Partition Communication (IPC) enables seamless communication between distinct partitions in a
 computing system. This mechanism facilitates data exchange, synchronization, and coordination,
 fostering enhanced functionality and system efficiency.
 

@@ -285,9 +285,8 @@ physical mappings. This feature provides a means to define the physical memory r
 ######################################
 .. _Inter-Partition Communication (IPC):
 
-Inter-Partition Communication (IPC) enables seamless communication between distinct partitions in a
-computing system. This mechanism facilitates data exchange, synchronization, and coordination,
-fostering enhanced functionality and system efficiency.
+Inter-Partition Communication (IPC) enables communication between distinct partitions in a
+computing system, facilitating data exchange, synchronization, and coordination between partitions.
 
 .. figure:: img/ipc.svg
     :align: center

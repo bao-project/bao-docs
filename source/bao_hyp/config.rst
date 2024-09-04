@@ -85,7 +85,13 @@ configuration of each individual guest:
 .. code-block:: c
 
     struct vm_config {
-        struct vm_image image;
+        struct {
+          vaddr_t base_addr;
+          paddr_t load_addr;
+          size_t size;
+          bool separately_loaded;
+          bool inplace;
+        } image;
         vaddr_t entry;
         cpumap_t cpu_affinity;
         colormap_t colors;

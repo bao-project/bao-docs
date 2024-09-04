@@ -528,9 +528,6 @@ However, this mechanism may not take effect if the physical mapping feature is e
 specific memory region. Cache coloring exclusively operates in virtual memory systems, i.e.,
 systems featuring Memory Management Units (MMUs) for address translation.
 
-Shared Memory Configuration
----------------------------
-
 Configuration File Location
 ---------------------------
 

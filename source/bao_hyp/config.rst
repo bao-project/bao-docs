@@ -104,7 +104,7 @@ specified:
 
 - ``image`` [mandatory] - a structure containing information about guest image loading (see details
   in `Guest Image`_)
-- ``entry`` [mandatory] - defines the entry point address in VM's address space;
+- ``entry`` [mandatory] - defines the entry point address in guest's address space;
 - ``platform description`` [mandatory] - a description of the VM platform, defining its resource
   assignments and requirements (see details in `Virtual Machine Configuration`_);
 - ``cpu_affinity`` [optional] - defines the affinity of the VM's vCPUs to the physical CPUs
@@ -135,9 +135,9 @@ guest side. It encompasses the following options:
 
 where:
 
-- ``base_addr`` [mandatory] - corresponds to the ``image`` load address in the VM's address space;
-- ``load_addr`` [mandatory] - corresponds to the ``image`` load address in physical memory/physical
-  address space. This value can be defined using the macro ``VM_IMAGE_OFFSET(img_name)``;
+- ``base_addr`` [mandatory] - corresponds to the ``image`` load ``guest address``;
+- ``load_addr`` [mandatory] - corresponds to the ``image`` load ``physical address``. This value
+  can be defined using the macro ``VM_IMAGE_OFFSET(img_name)``;
 - ``size`` [mandatory] - corresponds to the image size. For builtin images declared using
   `VM_IMAGE`, this value can be defined using the macro ``VM_IMAGE_SIZE(img_name)``;
 - ``separately_loaded`` [optional] - informs the hypervisor if the VM image is to be loaded
@@ -255,7 +255,7 @@ Then, each memory region is described by populating the ``struct vm_mem_region``
 
 where:
 
-- ``base`` [mandatory] - corresponds to the base virtual address of the memory region;
+- ``base`` [mandatory] - corresponds to the base ``guest address`` of the memory region;
 - ``size``  [mandatory] -  corresponds to the size of the memory region;
 
 .. note::
@@ -264,7 +264,7 @@ where:
 
 - ``place_phys`` [optional] - the memory region is mapped into the virtual memory, and it's
   important to note that the virtual address (VA) might not necessarily be the same as the physical
-  address (PA). When "place_phys" is set to true, the virtual address corresponds to the physical
+  address (PA). When "place_phys" is set to true, the guest address corresponds to the physical
   address. If ``place_phys`` equals to true, it allows to specify the physical address of the
   memory region. By default, ``place_phys`` equals to false;
 
@@ -318,7 +318,7 @@ including fields such as ``base``, ``size``, ``shmem_id``, ``interrupt_num``, an
 
 where:
 
-- ``base``  [mandatory] - corresponds to the virtual base address of the IPC memory region;
+- ``base``  [mandatory] - corresponds to the base ``guest address`` of the IPC memory region;
 - ``size`` [mandatory] - corresponds to the size of the IPC memory region;
 
 .. note::
@@ -358,8 +358,8 @@ where:
 
 where:
 
-- ``pa`` [mandatory] - corresponds to the base physical address of the device;
-- ``va`` [mandatory] - corresponds to the base virtual address of the device;
+- ``pa`` [mandatory] - corresponds to the base ``physical address`` of the device;
+- ``va`` [mandatory] - corresponds to the base guest ``physical address`` of the device;
 - ``size`` [mandatory] - corresponds to the size of the device memory region;
 
 .. note::

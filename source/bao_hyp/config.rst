@@ -172,7 +172,7 @@ parameters such as ``img_name``, ``base_addr``, ``load_addr``, and size. For ins
 
 - ``IMAGE_LOADED``: Highly recommended, especially for MPU systems, where manual allocation of
   space for the guest image can be challenging if embedded in Bao's binary. Without utilizing
-  LOADED, Bao may need to copy the image, potentially resulting in space wastage.
+  LOADED, Bao may need to copy the image, potentially resulting in wasted space.
 
 Moreover, if the ``separately_loaded`` parameter is configured as false, the hypervisor interprets
 this setting as the offset of the built-in guest image within its own image, denoted as

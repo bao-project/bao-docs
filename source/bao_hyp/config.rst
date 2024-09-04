@@ -236,11 +236,6 @@ definition of:
 #################
 .. _Memory Regions:
 
-Bao employs a two-stage translation mechanism to manage VM memory. Each VM memory region is
-delineated by its virtual address in the second stage. Generally, Bao manages the allocation of
-physical memory for these regions. However, there is an option to define the physical memory region
-where the specific region will be mapped.
-
 For each VM, users can define multiple memory regions. To facilitate this, users first define the
 total number of memory regions via the ``region_num`` parameter:
 

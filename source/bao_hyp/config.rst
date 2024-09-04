@@ -297,7 +297,7 @@ computing system, facilitating data exchange, synchronization, and coordination 
 
 Bao provides support for IPC, allowing VMs to establish communication channels. The IPC
 configuration involves defining the number of IPCs using the ``ipc_num`` field within the
-``vm_config`` struct. The specifics of each IPC are then outlined through the ``ipcs`` structure,
+``vm_platform`` struct. The specifics of each IPC are then outlined through the ``ipcs`` structure,
 including fields such as ``base``, ``size``, ``shmem_id``, ``interrupt_num``, and ``interrupts``.
 
 - ``ipc_num`` [optional] - defines the number of IPCs assigned to the VM. By default, ``ipc_num``

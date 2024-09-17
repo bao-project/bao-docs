@@ -533,9 +533,9 @@ Shared Memory Configuration
 ---------------------------
 .. _Shared Memory Configuration:
 
-In Bao's configuration multiple (``shmem0``, ``shmem1``, ...) or no shared memory can be set. An ID
-is assigned to each shared memory object. Later, this ID can be linked to an IPC in the multi-guest
-configuration.
+In Bao's configuration, you can set multiple shared memory regions (e.g., ``shmem0``, ``shmem1``,
+...) or none at all. An ID is assigned to each shared memory object. Later, this ID can be linked
+to an IPC in the multi-guest configuration.
 
 .. figure:: img/shmem.svg
     :align: center

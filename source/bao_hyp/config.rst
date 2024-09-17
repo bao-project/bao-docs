@@ -562,10 +562,10 @@ This struct contains the following parameters:
 
 - **size** [mandatory] - defines the total size of the shared memory. The size of the shared \
   memory must always be multiples of 4Kb (0x1000);
-- **place_phys** [optional] - shared memory is mapped into the virtual memory and it's \
-  important to note that the virtual address (VA) might not necessarily be the same as the \
-  physical address (PA). When ``place_phys`` is set to true, the virtual address corresponds to \
-  the physical address. By default, ``place_phy`` equals to false;
+- **place_phys** [optional] - shared memory is mapped into the virtual memory and it's important \
+  to note that the guest address might not necessarily be the same as the physical address (PA). \
+  When ``place_phys`` is set to true, the guest address corresponds to the physical address. By \
+  default, ``place_phy`` equals to false;
 - **base / phys** [optional] - defines the physical address (base address) of the shared memory.
 
 

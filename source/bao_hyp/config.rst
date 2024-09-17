@@ -543,8 +543,8 @@ configuration.
 
 |
 
-The configuration of shared memories is done by populating a struct called
-``shmem``, as follows:
+The configuration of shared memory is done by populating a struct called ``shmem``. The struct
+definition is presented bellow:
 
 .. code-block:: c
 

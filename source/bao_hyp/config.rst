@@ -214,11 +214,11 @@ By customizing this configuration, users can tailor the virtual platform to suit
 requirements and application needs for their virtual machines. The configuration includes the
 definition of:
 
-- ``Number of CPUs`` - see details in `Number of vCPUs`_;
-- ``Memory regions`` - see details in `Memory Regions`_;`
-- ``Inter-Partition Comunication (IPC)`` - see details in `Inter-Partition Communication (IPC)`_;
-- ``Devices`` - see details in `Devices`_;
-- ``Architectural-Specific Configurations`` - see details in `Architectural-Specific
+- **Number of CPUs** - see details in `Number of vCPUs`_;
+- **Memory regions** - see details in `Memory Regions`_;`
+- **Inter-Partition Comunication (IPC)** - see details in `Inter-Partition Communication (IPC)`_;
+- **Devices** - see details in `Devices`_;
+- **Architectural-Specific Configurations** - see details in `Architectural-Specific
   Configurations`_;
 
 1. Number of vCPUs

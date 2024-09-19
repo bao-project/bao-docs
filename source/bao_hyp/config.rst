@@ -342,8 +342,8 @@ where:
 .. _Devices:
 
 - ``dev_num`` [mandatory] - corresponds to the number of devices assigned to the VM;
-- ``devs`` [mandatory if *dev_num* > 0] - corresponds to the specification of the VM's devices and
-  is configured through the following structure:
+- ``devs`` [mandatory if ``dev_num`` > 0] - corresponds to the specification of the VM's devices
+  and is configured through the following structure:
 
 .. code-block:: c
 

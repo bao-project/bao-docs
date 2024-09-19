@@ -560,13 +560,13 @@ definition is presented bellow:
 
 This struct contains the following parameters:
 
-- **size** [mandatory] - defines the total size of the shared memory. The size of the shared \
+- ``size`` [mandatory] - defines the total size of the shared memory. The size of the shared \
   memory must always be multiples of 4Kb (0x1000);
-- **place_phys** [optional] - This flag determines the mapping of shared memory into virtual \
+- ``place_phys`` [optional] - This flag determines the mapping of shared memory into virtual \
   memory. When ``place_phys`` is set to ``false`` (default value), the base address is a guest \
   (virtual) address. When set to ``true``, the guest address directly corresponds to the physical \
   address (PA) of the shared memory.
-- **base / phys** [optional] - When ``place_phys`` is set to ``false``, the ``base`` parameter \
+- ``base / phys`` [optional] - When ``place_phys`` is set to ``false``, the ``base`` parameter \
   should be used to specify the guest virtual address of the shared memory. When place_phys is \
   ``true``, the ``phys`` parameter should be used to specify the physical address of the shared \
   memory.

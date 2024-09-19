@@ -120,7 +120,7 @@ Guest Image
 The guest ``image`` comprises a structure that describes the image configuration running on the
 guest side. It encompasses the following options:
 
-- **image** [mandatory] - definition of the ``image`` to run on a given VM. The ``image``
+- ``image`` [mandatory] - definition of the ``image`` to run on a given VM. The ``image``
   corresponds to the following structure:
 
 .. code-block:: c

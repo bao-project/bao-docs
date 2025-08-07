@@ -64,9 +64,22 @@ html_theme_options = {
     'style_external_links': True,
     # Toc options
     'collapse_navigation': False,
+    'sticky_navigation': True,
+    'prev_next_buttons_location': 'both',
+    'style_external_links': True,
+    'style_nav_header_background': '#156577',
 }
 
 html_logo = "introduction/img/bao-logo-200x.png"
+
+# These folders are copied to the documentation's HTML output
+html_static_path = ['_static']
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'custom.css',
+]
 
 # -- Options for spelling builder ----------------------------------------------
 spelling_lang='en_US'

@@ -6,12 +6,12 @@ MISRA Compliance
 The project aims to comply with the :term:`MISRA` C:2012 coding guidelines in all C code across all
 repositories. All submitted code will be checked for :term:`MISRA` violations following the
 :ref:`Guideline Enforcement Plan <misra_gep>` and the :ref:`Guideline Requalification Plan
-<misra_grp>` using automated checker tools in the :ref:`CI pipeline <ci>`. Developers should
-continuously check for :term:`MISRA` violations by :ref:`running the checker tools
-locally<misra_check_locally>` at each commit. Any violation identified in the submitted code must
-be justifiable and duly :ref:`deviated<deviations>`. These processes must be properly documented,
-peer-reviewed, and authorized according to the project's :ref:`contribution process <contributing>`
-and the guidance provided by the official `MISRA Compliance:2020 document
+<misra_grp>` using automated checker tools in the CI pipeline. Developers should continuously check
+for :term:`MISRA` violations by :ref:`running the checker tools locally<misra_check_locally>` at
+each commit. Any violation identified in the submitted code must be justifiable and duly
+:ref:`deviated<deviations>`. These processes must be properly documented, peer-reviewed, and
+authorized according to the project's :ref:`contribution process <contributing>` and the guidance
+provided by the official `MISRA Compliance:2020 document
 <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_.
 
 Every :term:`developer`, reviewer, or :term:`maintainer` should familiarize themselves with, first
@@ -101,7 +101,7 @@ A project's GRP must start with the original category for every rule. Every reca
       reconfigure the tools accordingly.
 
 As described in :ref:`Repository MISRA Artefacts<misra_artifacts>`, each repository must provide a
-GEP in a CSV format, for which a baseline is provided in the :ref:`CI repository <ci>`.
+GEP in a CSV format, for which a baseline is provided in the CI repository.
 
 .. _deviations:
 
@@ -109,16 +109,16 @@ Deviations
 ----------
 
 All new :ref:`code submissions via a GitHub pull-requests <contributing>`, will be subject to the
-automatic checking of :term:`MISRA` compliance by the :ref:`CI pipeline <ci>`. Ideally, the
-pull-request should not introduce any new :term:`MISRA` violations. Developers should always strive
-to follow the :term:`MISRA` coding guidelines. However, they may conclude that a violation is
-unavoidable and justifiable according to at least one of the :ref:`deviation reasons
-<deviation_reasons>`. If so, developers must document and request the introduction of the violation
-in the code base, which will be subject to the approval of a code reviewer. These approved
-violations are called deviations. To introduce a deviation, a :term:`developer` must follow the
-:ref:`deviation procedure <deviation_procedure>` which include providing a :ref:`deviation record
-<deviation_records>`, :ref:`annotate<deviation_annotations>` all violations, and being explicitly
-approved by :ref:`MISRA managers<misra_manager>`.
+automatic checking of :term:`MISRA` compliance by the CI pipeline. Ideally, the pull-request should
+not introduce any new :term:`MISRA` violations. Developers should always strive to follow the
+:term:`MISRA` coding guidelines. However, they may conclude that a violation is unavoidable and
+justifiable according to at least one of the :ref:`deviation reasons <deviation_reasons>`. If so,
+developers must document and request the introduction of the violation in the code base, which will
+be subject to the approval of a code reviewer. These approved violations are called deviations. To
+introduce a deviation, a :term:`developer` must follow the :ref:`deviation procedure
+<deviation_procedure>` which include providing a :ref:`deviation record <deviation_records>`,
+:ref:`annotate<deviation_annotations>` all violations, and being explicitly approved by :ref:`MISRA
+managers<misra_manager>`.
 
 .. _deviation_reasons:
 
@@ -425,7 +425,7 @@ Templates for all these documents are provided in the ``misra`` directory of the
 MISRA managers
 --------------
 
-On top of the roles described in :ref:`ci`, every repository shall be assigned at least one
+On top of the roles described in the CI, every repository shall be assigned at least one
 :term:`MISRA` manager responsible for enforcing the processes described in this document and
 guaranteeing the `MISRA compliance best practices
 <https://www.misra.org.uk/app/uploads/2021/06/MISRA-Compliance-2020.pdf>`_ are being followed as
@@ -450,13 +450,13 @@ guidelines. Their responsibilities include, but are not limited to:
 Running the MISRA Checker Locally
 ---------------------------------
 
-Every project shall instantiate the :ref:`CI<ci>` :code:`misra-check` Make rule that takes care of
-running all the necessary :term:`MISRA` checks. For example, for checking compliance for the
+Every project shall instantiate the CI :code:`misra-check` Make rule that takes care of running all
+the necessary :term:`MISRA` checks. For example, for checking compliance for the
 *qemu-aarch64-virt* platform:
 
   .. code-block:: shell
 
     make PLATFORM=qemu-aarch64-virt misra-check
 
-It is suggested to use the provided :ref:`Docker container image <docker>` for running the checks;
-otherwise, you will first have to :ref:`setup all the necessary tools locally<gitact_local_env>`.
+It is suggested to use the provided Docker container image for running the checks; otherwise, you
+will first have to setup all the necessary tools locally.

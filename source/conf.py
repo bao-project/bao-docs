@@ -44,7 +44,12 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = [
+    'introduction/*',
+    'development/testing.rst',
+    'development/coding_style.rst',
+    'bao_hyp/internals/index.rst',
+    'development/ci_pipeline.rst',]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -70,7 +75,7 @@ html_theme_options = {
     'style_nav_header_background': '#156577',
 }
 
-html_logo = "introduction/img/bao-logo-200x.png"
+html_logo = "img/bao-logo-200x.png"
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ['_static']

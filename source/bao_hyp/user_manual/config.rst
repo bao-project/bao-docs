@@ -63,7 +63,7 @@ single VM and cannot be shared. In contrast, certain hardware devices and commun
 (such as shared memory or dedicated IPCs) can be assigned to more than one VM, enabling controlled
 sharing and inter-VM communication.
 
-.. figure:: img/guest-config.svg
+.. figure:: ../img/guest-config.svg
     :align: center
     :name: guest-config-fig
 
@@ -196,7 +196,7 @@ hypervisor itself was loaded. However, if the ``separately_loaded`` parameter is
 ``true``, the VM image is not embedded in the hypervisor image; instead, it is loaded
 independently. For more details, refer to the figure below.
 
-.. figure:: img/guest-image.svg
+.. figure:: ../img/guest-image.svg
     :align: center
     :width: 100%
     :name: vm-image-fig
@@ -317,7 +317,7 @@ physical mappings. This feature provides a means to define the physical memory r
 Inter-Partition Communication (IPC) enables communication between distinct partitions in a
 computing system, facilitating data exchange, synchronization, and coordination between partitions.
 
-.. figure:: img/ipc.svg
+.. figure:: ../img/ipc.svg
     :align: center
     :width: 100%
     :name: ipc-fig
@@ -548,7 +548,7 @@ CPU Affinity
 The configuration file of the Bao hypervisor also enables the definition of core affinity, which
 involves selecting the physical core where the guest should run.
 
-.. figure:: img/cpu-affinity.svg
+.. figure:: ../img/cpu-affinity.svg
     :align: center
     :width: 100%
     :name: cpu-affinity-fig
@@ -576,7 +576,7 @@ Bao supports cache coloring which can be configured using the ``colors`` field w
   platform-dependent. By default, the coloring mechanism is not active. For instance, the following
   picture depicts a hypothetical setup with a 50/50 coloring scheme;
 
-.. figure:: img/llc-colors.svg
+.. figure:: ../img/llc-colors.svg
     :align: center
     :width: 100%
     :name: llc-colors-fig
@@ -596,7 +596,7 @@ In Bao's configuration, you can set multiple shared memory regions (e.g., ``shme
 ...) or none at all. An ID is assigned to each shared memory object. Later, this ID can be linked
 to an IPC in the multi-guest configuration.
 
-.. figure:: img/shmem.svg
+.. figure:: ../img/shmem.svg
     :align: center
     :name: shmem-fig
 

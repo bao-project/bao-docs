@@ -1,16 +1,11 @@
-Development
-===========
+Development Guidelines
+======================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
 
-   coding_style
    code_documentation
    doc_guidelines
-   testing
-   ci_pipeline
-   licensing
    contributing
    misra
    versioning

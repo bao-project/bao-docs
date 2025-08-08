@@ -83,3 +83,8 @@ aarch64
 aarch
 linearized
 VM
+baremetal
+toolchain
+bǎohù
+instantiation
+untrustable

@@ -447,9 +447,9 @@ updated.
 
 Spelling and Format Checkers
 ----------------------------
-To keep the consistency of the documentation, the :ref:`CI pipeline <ci>` runs two checkers to find
-misspelled words and invalid reST format styles. The checkers can be run locally by just running
-the following Make rules:
+To keep the consistency of the documentation, the CI pipeline runs two checkers to find misspelled
+words and invalid reST format styles. The checkers can be run locally by just running the following
+Make rules:
 
 To run the `sphinxcontrib.spelling <https://sphinxcontrib-spelling.readthedocs.io/en/latest/>`_
 spell checker:
@@ -528,5 +528,5 @@ To link terms with the glossary, the keyword ``:term:`term1``` must be used, whi
       reference in all other documents and mark it with the ``:term:`` keyword
       to created a link to the glossary entry. However, this should be
       avoided if the term has a dedicated file documenting it (e.g.,
-      :ref:`CI <ci>`, :ref:`MISRA <misra>`). Use explicit referencing
-      instead. Notwithstanding, add the term to the glossary.
+      CI, :ref:`MISRA <misra>`). Use explicit referencing instead. Notwithstanding, add the term to
+      the glossary.

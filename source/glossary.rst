@@ -12,7 +12,7 @@ Glossary
 
     CI
         Continuous Integration: process that automates the integration of new changes to the
-        repositories. More information :ref:`here <ci>`.
+        repositories. More information here.
 
     MISRA
         Set of software development guidelines for the C programming language developed by The
@@ -51,3 +51,9 @@ Glossary
         A subject is an entity that can access or interact with a system, its resources and its
         assets. This can include individuals, other systems (e.g., through a remote connection),
         and specific system components such as VMs and VMMs.
+
+    VM
+        A Virtual Machine (VM) is a software-emulated environment that runs programs, including
+        operating systems, as if they were executing directly on physical hardware. VMs are created
+        and managed by a hypervisor, which enables the consolidation of multiple VM-based isolated
+        systems on a single platform.

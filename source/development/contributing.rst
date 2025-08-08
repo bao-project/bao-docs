@@ -199,15 +199,15 @@ Review Guide
 ************
 
 As much as possible, code quality and enforced standards/guidelines will be automatically checked
-in the :ref:`CI pipeline <ci>`. **Reviewers** must be particularly attentive to the ones that are
+in the CI pipeline. **Reviewers** must be particularly attentive to the ones that are
 not addressed by these automated tools.
 
 The following are some tips all **reviewers** should take into account:
 
 * Make sure the code is readable, well commented (includes doxygen comments), and the :term:`PR`
   provide the appropriate/necessary documentation;
-* The code follows the project's :ref:`coding guidelines<coding_guidelines>` as much as possible,
-  especially those not automatically checked such as:
+* The code follows the project's coding guidelines as much as possible, especially those not
+  automatically checked such as:
 
     * code organization, that is, are the files placed correctly? (e.g., architecture specific
       files in the *arch* directory);
@@ -251,7 +251,7 @@ enforced by GitHub:
 
 * was reviewed by at least by two **reviewers**;
 * all review comments, suggestions or modification requests have been addressed;
-* passes all :ref:`CI pipeline <ci>` checks;
+* passes all CI pipeline checks;
 * can be rebased on ``main`` without any conflict;
 
 The **maintainer** shall have as the main objective when integrating the :term:`PR` to maintain a
@@ -282,10 +282,10 @@ history within the :term:`PR`:
   ``branch/pull-request``);
 * follow a logical order. That is, a commit that has a dependence on the modifications by a
   different commit of the same :term:`PR`, is after the former.
-* adhere to the project's :ref:`coding guidelines<coding_guidelines>` for the targeted languages;
+* adhere to the project's coding guidelines for the targeted languages;
 * tag the necessary requirements;
 * introduce code that is readable and sufficiently commented/documented;
-* pass all :ref:`base CI pipeline<ci>` checks, by running them locally;
+* pass all base CI pipeline checks, by running them locally;
 * make sure your code works: test your code in as many targets as possible and write the needed
   automated tests;
 * introduces or updates the necessary documentation;
@@ -371,7 +371,7 @@ Message Format
 ##############
 
 The format of the message, especially the header, is checked using the `gitlint
-<https://jorisroovers.com/gitlint/>`_ tool referenced in :ref:`CI pipeline<ci>`. For detailed
+<https://jorisroovers.com/gitlint/>`_ tool referenced in the CI pipeline. For detailed
 information on the commit format check the ``.gitlint`` file in the `CI repository
 <https://github.com/bao-project/bao-ci>`_, which defines a certain set of rules that comply with
 the following list:
@@ -551,10 +551,10 @@ Other topic branches might also be subject to protection rules at the will of th
 CI/GitHub Actions
 *****************
 
-Every repository must have an automated :ref:`CI pipeline <ci>` setup using GitHub Actions.
-Specifically, by adding workflow yaml files to the ``.github/workflows`` directory. The `CI
-repository <https://github.com/bao-project/bao-ci>`_ contains a number of templates as well as
-further instructions on how to set it up.
+Every repository must have an automated CI pipeline setup using GitHub Actions. Specifically, by
+adding workflow yaml files to the ``.github/workflows`` directory. The `CI repository
+<https://github.com/bao-project/bao-ci>`_ contains a number of templates as well as further
+instructions on how to set it up.
 
 Here are a few workflows a **maintainer** should add to the repository's :term:`CI`:
 
@@ -562,10 +562,10 @@ Here are a few workflows a **maintainer** should add to the repository's :term:`
   conventional commit style;
 * copyright and license check: making sure all files have the necessary license and copyright
   information;
-* language format/linting: apply the language format checkers defined in the :ref:`CI repository
-  <gitact_checkers>` for the repo's used languages (e.g. clang-format for C or pylint for python);
-* static analysis: apply static analyses defined in :ref:`CI repository <gitact_checkers>` for the
-  repo's used language (e.g. misra-check for C language);
+* language format/linting: apply the language format checkers defined in the CI repository for the
+  repo's used languages (e.g. clang-format for C or pylint for python);
+* static analysis: apply static analyses defined in the CI repository for the repo's used language
+  (e.g. misra-check for C language);
 * build: build the repository for a representative set of targets and configurations (using GitHub
   Actions' strategy matrix);
 
@@ -659,3 +659,5 @@ Final layout of the ``.gitmodules`` configuration file:
 .. ----------
 
 .. add ref to "requirements and traceability" mentions throughout the document
+
+..Reference to coding guidelines needs to be added

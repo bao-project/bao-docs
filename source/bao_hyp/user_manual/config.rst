@@ -30,16 +30,16 @@ for each list, it is necessary to specify the list size using the parameters ``s
             [0] = {/*shared memory config*/,},
             [1] = {/*shared memory config*/,},
             ...
-            [N] = {/*shared memory config*/,}
+            [N-1] = {/*shared memory config*/,}
         },
 
         // Guests Configuration
-        .vmlist_size = NUM_VMs,
+        .vmlist_size = N,
         .vmlist = {
             { /* VM 0 Config*/},
             { /* VM 1 Config*/},
             ...
-            { /* VM N Config*/},
+            { /* VM N-1 Config*/},
         }
     };
 

@@ -48,8 +48,7 @@ exclude_patterns = [
     'introduction/*',
     'development/testing.rst',
     'development/coding_style.rst',
-    'bao_hyp/internals/index.rst',
-    'development/ci_pipeline.rst',]
+    'bao_hyp/internals/index.rst',]
 
 
 # -- Options for HTML output -------------------------------------------------

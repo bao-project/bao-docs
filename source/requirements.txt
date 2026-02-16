@@ -2,3 +2,4 @@ sphinx
 sphinxcontrib-spelling
 sphinx-tabs
 sphinx-rtd-theme
+docutils<0.22

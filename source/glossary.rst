@@ -12,7 +12,7 @@ Glossary
 
     CI
         Continuous Integration: process that automates the integration of new changes to the
-        repositories. More information here.
+        repositories. More information :ref:`here <ci>`.
 
     MISRA
         Set of software development guidelines for the C programming language developed by The

@@ -1,68 +1,1018 @@
-.wy-nav-side {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 2em;
-    width: 300px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    min-height: 100%;
-    color: #D6D6D6;
-    background: #D6D6D6;
-    z-index: 200
+/* Bao documentation theme.
+   Overrides sphinx_rtd_theme with the Bao visual identity used on
+   bao-project.org: ink / paper / one accent, Chakra Petch for display type and
+   IBM Plex Mono for navigation, labels and code. Running text is set in IBM
+   Plex Sans, the same family, because long pages read better in a
+   proportional face. The identity is flat: 1px borders, no
+   shadows, no gradients. The accent is kept for small marks on ink and for
+   highlighted borders; it never colors body type on paper. */
+
+/* -- Fonts (self-hosted, SIL OFL 1.1, see fonts/LICENSE-*) -------------- */
+
+@font-face {
+    font-family: "Chakra Petch";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("fonts/chakra-petch-latin-600-normal.woff2") format("woff2");
 }
 
-.wy-menu-vertical header,.wy-menu-vertical p.caption {
-    color: #55a5d9;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 1.618em;
-    margin: 12px 0 0;
-    display: block;
+@font-face {
+    font-family: "Chakra Petch";
+    font-style: normal;
     font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0%;
-    white-space: nowrap
+    font-display: swap;
+    src: url("fonts/chakra-petch-latin-700-normal.woff2") format("woff2");
 }
 
-.wy-menu-vertical a {
-    line-height: 18px;
-    padding: .4045em 1.618em;
+@font-face {
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/ibm-plex-mono-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("fonts/ibm-plex-mono-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+
+/* -- Tokens (same names and values as the website's tailwind.config.ts) ----- */
+
+:root {
+    --bao-ink: #0B1F33;
+    --bao-ink-2: #12294A;
+    --bao-paper: #F8FAFC;
+    --bao-accent: #13F0C4;
+    --bao-teal: #006B6B;
+    --bao-surface: #EEF2F6;
+    --bao-line: #D5DEE8;
+    --bao-line-2: #E3EAF1;
+    --bao-line-dark: #1B3550;
+    --bao-line-dark-2: #2A4666;
+    --bao-body: #3D5470;
+    --bao-muted: #8B9BB0;
+    --bao-on-dark: #B7C4D4;
+    /* Cool steps between the accent and on-dark, used for code on ink. */
+    --bao-ramp-2: #6FD9DC;
+    --bao-ramp-3: #9CB8D6;
+
+    --bao-font-display: "Chakra Petch", sans-serif;
+    --bao-font-sans: "IBM Plex Sans", system-ui, sans-serif;
+    --bao-font-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* -- Base ------------------------------------------------------------------- */
+
+html {
+    scroll-padding-top: 24px;
+}
+
+body,
+.wy-body-for-nav {
+    background: var(--bao-paper);
+    color: var(--bao-body);
+    font-family: var(--bao-font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+select,
+textarea,
+button,
+legend {
+    font-family: var(--bao-font-mono);
+}
+
+::selection {
+    background: var(--bao-accent);
+    color: var(--bao-ink);
+}
+
+:focus-visible {
+    outline: 2px solid var(--bao-accent);
+    outline-offset: 2px;
+}
+
+.wy-nav-content-wrap {
+    background: var(--bao-paper);
+}
+
+.wy-nav-content {
+    background: var(--bao-paper);
+    max-width: 860px;
+    padding: 32px 48px 48px;
+}
+
+hr {
+    border-top: 1px solid var(--bao-line);
+}
+
+/* -- Type ------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.rst-content .toctree-wrapper > p.caption {
+    font-family: var(--bao-font-display);
+    font-weight: 700;
+    color: var(--bao-ink);
+}
+
+.rst-content h1 {
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-wrap: balance;
+}
+
+.rst-content h2 {
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 56px 0 20px;
+}
+
+.rst-content h3 {
+    font-size: 19px;
+    line-height: 1.3;
+    margin: 36px 0 12px;
+}
+
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 28px 0 10px;
+}
+
+.rst-content p,
+.rst-content li,
+.rst-content dd,
+.rst-content .line-block {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.rst-content p {
+    margin-bottom: 16px;
+}
+
+.rst-content strong,
+.rst-content b {
+    font-weight: 600;
+    color: var(--bao-ink);
+}
+
+.rst-content .section ul li,
+.rst-content section ul li,
+.rst-content .toctree-wrapper ul li {
+    list-style: square;
+}
+
+.rst-content li::marker {
+    color: var(--bao-muted);
+}
+
+/* Links: teal on paper, never the accent. */
+a,
+a:visited,
+.rst-content a,
+.rst-content a:visited {
+    color: var(--bao-teal);
+    text-decoration: none;
+}
+
+.rst-content a {
+    font-weight: 500;
+    text-underline-offset: 2px;
+}
+
+a:hover,
+.rst-content a:hover {
+    color: var(--bao-teal);
+    text-decoration: underline;
+}
+
+.rst-content h1 a,
+.rst-content h2 a,
+.rst-content h3 a {
+    font-weight: 700;
+}
+
+.rst-content h1 .headerlink,
+.rst-content h2 .headerlink,
+.rst-content h3 .headerlink,
+.rst-content h4 .headerlink,
+.rst-content h5 .headerlink,
+.rst-content h6 .headerlink,
+.rst-content dl dt .headerlink,
+.rst-content p .headerlink,
+.rst-content p.caption .headerlink,
+.rst-content table > caption .headerlink,
+.rst-content .code-block-caption .headerlink {
+    color: var(--bao-muted);
+    font-size: 13px;
+}
+
+.rst-content .headerlink:hover {
+    color: var(--bao-teal);
+    text-decoration: none;
+}
+
+/* -- Sidebar (ink) ---------------------------------------------------------- */
+
+.wy-nav-side {
+    background: var(--bao-ink);
+    color: var(--bao-on-dark);
+    font-family: var(--bao-font-mono);
+    border-right: 1px solid var(--bao-line-dark);
+}
+
+.wy-side-nav-search {
+    background-color: var(--bao-ink);
+    border-bottom: 1px solid var(--bao-line-dark);
+    margin-bottom: 12px;
+    padding: 20px 24px;
+    text-align: left;
+}
+
+.wy-side-nav-search > a,
+.wy-side-nav-search > a.icon {
     display: block;
-    position: relative;
-    font-size: 90%;
-    color: #404040
+    margin: 0 0 16px;
+    padding: 0;
 }
 
-.wy-menu-vertical a:hover {
-    background-color: #45C494;
-    cursor: pointer
+.wy-side-nav-search > a:hover {
+    background: none;
 }
 
-.wy-menu-vertical li.toctree-l1.current>a {
-    border-bottom: 0px solid #c9c9c9;
-    border-top: 0px solid #c9c9c9
+.wy-side-nav-search > a img.logo,
+.wy-side-nav-search > a.icon img.logo {
+    width: 188px;
+    margin: 0;
 }
 
-.wy-side-nav-search input[type=text] {
-    width: 100%;
-    border-radius: 5px;
-    padding: 6px 12px;
-    border-color: #45C494;
-    border-width: 2px;
+/* 11px uppercase label under the wordmark. */
+.wy-side-nav-search > a::after {
+    content: "documentation";
+    display: block;
+    margin-top: 10px;
+    color: var(--bao-muted);
+    font-family: var(--bao-font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
+.wy-side-nav-search input[type="text"] {
+    background: var(--bao-ink-2);
+    border: 1px solid var(--bao-line-dark-2);
+    border-radius: 4px;
+    box-shadow: none;
+    color: var(--bao-paper);
+    font-family: var(--bao-font-mono);
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+.wy-side-nav-search input[type="text"]::placeholder {
+    color: var(--bao-muted);
+    opacity: 1;
+}
+
+.wy-side-nav-search input[type="text"]:focus {
+    border-color: var(--bao-accent);
+    outline: none;
+}
+
+.wy-menu-vertical p.caption,
+.wy-menu-vertical header {
+    color: var(--bao-muted);
+    font-family: var(--bao-font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 0 24px;
+}
+
+/* Every level sits on ink; depth is carried by the indent, not by a fill. */
+.wy-menu-vertical li.current,
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l3.current > a,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+    background: transparent;
+}
+
+.wy-menu-vertical a,
+.wy-menu-vertical li ul li a,
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l4 a {
+    color: var(--bao-on-dark);
+    border-right: none;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    transition: color 0.2s;
+}
+
+.wy-menu-vertical li.toctree-l1 > a {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.wy-menu-vertical li.toctree-l3,
+.wy-menu-vertical li.toctree-l4 {
+    font-size: 1em;
+}
+
+.wy-menu-vertical a:hover,
+.wy-menu-vertical li.current a:hover,
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.on a:hover,
+.wy-menu-vertical a:active {
+    background: transparent;
+    color: var(--bao-accent);
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+    border-top: none;
+    border-bottom: none;
+}
+
+/* The trail to the open page reads in paper; the page itself carries the accent rule. */
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+    color: var(--bao-paper);
+    font-weight: 500;
+}
+
+.wy-menu-vertical li.current > a.current {
+    box-shadow: inset 2px 0 0 var(--bao-accent);
+}
+
+.wy-menu-vertical li button.toctree-expand,
+.wy-menu-vertical li.current > a button.toctree-expand,
+.wy-menu-vertical li.on a button.toctree-expand,
+.wy-menu-vertical li.toctree-l2 button.toctree-expand,
+.wy-menu-vertical li.toctree-l3 button.toctree-expand {
+    color: var(--bao-muted);
+    line-height: 1.5;
+}
+
+.wy-menu-vertical a:hover button.toctree-expand,
+.wy-menu-vertical li.current > a:hover button.toctree-expand,
+.wy-menu-vertical li.on a:hover button.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:hover button.toctree-expand,
+.wy-menu-vertical li.toctree-l3 a:hover button.toctree-expand {
+    color: var(--bao-accent);
+}
+
+/* Top bar shown below 768px. */
+.wy-nav-top {
+    background: var(--bao-ink);
+    border-bottom: 1px solid var(--bao-line-dark);
+    color: var(--bao-paper);
+}
+
+.wy-nav-top a,
+.wy-nav-top a:visited {
+    color: var(--bao-paper);
+    font-family: var(--bao-font-display);
+    font-weight: 700;
+}
+
+.wy-nav-top i {
+    color: var(--bao-on-dark);
+}
+
+/* Version flyout on Read the Docs. */
+.rst-versions {
+    background: var(--bao-ink);
+    border-top: 1px solid var(--bao-line-dark);
+    font-family: var(--bao-font-mono);
+}
+
+.rst-versions .rst-current-version {
+    background: var(--bao-ink-2);
+    color: var(--bao-on-dark);
+}
+
+/* -- Breadcrumbs, page buttons, footer -------------------------------------- */
+
+.wy-breadcrumbs,
+.wy-breadcrumbs li,
+.wy-breadcrumbs li a {
+    color: var(--bao-muted);
+    font-family: var(--bao-font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.wy-breadcrumbs li.breadcrumb-item.active {
+    color: var(--bao-body);
+}
+
+.wy-breadcrumbs li a:hover {
+    color: var(--bao-teal);
+    text-decoration: none;
+}
+
+.btn,
 .btn-neutral {
-    background-color: #f3f6f6!important;
-    color: #45C494!important
+    background: transparent !important;
+    border: 1px solid var(--bao-line);
+    border-radius: 4px;
+    box-shadow: none;
+    color: var(--bao-ink) !important;
+    font-family: var(--bao-font-display);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 14px;
+    transition: border-color 0.2s;
 }
 
+.btn:hover,
 .btn-neutral:hover {
-    background-color: #e5ebeb!important;
-    color: #45C494
+    background: transparent !important;
+    border-color: var(--bao-accent);
+    box-shadow: none;
+    color: var(--bao-ink);
+    text-decoration: none;
+}
+
+.btn:active,
+.btn:focus {
+    box-shadow: none;
 }
 
 .btn-neutral:visited {
-    color: #45C494!important
+    color: var(--bao-ink) !important;
+}
+
+.btn .fa {
+    color: var(--bao-muted);
+}
+
+footer,
+.rst-content footer p {
+    color: var(--bao-muted);
+    font-family: var(--bao-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+footer a,
+footer a:visited {
+    color: var(--bao-body);
+}
+
+footer .btn {
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* -- Code ------------------------------------------------------------------- */
+
+.rst-content code,
+.rst-content tt,
+code,
+kbd,
+pre,
+samp {
+    font-family: var(--bao-font-mono);
+}
+
+/* Inline code: a surface chip in ink. */
+.rst-content code,
+.rst-content tt,
+.rst-content code.literal,
+.rst-content tt.literal {
+    background: var(--bao-surface);
+    border: none;
+    border-radius: 3px;
+    color: var(--bao-ink);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 2px 6px;
+}
+
+.rst-content a code,
+.rst-content a code.literal {
+    color: var(--bao-teal);
+}
+
+/* Code blocks: an ink panel, as on the website. */
+.rst-content div[class^="highlight"],
+.rst-content pre.literal-block {
+    background: var(--bao-ink);
+    border: 1px solid var(--bao-line-dark-2);
+    border-radius: 6px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.rst-content div[class^="highlight"] div[class^="highlight"] {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+.rst-content .highlight {
+    background: var(--bao-ink);
+}
+
+.rst-content div[class^="highlight"] pre,
+.rst-content pre.literal-block {
+    color: var(--bao-paper);
+    font-size: 13px;
+    line-height: 1.7;
+    padding: 16px;
+}
+
+/* Syntax colors stay inside the palette: the accent, its two cool steps,
+   on-dark and muted. Anything not listed below reads in paper. */
+.rst-content .highlight pre span {
+    background: none;
+    border: none;
+    color: inherit;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.rst-content .highlight pre .hll {
+    background: var(--bao-ink-2);
+    display: block;
+}
+
+.rst-content .highlight pre .c,
+.rst-content .highlight pre .ch,
+.rst-content .highlight pre .cm,
+.rst-content .highlight pre .c1,
+.rst-content .highlight pre .cs {
+    color: var(--bao-muted);
+    font-style: italic;
+}
+
+.rst-content .highlight pre .cp,
+.rst-content .highlight pre .cpf,
+.rst-content .highlight pre .gp,
+.rst-content .highlight pre .go,
+.rst-content .highlight pre .o,
+.rst-content .highlight pre .ow,
+.rst-content .highlight pre .p {
+    color: var(--bao-on-dark);
+}
+
+.rst-content .highlight pre .k,
+.rst-content .highlight pre .kc,
+.rst-content .highlight pre .kd,
+.rst-content .highlight pre .kn,
+.rst-content .highlight pre .kp,
+.rst-content .highlight pre .kr,
+.rst-content .highlight pre .nt,
+.rst-content .highlight pre .gh,
+.rst-content .highlight pre .gu {
+    color: var(--bao-accent);
+}
+
+.rst-content .highlight pre .kt,
+.rst-content .highlight pre .nc,
+.rst-content .highlight pre .nf,
+.rst-content .highlight pre .nb,
+.rst-content .highlight pre .nn,
+.rst-content .highlight pre .na,
+.rst-content .highlight pre .nv,
+.rst-content .highlight pre .no {
+    color: var(--bao-ramp-2);
+}
+
+.rst-content .highlight pre .s,
+.rst-content .highlight pre .s1,
+.rst-content .highlight pre .s2,
+.rst-content .highlight pre .sb,
+.rst-content .highlight pre .sc,
+.rst-content .highlight pre .sd,
+.rst-content .highlight pre .se,
+.rst-content .highlight pre .sh,
+.rst-content .highlight pre .si,
+.rst-content .highlight pre .sx,
+.rst-content .highlight pre .m,
+.rst-content .highlight pre .mi,
+.rst-content .highlight pre .mf,
+.rst-content .highlight pre .mh,
+.rst-content .highlight pre .mo,
+.rst-content .highlight pre .il,
+.rst-content .highlight pre .l {
+    color: var(--bao-ramp-3);
+}
+
+.rst-content .highlight pre .gs {
+    font-weight: 600;
+}
+
+.rst-content .highlight pre .ge {
+    font-style: italic;
+}
+
+.rst-content .code-block-caption,
+.rst-content .literal-block-wrapper .code-block-caption {
+    color: var(--bao-muted);
+    font-size: 13px;
+    font-style: normal;
+    text-align: left;
+}
+
+/* -- Admonitions ------------------------------------------------------------ */
+
+/* Notes are the website's callout: an accent rule and a faint accent tint. */
+.rst-content .admonition,
+.rst-content .note,
+.rst-content .hint,
+.rst-content .tip,
+.rst-content .important,
+.rst-content .seealso,
+.rst-content .admonition-todo {
+    background: rgba(19, 240, 196, 0.06);
+    border-left: 2px solid var(--bao-accent);
+    border-radius: 0 6px 6px 0;
+    margin: 24px 0;
+    padding: 16px 20px;
+}
+
+.rst-content .seealso,
+.rst-content .admonition-todo {
+    background: var(--bao-surface);
+    border-left-color: var(--bao-muted);
+}
+
+.rst-content .admonition .admonition-title {
+    background: none;
+    color: var(--bao-ink);
+    font-family: var(--bao-font-display);
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    padding: 0;
+}
+
+.rst-content .admonition .admonition-title::before {
+    display: none;
+}
+
+.rst-content .admonition p,
+.rst-content .admonition li {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.rst-content .admonition > :last-child {
+    margin-bottom: 0;
+}
+
+/* Warnings invert to an ink card, so they cannot be read as a note. */
+.rst-content .warning,
+.rst-content .caution,
+.rst-content .attention,
+.rst-content .danger,
+.rst-content .error {
+    background: var(--bao-ink);
+    border: 1px solid var(--bao-line-dark-2);
+    border-left: 2px solid var(--bao-accent);
+    border-radius: 0 6px 6px 0;
+    color: var(--bao-on-dark);
+    margin: 24px 0;
+    padding: 16px 20px;
+}
+
+.rst-content .warning .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .attention .admonition-title,
+.rst-content .danger .admonition-title,
+.rst-content .error .admonition-title {
+    color: var(--bao-accent);
+    font-family: var(--bao-font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.rst-content .warning strong,
+.rst-content .caution strong,
+.rst-content .attention strong,
+.rst-content .danger strong,
+.rst-content .error strong {
+    color: var(--bao-paper);
+}
+
+.rst-content .warning code,
+.rst-content .caution code,
+.rst-content .attention code,
+.rst-content .danger code,
+.rst-content .error code {
+    background: var(--bao-ink-2);
+    color: var(--bao-paper);
+}
+
+.rst-content .warning a,
+.rst-content .caution a,
+.rst-content .attention a,
+.rst-content .danger a,
+.rst-content .error a,
+.rst-content .warning a code,
+.rst-content .caution a code,
+.rst-content .attention a code,
+.rst-content .danger a code,
+.rst-content .error a code {
+    color: var(--bao-accent);
+}
+
+/* -- Tables ----------------------------------------------------------------- */
+
+.rst-content table.docutils,
+.wy-table-bordered-all {
+    border: 1px solid var(--bao-line);
+    border-radius: 6px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.rst-content table.docutils th,
+html.writer-html5 .rst-content table.docutils th {
+    background: var(--bao-surface);
+    border: none;
+    border-bottom: 1px solid var(--bao-line);
+    color: var(--bao-body);
+    font-family: var(--bao-font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.rst-content table.docutils td,
+.wy-table-bordered-all td {
+    border-bottom: 1px solid var(--bao-line-2);
+    border-left: none;
+    color: var(--bao-body);
+    font-size: 14px;
+}
+
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+    background-color: transparent;
+}
+
+html.writer-html5 .rst-content table.docutils td > p,
+html.writer-html5 .rst-content table.docutils th > p {
+    font-size: inherit;
+    line-height: 1.6;
+}
+
+.rst-content table.docutils caption {
+    color: var(--bao-muted);
+    font: normal 13px/1.6 var(--bao-font-sans);
+}
+
+/* -- Figures, glossary, footnotes ------------------------------------------- */
+
+.rst-content figure {
+    margin: 32px 0;
+}
+
+.rst-content figure figcaption p,
+.rst-content figure .caption-text,
+.rst-content figure .caption-number {
+    color: var(--bao-muted);
+    font-size: 13px;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.rst-content figure figcaption {
+    margin-top: 12px;
+}
+
+.rst-content dl dt,
+.rst-content dl.glossary dt {
+    color: var(--bao-ink);
+    font-family: var(--bao-font-display);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+html.writer-html5 .rst-content aside.footnote,
+html.writer-html5 .rst-content aside.footnote-list aside.footnote {
+    color: var(--bao-muted);
+}
+
+/* -- Home page cards -------------------------------------------------------- */
+
+/* One link per card: title, short text, arrow. Hover turns the border accent. */
+.bao-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 32px 0 8px;
+}
+
+.rst-content a.bao-card,
+.rst-content a.bao-card:visited {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--bao-line);
+    border-radius: 6px;
+    color: var(--bao-ink);
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+.rst-content a.bao-card:hover {
+    border-color: var(--bao-accent);
+    text-decoration: none;
+}
+
+.bao-card-title {
+    color: var(--bao-ink);
+    font-family: var(--bao-font-display);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.bao-card-text {
+    color: var(--bao-body);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bao-card-cta {
+    margin-top: auto;
+    padding-top: 4px;
+    color: var(--bao-teal);
+    font-family: var(--bao-font-display);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* -- sphinx-tabs ------------------------------------------------------------ */
+
+.sphinx-tabs {
+    margin: 24px 0;
+}
+
+.sphinx-tabs [role="tablist"] {
+    border-bottom: 1px solid var(--bao-line);
+}
+
+.sphinx-tabs-tab,
+.sphinx-tabs-tab[aria-selected="true"] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    color: var(--bao-body);
+    font-family: var(--bao-font-display);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: -1px;
+    padding: 10px 16px;
+    transition: color 0.2s;
+}
+
+.sphinx-tabs-tab:hover {
+    color: var(--bao-ink);
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+    border-bottom-color: var(--bao-accent);
+    color: var(--bao-ink);
+}
+
+.sphinx-tabs-panel {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 20px 0 0;
+}
+
+/* -- Search results --------------------------------------------------------- */
+
+.rst-content .highlighted {
+    background: rgba(19, 240, 196, 0.3);
+    box-shadow: none;
+    color: var(--bao-ink);
+    font-weight: inherit;
+    padding: 0 2px;
+}
+
+#search-results .search li {
+    border-bottom: 1px solid var(--bao-line-2);
+}
+
+#search-results .search li a {
+    font-family: var(--bao-font-display);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+#search-results .context {
+    color: var(--bao-body);
+    font-size: 13px;
+}
+
+/* -- Small screens ---------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap {
+        background: var(--bao-paper);
+    }
+
+    .wy-nav-content-wrap .wy-nav-content {
+        padding: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
 }

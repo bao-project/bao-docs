@@ -20,6 +20,15 @@ physical CPUs, with no need for a scheduler.
 Bao has no external dependencies, such as on privileged VMs running untrustable, large monolithic
 general-purpose operating systems (e.g., Linux), and, as such, encompasses a much smaller TCB.
 
+.. figure:: img/architecture.svg
+    :align: center
+    :name: bao-architecture-fig
+    :alt: Four guest VMs above the Bao hypervisor, each owning cores, a slice of memory, and
+          devices.
+
+    Bao architecture: four guests run on top of the hypervisor, each owning its own cores, slice
+    of memory and devices.
+
 **Main Features**
 
 * Static partitioning consolidation

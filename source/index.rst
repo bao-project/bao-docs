@@ -18,31 +18,36 @@ partners, researchers, and end users alike.
 
 .. raw:: html
 
-   <a href="bao_hyp/index.html">
-      <h2>The Bao Hypervisor</h2>
-   </a>
-   <p>Overview, getting started, user manual, and advanced guides regarding the Bao Hypervisor</p>
-
-   <a href="development/index.html">
-      <h2>Development Guidelines</h2>
-   </a>
-   <p>Guidelines for contributing to the Bao Project (coding style, CI workflow, MISRA guides,
-   contributing guidelines)</p>
-
-   <a href="licensing.html">
-      <h2>Licensing</h2>
-   </a>
-   <p>Licensing summary and author's DCO </p>
-
-   <a href="glossary.html">
-      <h2>Glossary</h2>
-   </a>
-   <p>Definitions of terms and concepts used in the Bao Project</p>
+   <div class="bao-cards">
+     <a class="bao-card" href="bao_hyp/index.html">
+       <span class="bao-card-title">The Bao Hypervisor</span>
+       <span class="bao-card-text">Overview, getting started, user manual, and advanced guides
+       regarding the Bao Hypervisor</span>
+       <span class="bao-card-cta">Open &rarr;</span>
+     </a>
+     <a class="bao-card" href="development/index.html">
+       <span class="bao-card-title">Development Guidelines</span>
+       <span class="bao-card-text">Guidelines for contributing to the Bao Project (coding style,
+       CI workflow, MISRA guides, contributing guidelines)</span>
+       <span class="bao-card-cta">Open &rarr;</span>
+     </a>
+     <a class="bao-card" href="licensing.html">
+       <span class="bao-card-title">Licensing</span>
+       <span class="bao-card-text">Licensing summary and author's DCO</span>
+       <span class="bao-card-cta">Open &rarr;</span>
+     </a>
+     <a class="bao-card" href="glossary.html">
+       <span class="bao-card-title">Glossary</span>
+       <span class="bao-card-text">Definitions of terms and concepts used in the Bao
+       Project</span>
+       <span class="bao-card-cta">Open &rarr;</span>
+     </a>
+   </div>
 
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
    bao_hyp/index
    development/index

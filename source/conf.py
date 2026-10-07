@@ -58,25 +58,25 @@ exclude_patterns = [
 #
 html_theme = 'sphinx_rtd_theme'
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
-
 html_theme_options = {
     'logo_only': True,
-    'style_external_links': True,
     # Toc options
     'collapse_navigation': False,
     'sticky_navigation': True,
     'prev_next_buttons_location': 'both',
     'style_external_links': True,
-    'style_nav_header_background': '#156577',
+    # Ink, as on bao-project.org. The theme writes this inline, so it has to be
+    # set here and not in custom.css.
+    'style_nav_header_background': '#0B1F33',
 }
 
-html_logo = "img/bao-logo-200x.png"
+# Wordmark and favicon from the Bao brand kit.
+html_logo = "img/bao-project-wordmark-on-dark.svg"
+html_favicon = "img/favicon.svg"
 
-# These folders are copied to the documentation's HTML output
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
 # These paths are either relative to html_static_path

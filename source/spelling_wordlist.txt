@@ -66,3 +66,8 @@ Submodules
 subdirectory
 scalability
 codebase
+initializer
+initializers
+typedefs
+structs
+accessors

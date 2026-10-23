@@ -88,3 +88,16 @@ toolchain
 bǎohù
 instantiation
 untrustable
+hypercall
+hypercalls
+backend
+invariants
+preemptible
+SoC
+spinlock
+microcontroller
+microcontrollers
+revalidates
+bringup
+runtime
+structs

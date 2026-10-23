@@ -7,6 +7,7 @@ Development Guidelines
    ci_pipeline
    code_documentation
    doc_guidelines
+   design_guidelines
    contributing
    misra
    versioning
